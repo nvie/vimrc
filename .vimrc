@@ -85,14 +85,6 @@ if has("autocmd")
    autocmd BufRead *.py map <f4> :!python setup.py test<CR>
    autocmd BufRead *.py map <f5> :w<CR>:!python %<CR>
 
-   " This is disabled, because it changes the jumplist.  Can't use CTRL-O to go
-   " back to positions in previous files more than once.
-   if 0
-      " When editing a file, always jump to the last cursor position.
-      " This must be after the uncompress commands.
-       autocmd BufReadPost * if line("'\"") && line("'\"") <= line("$") | exe "normal `\"" | endif
-   endif
-
 endif " has("autocmd")
 
 " set vi-compatible options
