@@ -85,18 +85,6 @@ if has("autocmd")
    autocmd BufRead *.py map <f4> :!python setup.py test<CR>
    autocmd BufRead *.py map <f5> :w<CR>:!python %<CR>
 
-   augroup cprog
-      " Remove all cprog autocommands
-      au!
-
-      " When starting to edit a file:
-      "   For C and C++ files set formatting of comments and set C-indenting on.
-      "   For other files switch it off.
-      "   Don't change the order, it's important that the line with * comes first.
-      autocmd FileType *      set formatoptions=tcql nocindent comments&
-      autocmd FileType c,cpp  set formatoptions=croql cindent comments=sr:/*,mb:*,el:*/,://
-   augroup END
-
    " This is disabled, because it changes the jumplist.  Can't use CTRL-O to go
    " back to positions in previous files more than once.
    if 0
