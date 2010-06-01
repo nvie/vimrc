@@ -1,6 +1,6 @@
-Using this :file:`.vimrc`
-=========================
-Although a :file:`.vimrc` is a very personal thing, you may use mine if you
+Using this .vimrc
+=================
+Although a .vimrc is a very personal thing, you may use mine if you
 like it.  To do so, please do the following:
 
 1. Clone this repo::
@@ -11,7 +11,7 @@ like it.  To do so, please do the following:
 
    	wget -qO - http://github.com/nvie/vimrc/tarball/master | tar -xzvf -
 
-2. In your :file:`~/.vimrc`, add the following line::
+2. In your ~/.vimrc, add the following line::
 
    	source ~/path/to/vimrc/.vimrc
 
