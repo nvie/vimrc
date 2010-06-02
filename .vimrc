@@ -82,10 +82,10 @@ if has("autocmd")
    autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
    autocmd BufRead *.py,*.rst set list
 
-   " run Python files by pressing F5
-   autocmd BufRead *.py map <f3> :!pyflakes %<CR>
-   autocmd BufRead *.py map <f4> :!python setup.py test<CR>
-   autocmd BufRead *.py map <f5> :w<CR>:!python %<CR>
+   " some shortcuts to run Python commands from within vim
+   autocmd BufRead *.py map <C-k> :!pyflakes %<CR>
+   autocmd BufRead *.py map <C-t> :!python setup.py test<CR>
+   autocmd BufRead *.py map <C-p> :w<CR>:!python %<CR>
 
 endif " has("autocmd")
 
