@@ -95,8 +95,8 @@ if has("autocmd")
    " - pep8     is ran with Ctrl-K, Ctrl-P ('p' for PEP8)
    " - all      are ran with Ctrl-K, Ctrl-K
    autocmd BufRead *.py map <C-k><C-f> :!pyflakes %<CR>
-   autocmd BufRead *.py map <C-k><C-p> :!pep8 %<CR>
-   autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 %)<CR>
+   autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
+   autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
 
 endif " has("autocmd")
 
