@@ -41,7 +41,7 @@ set nobackup                    " do not keep a backup file, we have version con
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
                                 " store swap files in one of these directories
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
-		 		 		        "    than 80 lines of registers
+                                "    than 80 lines of registers
 set wildmenu                    " make tab completion for files/buffers act like bash
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set visualbell                  " don't beep
