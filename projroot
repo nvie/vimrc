@@ -1,0 +1,31 @@
+#
+# projroot - Helper script to find the root of a project
+#
+# Currently detects projects based on existence of .git folder or setup.py
+# file.  Limited to domestic use only.
+#
+
+# Enable these checks
+USE_GIT=1
+USE_SETUP_PY=1
+
+if [ "$#" -ge 1 ]; then
+	cd $(dirname "$1")
+else
+	cd $(pwd)
+fi
+
+is_proj_root() {
+	[ "$USE_GIT" -eq 1 -a -d "$(pwd)/.git" ] || \
+	[ "$USE_SETUP_PY" -eq 1 -a -f "$(pwd)/setup.py" ]
+}
+
+while [ "$(pwd)" != "/" ] && ! is_proj_root; do
+	cd ..
+done
+
+if is_proj_root; then
+	pwd
+else
+	echo "project root not found" >&2
+fi

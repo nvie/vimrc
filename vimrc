@@ -86,17 +86,24 @@ if has("autocmd")
    " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
    " - nosetests is ran with Ctrl-P, Ctrl-N ('n' for Nose)
    " - test      is ran with Ctrl-P, Ctrl-T ('t' for test)
+   "
+   " NOTE:
+   " To have these commands work, make sure you have the 'projroot' script
+   " on your $PATH.  It is part of this repo.
+   "
    autocmd BufRead *.py map <C-p><C-p> :!python %<CR>
-   autocmd BufRead *.py map <C-p><C-n> :!nosetests %<CR>
-   autocmd BufRead *.py map <C-p><C-t> :!python setup.py test<CR>
-   
+   autocmd BufRead *.py map <C-p><C-n> :!(cd $(projroot); nosetests)<CR>
+   autocmd BufRead *.py map <C-p><C-t> :!(cd $(projroot); python setup.py test)<CR>
+
    " Python static source checkers:
    " - pyflakes is ran with Ctrl-K, Ctrl-F ('f' for Flakes)
    " - pep8     is ran with Ctrl-K, Ctrl-P ('p' for PEP8)
-   " - all      are ran with Ctrl-K, Ctrl-K
+   " - both     are ran with Ctrl-K, Ctrl-K (for the given file)
+   " - both     are ran for all files in the project with Ctrl-K, Ctrl-A
    autocmd BufRead *.py map <C-k><C-f> :!pyflakes %<CR>
    autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
+   autocmd BufRead *.py map <C-k><C-a> :!find $(projroot) -name '*.py' \| xargs pyflakes; find $(projroot) -name '*.py' \| xargs pep8 -r<CR>
 
 endif " has("autocmd")
 

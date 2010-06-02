@@ -15,4 +15,9 @@ like it.  To do so, please do the following:
 
    	source ~/path/to/vimrc/vimrc
 
+3. To use the Vim macro's that use the project folder detection script,
+   add it to your PATH::
+
+   	cd /usr/local/bin; ln -sf ~/path/to/vimrc/projroot
+
 That's it.
