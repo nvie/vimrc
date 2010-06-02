@@ -1,6 +1,6 @@
-Using this .vimrc
-=================
-Although a .vimrc is a very personal thing, you may use mine if you
+Using this vimrc
+================
+Although a vimrc is a very personal thing, you may use mine if you
 like it.  To do so, please do the following:
 
 1. Clone this repo::
@@ -13,6 +13,6 @@ like it.  To do so, please do the following:
 
 2. In your ~/.vimrc, add the following line::
 
-   	source ~/path/to/vimrc/.vimrc
+   	source ~/path/to/vimrc/vimrc
 
 That's it.
