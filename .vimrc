@@ -74,13 +74,13 @@ if has("autocmd")
    autocmd BufRead *.txt,*.tex,*.rst set textwidth=78
 
    " tabs in Python scripts are evil, so expand them to spaces
-   autocmd BufRead *.py set expandtab
-   autocmd BufRead *.py set number
-   autocmd BufRead *.py set textwidth=72
+   autocmd BufRead *.py,*.rst set expandtab
+   autocmd BufRead *.py,*.rst set number
+   autocmd BufRead *.py,*.rst set textwidth=72
 
    " highlight spaces in python
-   autocmd BufRead *.py set listchars=tab:»·,trail:·,extends:#
-   autocmd BufRead *.py set list
+   autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
+   autocmd BufRead *.py,*.rst set list
 
    " run Python files by pressing F5
    autocmd BufRead *.py map <f3> :!pyflakes %<CR>
