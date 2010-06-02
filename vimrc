@@ -17,7 +17,7 @@ set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch                   " set show matching parenthesis
 set foldenable                  " enable folding
-"set ignorecase                  " ignore case when searching
+set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
                                 "    case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
