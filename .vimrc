@@ -1,7 +1,9 @@
+"
 " Personal preference .vimrc file
 " Maintained by Vincent Driessen <vincent@datafox.nl>
 "
-" Use Vim settings, rather then Vi settings (much better!).
+
+" Use vim settings, rather then vi settings (much better!)
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
@@ -91,5 +93,5 @@ endif " has("autocmd")
 set cpo=aABceFs$
 
 " auto save/restore views for all files (*)
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+au BufReadPost,BufWritePost * mkview
+au BufReadPost,BufWritePost * silent loadview
