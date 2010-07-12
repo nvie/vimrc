@@ -26,7 +26,7 @@ set smarttab                    " insert tabs on the start of a line according t
 " syncbind                        " syncronize offsets
 
 " EDITOR LAYOUT
-set term=ansi
+set term=screen-256color
 set termencoding=utf-8
 set encoding=utf-8
 set ruler                       " show the cursor position all the time
@@ -49,6 +49,10 @@ set showcmd                     " show (partial) command in the last line of the
                                 "    this also shows visual selection info
 
 " HIGHLIGHTING
+if &t_Co >= 256 || has("gui_running")
+   colorscheme xoria256
+endif
+
 if &t_Co > 2 || has("gui_running")
    syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
@@ -62,6 +66,14 @@ inoremap <Nul> <C-n>
 
 " make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
+
+" Map CTRL-\ to do what ',' used to do
+nnoremap <c-\> ,
+vnoremap <c-\> ,
+
+" Edit the vimrc file
+nmap <silent> ,ev :e $MYVIMRC<CR>
+nmap <silent> ,sv :so $MYVIMRC<CR>
 
 " only do this part when compiled with support for autocommands
 if has("autocmd")
