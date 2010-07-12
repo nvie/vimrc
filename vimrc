@@ -37,7 +37,6 @@ set exrc                        " support local .exrc files
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set nobackup                    " do not keep a backup file, we have version control, right?
-" set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
                                 " store swap files in one of these directories
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
@@ -52,9 +51,6 @@ set showcmd                     " show (partial) command in the last line of the
 " HIGHLIGHTING
 if &t_Co > 2 || has("gui_running")
    syntax on                    " switch syntax highlighting on, when the terminal has colors
-
-   " perfrom some custom highlighting
-   highlight comment ctermfg=yellow
 endif
 
 " SHORTCUT MAPPINGS
