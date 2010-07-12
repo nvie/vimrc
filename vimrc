@@ -8,6 +8,10 @@
 set nocompatible
 
 " EDITING BEHAVIOUR
+filetype on                     " set filetype stuff to on
+filetype plugin on
+filetype indent on
+
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
@@ -22,6 +26,10 @@ set smartcase                   " ignore case if search pattern is all lowercase
                                 "    case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
                                 "    shiftwidth, not tabstop
+set scrolloff=8                 " keep 8 lines off the edges of the screen when scrolling
+set virtualedit=all             " allow the cursor to go in to "invalid" places
+set hlsearch                    " highlight search terms
+set incsearch                   " show search matches as you type
 " set noscrollbind
 " syncbind                        " syncronize offsets
 
@@ -30,7 +38,10 @@ set term=screen-256color
 set termencoding=utf-8
 set encoding=utf-8
 set ruler                       " show the cursor position all the time
-set hlsearch                    " highlight search terms
+set lazyredraw                  " don't update the display while executing macros
+set laststatus=2                " tell VIM to always put a status line in, even
+                                "    if there is only one window
+set statusline=%f\ %m\ %r\ %=ln:%l/%L\ col:%c\ buf:%n\ 
 
 " VIM BEHAVIOUR
 set exrc                        " support local .exrc files
@@ -47,6 +58,7 @@ set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
                                 "    this also shows visual selection info
+
 
 " HIGHLIGHTING
 if &t_Co >= 256 || has("gui_running")
