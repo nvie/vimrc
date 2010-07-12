@@ -80,6 +80,7 @@ if has("autocmd")
 
    " Python (test) runners:
    " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
+   " - ipython   is ran with Ctrl-P, Ctrl-I ('i' for iPython)
    " - nosetests is ran with Ctrl-P, Ctrl-N ('n' for Nose)
    " - test      is ran with Ctrl-P, Ctrl-T ('t' for test)
    "
@@ -87,7 +88,8 @@ if has("autocmd")
    " To have these commands work, make sure you have the 'projroot' script
    " on your $PATH.  It is part of this repo.
    "
-   autocmd BufRead *.py map <C-p><C-p> :!python %<CR>
+   autocmd BufRead *.py map <C-p><C-p> :w<CR>:!python %<CR>
+   autocmd BufRead *.py map <C-p><C-i> :w<CR>:!ipython %<CR>
    autocmd BufRead *.py map <C-p><C-n> :!(cd $(projroot); nosetests)<CR>
    autocmd BufRead *.py map <C-p><C-t> :!(cd $(projroot); python setup.py test)<CR>
 
