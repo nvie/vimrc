@@ -116,7 +116,10 @@ if has("autocmd")
    " tabs in Python scripts are evil, so expand them to spaces
    autocmd BufRead *.py,*.rst set expandtab
    autocmd BufRead *.py,*.rst set number
-   autocmd BufRead *.py,*.rst set textwidth=72
+   autocmd BufRead *.py set textwidth=78
+
+   " highlight any line longer than 80 chars
+   autocmd BufRead *.py,*.rst match ErrorMsg '\%>79v.\+'
 
    " highlight spaces in python
    autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
