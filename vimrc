@@ -109,7 +109,7 @@ let NERDTreeShowBookmarks=1
 
 " Don't display these kinds of files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
-            \ '\.o$', '\.so$' ]
+            \ '\.o$', '\.so$', '\.egg$' ]
 
 
 " only do this part when compiled with support for autocommands
