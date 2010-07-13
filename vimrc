@@ -39,7 +39,7 @@ set ruler                       " show the cursor position all the time
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
-set statusline=%f\ %m\ %r\ %=ln:%l/%L\ col:%c\ buf:%n\ 
+set statusline=%f\ %m\ %r\ %=%{fugitive#statusline()}\ ln:%l/%L\ col:%c\ buf:%n\ 
 
 " VIM BEHAVIOUR
 set exrc                        " support local .exrc files
