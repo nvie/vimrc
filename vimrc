@@ -30,8 +30,6 @@ set scrolloff=8                 " keep 8 lines off the edges of the screen when 
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
-" set noscrollbind
-" syncbind                        " syncronize offsets
 
 " EDITOR LAYOUT
 set term=screen-256color
