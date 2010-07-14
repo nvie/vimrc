@@ -111,6 +111,13 @@ let NERDTreeShowBookmarks=1
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
             \ '\.o$', '\.so$', '\.egg$' ]
 
+" Conflict markers {{{
+" highlight conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+" map 'gc' means goto conflict marker
+" nmap <silent> gc /[<=>]\{7\}<CR>
+nmap <silent> gc /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+" }}}
 
 " only do this part when compiled with support for autocommands
 if has("autocmd")
