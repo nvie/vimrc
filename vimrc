@@ -146,6 +146,10 @@ if has("autocmd")
    autocmd BufRead *.py,*.rst set list
    autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
 
+   " folding for Python (uses syntax/python.vim for fold definitions)
+   autocmd BufRead *.py set nofoldenable
+   autocmd BufRead *.py set foldmethod=expr
+
    " Python (test) runners:
    " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
    " - ipython   is ran with Ctrl-P, Ctrl-I ('i' for iPython)
