@@ -22,6 +22,8 @@ set shiftround                  " use multiple of shiftwidth when indenting with
 set showmatch                   " set show matching parenthesis
 set foldenable                  " enable folding
 set foldmethod=marker           " detect triple-{ style fold markers
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+                                " which commands trigger auto-unfold
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
                                 "    case-sensitive otherwise
