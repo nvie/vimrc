@@ -60,7 +60,7 @@ set showcmd                     " show (partial) command in the last line of the
 
 " HIGHLIGHTING
 if &t_Co >= 256 || has("gui_running")
-   colorscheme xoria256
+   colorscheme mustang
 endif
 
 if &t_Co > 2 || has("gui_running")
