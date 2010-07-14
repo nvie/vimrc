@@ -33,6 +33,8 @@ set scrolloff=8                 " keep 8 lines off the edges of the screen when 
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
+set list                        " show invisible characters
+set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " }}}
 
 " Editor layout {{{
@@ -141,8 +143,8 @@ if has("autocmd")
    autocmd BufRead *.py,*.rst match ErrorMsg '\%>79v.\+'
 
    " highlight spaces in python
-   autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
    autocmd BufRead *.py,*.rst set list
+   autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
 
    " Python (test) runners:
    " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
