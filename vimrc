@@ -7,7 +7,7 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" EDITING BEHAVIOUR
+" Editing behaviour {{{
 filetype on                     " set filetype stuff to on
 filetype plugin on
 filetype indent on
@@ -21,6 +21,7 @@ set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch                   " set show matching parenthesis
 set foldenable                  " enable folding
+set foldmethod=marker           " detect triple-{ style fold markers
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
                                 "    case-sensitive otherwise
@@ -30,8 +31,9 @@ set scrolloff=8                 " keep 8 lines off the edges of the screen when 
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
+" }}}
 
-" EDITOR LAYOUT
+" Editor layout {{{
 set term=screen-256color
 set termencoding=utf-8
 set encoding=utf-8
@@ -40,8 +42,10 @@ set lazyredraw                  " don't update the display while executing macro
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
 set statusline=%f\ %m\ %r\ %=%{fugitive#statusline()}\ ln:%l/%L\ col:%c\ buf:%n\ 
+" }}}
 
-" VIM BEHAVIOUR
+
+" Vim behaviour {{{
 set exrc                        " support local .exrc files
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
@@ -56,9 +60,9 @@ set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
                                 "    this also shows visual selection info
+" }}}
 
-
-" HIGHLIGHTING
+" Highlighting {{{
 if &t_Co >= 256 || has("gui_running")
    colorscheme mustang
 endif
@@ -66,8 +70,9 @@ endif
 if &t_Co > 2 || has("gui_running")
    syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
+" }}}
 
-" SHORTCUT MAPPINGS
+" Shortcut mappings {{{
 " don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -84,10 +89,9 @@ vnoremap <c-\> ,
 " Edit the vimrc file
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
+" }}}
 
-"-----------------------------------------------------------------------------
-" NERD Tree Plugin Settings
-"-----------------------------------------------------------------------------
+" NERDTree settings {{{
 " Toggle the NERD Tree on an off with F2
 nmap <F2> :NERDTreeToggle<CR>
 
@@ -110,6 +114,7 @@ let NERDTreeShowBookmarks=1
 " Don't display these kinds of files
 let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
             \ '\.o$', '\.so$', '\.egg$' ]
+" }}}
 
 " Conflict markers {{{
 " highlight conflict markers
