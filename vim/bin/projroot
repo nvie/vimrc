@@ -6,8 +6,8 @@
 #
 
 # Enable these checks
-USE_GIT=1
-USE_SETUP_PY=1
+DETECT_DIRS=".git"
+DETECT_FILES="setup.py Makefile Rakefile .lvimrc build.xml .project"
 
 if [ "$#" -ge 1 ]; then
 	cd $(dirname "$1")
@@ -16,8 +16,17 @@ else
 fi
 
 is_proj_root() {
-	[ "$USE_GIT" -eq 1 -a -d "$(pwd)/.git" ] || \
-	[ "$USE_SETUP_PY" -eq 1 -a -f "$(pwd)/setup.py" ]
+	for x in $DETECT_DIRS; do
+		if [ -d "$(pwd)/$x" ]; then
+			return 0
+		fi
+	done
+	for x in $DETECT_FILES; do
+		if [ -f "$(pwd)/$x" ]; then
+			return 0
+		fi
+	done
+	return 1
 }
 
 while [ "$(pwd)" != "/" ] && ! is_proj_root; do

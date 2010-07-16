@@ -198,14 +198,10 @@ if has("autocmd")
    " - nosetests is ran with Ctrl-P, Ctrl-N ('n' for Nose)
    " - test      is ran with Ctrl-P, Ctrl-T ('t' for test)
    "
-   " NOTE:
-   " To have these commands work, make sure you have the 'projroot' script
-   " on your $PATH.  It is part of this repo.
-   "
    autocmd BufRead *.py map <C-p><C-p> :w<CR>:!python %<CR>
    autocmd BufRead *.py map <C-p><C-i> :w<CR>:!ipython %<CR>
-   autocmd BufRead *.py map <C-p><C-n> :!(cd $(projroot); nosetests)<CR>
-   autocmd BufRead *.py map <C-p><C-t> :!(cd $(projroot); python setup.py test)<CR>
+   autocmd BufRead *.py map <C-p><C-n> :!(cd $(~/.vim/bin/projroot); nosetests)<CR>
+   autocmd BufRead *.py map <C-p><C-t> :!(cd $(~/.vim/bin/projroot); python setup.py test)<CR>
 
    " Python static source checkers:
    " - pyflakes is ran with Ctrl-K, Ctrl-F ('f' for Flakes)
@@ -215,7 +211,7 @@ if has("autocmd")
    autocmd BufRead *.py map <C-k><C-f> :!pyflakes %<CR>
    autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
-   autocmd BufRead *.py map <C-k><C-a> :!find $(projroot) -name '*.py' \| xargs pyflakes; find $(projroot) -name '*.py' \| xargs pep8 -r<CR>
+   autocmd BufRead *.py map <C-k><C-a> :!find $(~/.vim/bin/projroot) -name '*.py' \| xargs pyflakes; find $(~/.vim/bin/projroot) -name '*.py' \| xargs pep8 -r<CR>
 
    " bind <F1> to show the keyword under cursor
    " general help can still be entered manually, with :h

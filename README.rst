@@ -18,6 +18,6 @@ like it.  To do so, please do the following:
 3. To use the Vim macro's that use the project folder detection script,
    add it to your PATH::
 
-   	cd /usr/local/bin; ln -sf ~/path/to/vimrc/projroot
+   	PATH=$PATH:~/.vim/bin
 
 That's it.
