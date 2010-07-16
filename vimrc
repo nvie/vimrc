@@ -221,6 +221,9 @@ if has("autocmd")
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
    autocmd BufRead *.py map <C-k><C-a> :!find $(~/.vim/bin/projroot) -name '*.py' \| xargs pyflakes; find $(~/.vim/bin/projroot) -name '*.py' \| xargs pep8 -r<CR>
 
+   " use closetag plugin to auto-close HTML tags
+   autocmd Filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
+
    " bind <F1> to show the keyword under cursor
    " general help can still be entered manually, with :h
    autocmd Filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
