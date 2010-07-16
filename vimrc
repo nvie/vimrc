@@ -169,6 +169,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 nmap <silent> gc /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
+" Filetype specific handling {{{
 " only do this part when compiled with support for autocommands
 if has("autocmd")
 
@@ -215,13 +216,13 @@ if has("autocmd")
    autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
    autocmd BufRead *.py map <C-k><C-a> :!find $(projroot) -name '*.py' \| xargs pyflakes; find $(projroot) -name '*.py' \| xargs pep8 -r<CR>
-
 endif " has("autocmd")
+" }}}
 
-
-" auto save/restore views for all files (*)
+" Auto save/restore {{{
 au BufReadPost,BufWritePost * mkview
 au BufReadPost,BufWritePost * silent loadview
+" }}}
 
 " Extra vi-compatibility {{{
 " set extra vi-compatible options
