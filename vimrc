@@ -216,6 +216,12 @@ if has("autocmd")
    autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
    autocmd BufRead *.py map <C-k><C-a> :!find $(projroot) -name '*.py' \| xargs pyflakes; find $(projroot) -name '*.py' \| xargs pep8 -r<CR>
+
+   " bind <F1> to show the keyword under cursor
+   " general help can still be entered manually, with :h
+   autocmd Filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
+   autocmd Filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
+
 endif " has("autocmd")
 " }}}
 
