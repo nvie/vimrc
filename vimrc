@@ -89,6 +89,10 @@ endif
 " }}}
 
 " Shortcut mappings {{{
+" Quit fast, with q, or qq (to quit and write)
+nmap q :q<CR>
+nmap qq :wq<CR>
+
 " don't use Ex mode, use Q for formatting
 map Q gq
 
