@@ -9,6 +9,12 @@
 "                 --without-x --enable-cscope \
 "                 --with-compiledby="Vincent Driessen <vincent@datafox.nl>"
 "
+" To start vim without using this .vimrc file, use:
+"     vim -u NORC
+"
+" To start vim without loading any .vimrc or plugins, use:
+"     vim -u NONE
+"
 
 " Use vim settings, rather then vi settings (much better!)
 " This must be first, because it changes other options as a side effect.
