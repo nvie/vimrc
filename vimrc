@@ -230,6 +230,10 @@ au BufReadPost,BufWritePost * mkview
 au BufReadPost,BufWritePost * silent loadview
 " }}}
 
+" Common abbreviations / misspellings {{{
+source ~/.vim/autocorrect.vim
+" }}}
+
 " Extra vi-compatibility {{{
 " set extra vi-compatible options
 set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
