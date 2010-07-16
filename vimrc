@@ -2,6 +2,13 @@
 " Personal preference .vimrc file
 " Maintained by Vincent Driessen <vincent@datafox.nl>
 "
+" My personally preferred version of vim is the one with the "normal" feature
+" set, in addition to the following configure options:
+"
+"     ./configure --enable-pythoninterp --enable-multibyte --enable-gui=no \
+"                 --without-x --enable-cscope \
+"                 --with-compiledby="Vincent Driessen <vincent@datafox.nl>"
+"
 
 " Use vim settings, rather then vi settings (much better!)
 " This must be first, because it changes other options as a side effect.
