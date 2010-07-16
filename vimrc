@@ -87,7 +87,7 @@ endif
 " don't use Ex mode, use Q for formatting
 map Q gq
 
-" make p in Visual mode replace the selected text with the "" register.
+" make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Map CTRL-\ to do what ',' used to do
