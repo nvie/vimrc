@@ -259,6 +259,11 @@ v_a%	matchit.txt	/*v_a%*
 v_g%	matchit.txt	/*v_g%*
 vgS	surround.txt	/*vgS*
 vs	surround.txt	/*vs*
+xml-plugin-callbacks	xml-plugin.txt	/*xml-plugin-callbacks*
+xml-plugin-html	xml-plugin.txt	/*xml-plugin-html*
+xml-plugin-mappings	xml-plugin.txt	/*xml-plugin-mappings*
+xml-plugin-settings	xml-plugin.txt	/*xml-plugin-settings*
+xml-plugin.txt	xml-plugin.txt	/*xml-plugin.txt*
 yS	surround.txt	/*yS*
 ySS	surround.txt	/*ySS*
 ys	surround.txt	/*ys*
