@@ -46,7 +46,6 @@ set listchars=tab:»·,trail:·,extends:#,nbsp:·
 " }}}
 
 " Editor layout {{{
-set term=screen-256color
 set termencoding=utf-8
 set encoding=utf-8
 set ruler                       " show the cursor position all the time
@@ -56,12 +55,13 @@ set laststatus=2                " tell VIM to always put a status line in, even
 set statusline=%f\ %m\ %r\ %=%{fugitive#statusline()}\ ln:%l/%L\ col:%c\ buf:%n\ 
 " }}}
 
-
 " Vim behaviour {{{
 set exrc                        " support local .exrc files
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
-set nobackup                    " do not keep a backup file, we have version control, right?
+set nobackup                    " do not keep backup files, it's 70's style cluttering
+set noswapfile                  " do not write annoying intermediate swap files,
+                                "    who did ever restore from swap files anyway?
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
                                 " store swap files in one of these directories
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
@@ -87,9 +87,6 @@ endif
 " Shortcut mappings {{{
 " don't use Ex mode, use Q for formatting
 map Q gq
-
-" map Ctrl+space (apparently <Nul>?) to trigger autocompletion
-inoremap <Nul> <C-n>
 
 " make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
