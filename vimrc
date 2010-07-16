@@ -117,21 +117,14 @@ map ,/ <Esc>:noh<CR>
 " }}}
 
 " NERDTree settings {{{
-" Toggle the NERD Tree on an off with F2
-nmap <F2> :NERDTreeToggle<CR>
-
-" Close the NERD Tree with Shift-F2
-nmap <S-F2> :NERDTreeClose<CR>
-
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)
-nmap <F3> :NERDTreeClose<CR>:NERDTreeToggle<CR>
-
-" Locate the currently open file in the NERD Tree with F4
-nmap <F4> :NERDTreeFind<CR>
+nmap ,n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nmap ,m :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap ,N :NERDTreeClose<CR>
 
 " Store the bookmarks file in perforce
-let NERDTreeBookmarksFile="~/.vim/NERDTreeBookmarks"
+let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
 
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
