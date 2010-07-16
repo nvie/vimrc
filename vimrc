@@ -61,7 +61,6 @@ set laststatus=2                " tell VIM to always put a status line in, even
 " }}}
 
 " Vim behaviour {{{
-set exrc                        " support local .exrc files
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set nobackup                    " do not keep backup files, it's 70's style cluttering
