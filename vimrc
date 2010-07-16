@@ -218,9 +218,17 @@ if has("autocmd")
 
 endif " has("autocmd")
 
-" set vi-compatible options
-set cpo=aABceFs$
 
 " auto save/restore views for all files (*)
 au BufReadPost,BufWritePost * mkview
 au BufReadPost,BufWritePost * silent loadview
+
+" Extra vi-compatibility {{{
+" set extra vi-compatible options
+set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
+                     " the end during the change
+set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
+au Filetype vim set formatoptions-=o
+                     " somehow, during vim filetype detection, this gets set,
+                     " so explicitly unset it again for vim files
+" }}}
