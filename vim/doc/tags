@@ -30,6 +30,11 @@
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :S	abolish.txt	/*:S*
 :Subvert	abolish.txt	/*:Subvert*
+:TComment	tComment.txt	/*:TComment*
+:TCommentAs	tComment.txt	/*:TCommentAs*
+:TCommentBlock	tComment.txt	/*:TCommentBlock*
+:TCommentInline	tComment.txt	/*:TCommentInline*
+:TCommentRight	tComment.txt	/*:TCommentRight*
 :TlistAddFiles	taglist.txt	/*:TlistAddFiles*
 :TlistAddFilesRecursive	taglist.txt	/*:TlistAddFilesRecursive*
 :TlistClose	taglist.txt	/*:TlistClose*
@@ -51,6 +56,7 @@ ExtractSnipsFile()	snipMate.txt	/*ExtractSnipsFile()*
 Filename()	snipMate.txt	/*Filename()*
 MatchError	matchit.txt	/*MatchError*
 ResetSnippets()	snipMate.txt	/*ResetSnippets()*
+TCommentDefineType()	tComment.txt	/*TCommentDefineType()*
 Tlist_Get_Tag_Prototype_By_Line()	taglist.txt	/*Tlist_Get_Tag_Prototype_By_Line()*
 Tlist_Get_Tagname_By_Line()	taglist.txt	/*Tlist_Get_Tagname_By_Line()*
 Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
@@ -132,6 +138,11 @@ g:SuperTabMidWordCompletion	supertab.txt	/*g:SuperTabMidWordCompletion*
 g:SuperTabRetainCompletionDuration	supertab.txt	/*g:SuperTabRetainCompletionDuration*
 g:snippets_dir	snipMate.txt	/*g:snippets_dir*
 g:snips_author	snipMate.txt	/*g:snips_author*
+g:tcommentMapLeader1	tComment.txt	/*g:tcommentMapLeader1*
+g:tcommentMapLeader2	tComment.txt	/*g:tcommentMapLeader2*
+g:tcommentMapLeaderOp1	tComment.txt	/*g:tcommentMapLeaderOp1*
+g:tcommentMapLeaderOp2	tComment.txt	/*g:tcommentMapLeaderOp2*
+g:tcommentOpModeExtra	tComment.txt	/*g:tcommentOpModeExtra*
 i_CTRL-G_S	surround.txt	/*i_CTRL-G_S*
 i_CTRL-G_s	surround.txt	/*i_CTRL-G_s*
 i_CTRL-R_<Tab>	snipMate.txt	/*i_CTRL-R_<Tab>*
@@ -235,6 +246,11 @@ surround-mappings	surround.txt	/*surround-mappings*
 surround-replacements	surround.txt	/*surround-replacements*
 surround-targets	surround.txt	/*surround-targets*
 surround.txt	surround.txt	/*surround.txt*
+tComment-Installation	tComment.txt	/*tComment-Installation*
+tComment-Key-Bindings	tComment.txt	/*tComment-Key-Bindings*
+tComment-Usage	tComment.txt	/*tComment-Usage*
+tComment-commands	tComment.txt	/*tComment-commands*
+tComment.txt	tComment.txt	/*tComment.txt*
 taglist-commands	taglist.txt	/*taglist-commands*
 taglist-debug	taglist.txt	/*taglist-debug*
 taglist-extend	taglist.txt	/*taglist-extend*
