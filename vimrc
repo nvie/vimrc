@@ -30,6 +30,7 @@ set tabstop=4                   " a tab is four spaces
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
 set copyindent                  " copy the previous indentation on autoindenting
+set number                      " always show line numbers
 set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set showmatch                   " set show matching parenthesis
@@ -43,7 +44,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
                                 "    case-sensitive otherwise
 set smarttab                    " insert tabs on the start of a line according to
                                 "    shiftwidth, not tabstop
-set scrolloff=8                 " keep 8 lines off the edges of the screen when scrolling
+set scrolloff=4                 " keep 4 lines off the edges of the screen when scrolling
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
@@ -52,6 +53,10 @@ set listchars=tab:»·,trail:·,extends:#,nbsp:·
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
+
+" Speed up scrolling of the viewport slightly
+nnoremap <C-e> 2<C-e>
+nnoremap <C-y> 2<C-y>
 " }}}
 
 " Editor layout {{{
@@ -63,6 +68,10 @@ set laststatus=2                " tell VIM to always put a status line in, even
 " }}}
 
 " Vim behaviour {{{
+set hidden                      " hide buffers instead of closing them this
+                                "    means that the current buffer can be put
+                                "    to background without being written; and
+                                "    that marks and undo history are preserved
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set nobackup                    " do not keep backup files, it's 70's style cluttering
