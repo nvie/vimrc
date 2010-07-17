@@ -49,6 +49,9 @@ set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set list                        " show invisible characters
 set listchars=tab:»·,trail:·,extends:#,nbsp:·
+set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
+                                "    paste mode, where you can paste mass data
+                                "    that won't be autoindented
 " }}}
 
 " Editor layout {{{
