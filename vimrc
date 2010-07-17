@@ -57,7 +57,6 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
 " Editor layout {{{
 set termencoding=utf-8
 set encoding=utf-8
-set ruler                       " show the cursor position all the time
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
