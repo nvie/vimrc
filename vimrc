@@ -6,7 +6,7 @@
 " set, in addition to the following configure options:
 "
 "     ./configure --enable-pythoninterp --enable-multibyte --enable-gui=no \
-"                 --without-x --enable-cscope \
+"                 --with-x --enable-cscope \
 "                 --with-compiledby="Vincent Driessen <vincent@datafox.nl>"
 "
 " To start vim without using this .vimrc file, use:
