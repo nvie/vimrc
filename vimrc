@@ -53,6 +53,8 @@ set listchars=tab:»·,trail:·,extends:#,nbsp:·
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
+set mouse=a                     " enable using the mouse if terminal emulator
+                                "    supports it (xterm does)
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
@@ -65,6 +67,7 @@ set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
+set showtabline=2               " show a tabbar on top, always
 " }}}
 
 " Vim behaviour {{{
@@ -136,6 +139,26 @@ nmap <silent> ,sv :so $MYVIMRC<CR>
 
 " Clear search highlight when ,/ is used
 map ,/ <Esc>:noh<CR>
+" }}}
+
+" Working with tabs {{{
+set tabpagemax=10    " use at most 10 tabs
+nmap ,t <Esc>:tabedit .<CR>
+nmap ,T <Esc>:tabnew<CR>
+nmap gt <C-w>gf
+nmap gT <C-w>gF
+nmap ,1 :tabn 1<CR>
+nmap ,2 :tabn 2<CR>
+nmap ,3 :tabn 3<CR>
+nmap ,4 :tabn 4<CR>
+nmap ,5 :tabn 5<CR>
+nmap ,6 :tabn 6<CR>
+nmap ,7 :tabn 7<CR>
+nmap ,8 :tabn 8<CR>
+nmap ,9 :tabn 9<CR>
+nmap ,0 :tabn 10<CR>
+nmap ,<Left> :tabprevious<CR>
+nmap ,<Right> :tabnext<CR>
 " }}}
 
 " NERDTree settings {{{
