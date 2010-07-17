@@ -223,6 +223,11 @@ nmap <silent> gc /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " only do this part when compiled with support for autocommands
 if has("autocmd")
 
+    augroup vim_files
+        au!
+        autocmd Filetype vim set expandtab    " disallow tabs in Vim files
+    augroup end
+
    " in text files, always limit the width of text to 78 characters
    autocmd BufRead *.txt,*.tex,*.rst set textwidth=78
 
