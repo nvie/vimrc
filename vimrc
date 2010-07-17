@@ -105,9 +105,10 @@ endif
 " }}}
 
 " Shortcut mappings {{{
-" Quit fast, with q, or qq (to quit and write)
-nmap q :q<CR>
-nmap qq :wq<CR>
+" Since I never use the ; key anyway, this is a real optimization for almost
+" all Vim commands, since we don't have to press that annoying Shift key that
+" slows the commands down
+nnoremap ; :
 
 " don't use Ex mode, use Q for formatting
 map Q gq
@@ -115,9 +116,14 @@ map Q gq
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
-" Map CTRL-\ to do what ',' used to do
-nnoremap <c-\> ,
-vnoremap <c-\> ,
+" Swap implementations of ` and ' jump to markers
+" By default, ' jumps to the marked line, ` jumps to the marked line and
+" column, so swap them
+nnoremap ' `
+nnoremap ` '
+
+" Change the mapleader from \ to ,
+let mapleader=","
 
 " Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
 " yanked stack (also, in visual mode)
