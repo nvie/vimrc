@@ -286,19 +286,13 @@ endif " has("autocmd")
 " }}}
 
 " Auto save/restore {{{
-au BufReadPost,BufWritePost * mkview
-au BufReadPost,BufWritePost * silent loadview
+au BufWritePost *.* silent mkview!
+au BufReadPost *.* silent loadview
 
 " Quick write session with F2
 map <F2> :mksession! .vim_session<CR>
 " And load session with F3
 map <F3> :source .vim_session<CR>
-
-"autocmd VimLeave * nested
-"    \ execute "mksession! " . ".vim_session"
-"
-"autocmd VimEnter * nested if argc() == 0 && filereadable(".vim_session") |
-"    \ execute "source " . ".vim_session"
 " }}}
 
 " Common abbreviations / misspellings {{{
