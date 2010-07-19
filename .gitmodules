@@ -13,3 +13,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
+[submodule "vim/bundle/abolish"]
+	path = vim/bundle/abolish
+	url = git://github.com/tpope/vim-abolish.git

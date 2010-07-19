@@ -1,0 +1,10 @@
+Abolish acc{a,e,i}d{e,a}n{t,tally}  acc{i}d{e}n{}
+Abolish a{c,cc}e{s,ss}ories  a{cc}e{ss}ories
+Abolish desparat{e,es,ed,ing,ely,ion,ions,or}  desperat{}
+Abolish ne{c,cc}{e,a}{s,ss}{ity,ary,arily}  ne{c,c}{e}{ss}{}
+Abolish seperat{e,es,ed,ing,ely,ion,ions,or}  separat{}
+Abolish a{cc,c}o{m,mm}odat{e,ion} a{cc}o{mm}odat{}
+Abolish independ{a,e}n{t,tly,ce}  independ{e}n{}
+Abolish o{c,cc}u{r,rr}en{t,ce}  o{cc}u{rr}en{}
+Abolish su{c,cc}e{s,ss}fu{l,ll,ly,lly}  su{cc}e{ss}fu{l,l,lly,lly}
+Abolish {def,pref,transf}e{r,rr}ed  {}e{rr}ed
