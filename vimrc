@@ -100,6 +100,7 @@ set showcmd                     " show (partial) command in the last line of the
                                 "    this also shows visual selection info
 set modeline                    " allow files to include a 'mode line', to
                                 "    override vim defaults
+set modelines=5                 " check the first 5 lines for a modeline
 " }}}
 
 " Highlighting {{{
