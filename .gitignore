@@ -1,5 +1,6 @@
+.vim_session
 /vim/.VimballRecord
 /vim/NERDTreeBookmarks
 /vim/cache
+/vim/user.vim
 /vim/view
-.vim_session

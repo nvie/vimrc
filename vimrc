@@ -314,3 +314,7 @@ au Filetype vim set formatoptions-=o
                      " somehow, during vim filetype detection, this gets set,
                      " so explicitly unset it again for vim files
 " }}}
+
+" Extra user or machine specific settings {{{
+source ~/.vim/user.vim
+" }}}
