@@ -26,10 +26,7 @@
 'snippets'	snipMate.txt	/*'snippets'*
 .snippet	snipMate.txt	/*.snippet*
 .snippets	snipMate.txt	/*.snippets*
-:Abolish	abolish.txt	/*:Abolish*
 :MatchDebug	matchit.txt	/*:MatchDebug*
-:S	abolish.txt	/*:S*
-:Subvert	abolish.txt	/*:Subvert*
 :TComment	tComment.txt	/*:TComment*
 :TCommentAs	tComment.txt	/*:TCommentAs*
 :TCommentBlock	tComment.txt	/*:TCommentBlock*
@@ -63,15 +60,6 @@ Tlist_Set_App()	taglist.txt	/*Tlist_Set_App()*
 Tlist_Update_File_Tags()	taglist.txt	/*Tlist_Update_File_Tags()*
 [%	matchit.txt	/*[%*
 ]%	matchit.txt	/*]%*
-abolish	abolish.txt	/*abolish*
-abolish-abbrev	abolish.txt	/*abolish-abbrev*
-abolish-author	abolish.txt	/*abolish-author*
-abolish-coercion	abolish.txt	/*abolish-coercion*
-abolish-grep	abolish.txt	/*abolish-grep*
-abolish-patterns	abolish.txt	/*abolish-patterns*
-abolish-search	abolish.txt	/*abolish-search*
-abolish-substitute	abolish.txt	/*abolish-substitute*
-abolish.txt	abolish.txt	/*abolish.txt*
 b:match_col	matchit.txt	/*b:match_col*
 b:match_debug	matchit.txt	/*b:match_debug*
 b:match_ignorecase	matchit.txt	/*b:match_ignorecase*
@@ -85,7 +73,6 @@ b:match_tail	matchit.txt	/*b:match_tail*
 b:match_wholeBR	matchit.txt	/*b:match_wholeBR*
 b:match_word	matchit.txt	/*b:match_word*
 b:match_words	matchit.txt	/*b:match_words*
-cr	abolish.txt	/*cr*
 cs	surround.txt	/*cs*
 ds	surround.txt	/*ds*
 g%	matchit.txt	/*g%*
