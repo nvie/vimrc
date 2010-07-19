@@ -221,8 +221,8 @@ let Tlist_Use_Right_Window=1
 " highlight conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " map 'gc' means goto conflict marker
-" nmap <silent> gc /[<=>]\{7\}<CR>
-nmap <silent> gc /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+" nmap <silent> gC /[<=>]\{7\}<CR>
+nmap <silent> gC /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
 " Filetype specific handling {{{
