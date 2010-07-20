@@ -134,6 +134,10 @@ nnoremap ` '
 " Change the mapleader from \ to ,
 let mapleader=","
 
+" Complete whole filenames/lines with a quicker shortcut key in insert mode
+imap <C-f> <C-x><C-f>
+imap <C-l> <C-x><C-l>
+
 " Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
 " yanked stack (also, in visual mode)
 nmap <silent> ,d "_d
