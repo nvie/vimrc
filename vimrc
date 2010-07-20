@@ -80,6 +80,9 @@ set hidden                      " hide buffers instead of closing them this
                                 "    means that the current buffer can be put
                                 "    to background without being written; and
                                 "    that marks and undo history are preserved
+set switchbuf=useopen,usetab    " reveal already opened files from the
+                                " quickfix window instead of opening new
+                                " buffers
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set nobackup                    " do not keep backup files, it's 70's style cluttering
