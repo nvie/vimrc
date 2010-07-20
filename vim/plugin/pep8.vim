@@ -1,10 +1,11 @@
-function <SID>Pep8()
+function Pep8()
   set lazyredraw
+
   " Close any existing cwindows.
   cclose
+
   let l:grepformat_save = &grepformat
   let l:grepprogram_save = &grepprg
-  set grepformat&vim
   set grepformat&vim
   let &grepformat = '%f:%l:%m'
   let &grepprg = 'pep8 --repeat'
@@ -20,16 +21,27 @@ function <SID>Pep8()
   windo let l:mod_total = l:mod_total + winheight(0)/l:win_count |
         \ execute 'resize +'.l:mod_total
   " Open cwindow
-  execute 'belowright copen '.l:mod_total
-  nnoremap <buffer> <silent> c :cclose<CR>
-  nnoremap <buffer> <silent> q :cclose<CR>
-  set nolazyredraw
-  redraw!
+  if getqflist() != []
+    execute 'belowright copen '.l:mod_total
+    nnoremap <buffer> <silent> c :cclose<CR>
+    nnoremap <buffer> <silent> q :cclose<CR>
+    set nolazyredraw
+    redraw!
+  else
+    set nolazyredraw
+    redraw!
+
+    " Show OK status
+    hi Green ctermfg=green
+    echohl Green
+    echon "PEP8 safe"
+    echohl
+  endif
 endfunction
 
-if ( !hasmapto('<SID>Pep8()') && (maparg('<F5>') == '') )
-  map <F5> :call <SID>Pep8()<CR>
-  map! <F5> :call <SID>Pep8()<CR>
+if ( !hasmapto('Pep8()') && (maparg('<F5>') == '') )
+  map <F5> :call Pep8()<CR>
+  map! <F5> :call Pep8()<CR>
 else
   if ( !has("gui_running") || has("win32") )
     echo "Python PEP8 Error: No Key mapped.\n".
