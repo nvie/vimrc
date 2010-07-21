@@ -150,8 +150,8 @@ vmap <silent> ,d "_d
 nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
-" Clear search highlight when ,/ is used
-map ,/ <Esc>:noh<CR>
+" Clears the search register
+nmap ,/ :let @/=""<CR>
 
 " Quick alignment of text
 nmap ,al :left<CR>
