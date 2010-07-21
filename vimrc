@@ -232,9 +232,9 @@ let Tlist_Use_Right_Window=1
 " Conflict markers {{{
 " highlight conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-" map 'gc' means goto conflict marker
-" nmap <silent> gC /[<=>]\{7\}<CR>
-nmap <silent> gC /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+
+" shortcut to jump to next conflict marker
+nmap <silent> ,c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
 " Filetype specific handling {{{
