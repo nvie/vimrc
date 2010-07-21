@@ -1,51 +1,71 @@
+"
+" Python filetype plugin for running pep8
+" Language:     Python (ft=python)
+" Maintainer:   Vincent Driessen <vincent@datafox.nl>
+" Version:      Vim 7 (may work with lower Vim versions, but not tested)
+" URL:          http://github.com/nvie/vim-pep8
+"
+" Only do this when not done yet for this buffer
+if exists("b:did_ftplugin")
+    finish
+endif
+let b:did_ftplugin = 1
+
+let s:pep8_cmd="pep8"
+
 function Pep8()
-  set lazyredraw
+    if !executable(s:pep8_cmd)
+        echoerr "File " . s:pep8_cmd . " not found. Please install it first."
+        return
+    endif
 
-  " Close any existing cwindows.
-  cclose
+    set lazyredraw   " delay redrawing
+    cclose           " close any existing cwindows
 
-  let l:grepformat_save = &grepformat
-  let l:grepprogram_save = &grepprg
-  set grepformat&vim
-  let &grepformat = '%f:%l:%m'
-  let &grepprg = 'pep8 --repeat'
-  if &readonly == 0 | update | endif
-  silent! grep! %
-  let &grepformat = l:grepformat_save
-  let &grepprg = l:grepprogram_save
-  let l:mod_total = 0
-  let l:win_count = 1
-  " Determine correct window height
-  windo let l:win_count = l:win_count + 1
-  if l:win_count <= 2 | let l:win_count = 4 | endif
-  windo let l:mod_total = l:mod_total + winheight(0)/l:win_count |
-        \ execute 'resize +'.l:mod_total
-  " Open cwindow
-  if getqflist() != []
-    execute 'belowright copen '.l:mod_total
-    nnoremap <buffer> <silent> c :cclose<CR>
-    nnoremap <buffer> <silent> q :cclose<CR>
+    " store old grep settings (to restore later)
+    let l:old_gfm=&grepformat
+    let l:old_gp=&grepprg
+
+    " write any changes before continuing
+    if &readonly == 0
+        update
+    endif
+
+    " perform the grep itself
+    let &grepformat="%f:%l:%m"
+    let &grepprg=s:pep8_cmd . " --repeat $*"
+    silent! grep! %
+
+    " restore grep settings
+    let &grepformat=l:old_gfm
+    let &grepprg=l:old_gp
+
+    " open cwindow
+    let has_results=getqflist() != []
+    if has_results
+        execute 'belowright copen'
+        nnoremap <buffer> <silent> c :cclose<CR>
+        nnoremap <buffer> <silent> q :cclose<CR>
+    endif
+
     set nolazyredraw
     redraw!
-  else
-    set nolazyredraw
-    redraw!
 
-    " Show OK status
-    hi Green ctermfg=green
-    echohl Green
-    echon "PEP8 safe"
-    echohl
-  endif
+    if has_results == 0
+        " Show OK status
+        hi Green ctermfg=green
+        echohl Green
+        echon "PEP8 safe"
+        echohl
+    endif
 endfunction
 
-if ( !hasmapto('Pep8()') && (maparg('<F5>') == '') )
-  map <F5> :call Pep8()<CR>
-  map! <F5> :call Pep8()<CR>
-else
-  if ( !has("gui_running") || has("win32") )
-    echo "Python PEP8 Error: No Key mapped.\n".
-          \ "<F5> is taken and a replacement was not assigned."
-  endif
+" Add mappings, unless the user didn't want this.
+" The default mapping is registered under to <F5> by default, unless the user
+" remapped it already (or a mapping exists already for <F5>)
+if !exists("no_plugin_maps") && !exists("no_pep8_maps")
+    if !hasmapto('Pep8()')
+        noremap <buffer> <F5> :call Pep8()<CR>
+        noremap! <buffer> <F5> :call Pep8()<CR>
+    endif
 endif
-
