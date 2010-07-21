@@ -152,6 +152,11 @@ nmap <silent> ,sv :so $MYVIMRC<CR>
 
 " Clear search highlight when ,/ is used
 map ,/ <Esc>:noh<CR>
+
+" Quick alignment of text
+nmap ,al :left<CR>
+nmap ,ar :right<CR>
+nmap ,ac :center<CR>
 " }}}
 
 " Working with tabs {{{
