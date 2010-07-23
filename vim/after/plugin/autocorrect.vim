@@ -8,3 +8,4 @@ Abolish independ{a,e}n{t,tly,ce}  independ{e}n{}
 Abolish o{c,cc}u{r,rr}en{t,ce}  o{cc}u{rr}en{}
 Abolish su{c,cc}e{s,ss}fu{l,ll,ly,lly}  su{cc}e{ss}fu{l,l,lly,lly}
 Abolish {def,pref,transf}e{r,rr}ed  {}e{rr}ed
+Abolish o{cc,c}u{rr,r}{e,a}nce o{cc}u{rr}{e}nce
