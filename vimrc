@@ -297,8 +297,6 @@ if has("autocmd")
    " - pep8     is ran with Ctrl-K, Ctrl-P ('p' for PEP8)
    " - both     are ran with Ctrl-K, Ctrl-K (for the given file)
    " - both     are ran for all files in the project with Ctrl-K, Ctrl-A
-   autocmd BufRead *.py map <C-k><C-f> :!pyflakes %<CR>
-   autocmd BufRead *.py map <C-k><C-p> :!pep8 -r %<CR>
    autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
    autocmd BufRead *.py map <C-k><C-a> :!find $(~/.vim/bin/projroot) -name '*.py' \| xargs pyflakes; find $(~/.vim/bin/projroot) -name '*.py' \| xargs pep8 -r<CR>
 
