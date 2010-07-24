@@ -167,7 +167,7 @@ nmap <silent> ,ev :e $MYVIMRC<CR>
 nmap <silent> ,sv :so $MYVIMRC<CR>
 
 " Clears the search register
-nmap ,/ :let @/=""<CR>
+nmap <silent> ,/ :let @/=""<CR>
 
 " Quick alignment of text
 nmap ,al :left<CR>
