@@ -22,3 +22,6 @@
 [submodule "vim/bundle/pyflakes"]
 	path = vim/bundle/pyflakes
 	url = git://github.com/nvie/vim-pyflakes.git
+[submodule "vim/bundle/toggle_mouse"]
+	path = vim/bundle/toggle_mouse
+	url = git://github.com/nvie/vim-togglemouse.git
