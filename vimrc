@@ -300,6 +300,24 @@ if has("autocmd")
    autocmd BufRead *.py set nofoldenable
    autocmd BufRead *.py set foldmethod=expr
 
+   fun! PyFoldText()
+        let i = v:foldstart
+        while i <= v:foldend
+            if match(getline(i), "^[ \t]*@[a-zA-Z_]") == -1
+                let l:text = "+".v:folddashes." "
+                let l:line = substitute(getline(i), " *# *{{{", "", "g")
+                let l:line = substitute(l:line, ":", "", "g")
+                let l:line = substitute(l:line, "^\s*", "", "g")
+                let l:line = substitute(l:line, "\s*$", "", "g")
+                let l:text = l:text . l:line
+                return l:text
+            endif
+            let i = i+1
+        endwhile
+        return foldtext()
+    endf
+    autocmd BufRead *.py set foldtext=PyFoldText()
+
    " Python (test) runners:
    " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
    " - ipython   is ran with Ctrl-P, Ctrl-I ('i' for iPython)
