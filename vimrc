@@ -305,7 +305,7 @@ if has("autocmd")
         while i <= v:foldend
             if match(getline(i), "^[ \t]*@[a-zA-Z_]") == -1
                 let l:text = "+".v:folddashes." "
-                let l:line = substitute(getline(i), " *# *{{{", "", "g")
+                let l:line = substitute(getline(i), " *# *{"."{{", "", "g")
                 let l:line = substitute(l:line, ":", "", "g")
                 let l:line = substitute(l:line, "^\s*", "", "g")
                 let l:line = substitute(l:line, "\s*$", "", "g")
