@@ -348,6 +348,27 @@ if has("autocmd")
 endif " has("autocmd")
 " }}}
 
+" Skeleton processing {{{
+
+if has("autocmd")
+
+    if !exists('*LoadTemplate')
+    function LoadTemplate(file)
+        " Add skeleton fillings for Python (normal and unittest) files
+        if a:file =~ 'test_.*\.py$'
+            execute "0r ~/.vim/skeleton/test_template.py"
+        elseif a:file =~ '.*\.py$'
+            execute "0r ~/.vim/skeleton/template.py"
+        endif
+    endfunction
+    endif
+
+    autocmd BufNewFile * call LoadTemplate(@%)
+
+endif " has("autocmd")
+
+" }}}
+
 " Auto save/restore {{{
 au BufWritePost *.* silent mkview!
 au BufReadPost *.* silent loadview
