@@ -329,6 +329,9 @@ if has("autocmd")
    autocmd BufRead *.py map <C-p><C-n> :!(cd $(~/.vim/bin/projroot); nosetests)<CR>
    autocmd BufRead *.py map <C-p><C-t> :!(cd $(~/.vim/bin/projroot); python setup.py test)<CR>
 
+   " Run a quick static syntax check every time we save a Python file
+   autocmd BufWritePost *.py call Pyflakes()
+
    " Python static source checkers:
    " - pyflakes is ran with Ctrl-K, Ctrl-F ('f' for Flakes)
    " - pep8     is ran with Ctrl-K, Ctrl-P ('p' for PEP8)
