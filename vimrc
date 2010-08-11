@@ -320,7 +320,9 @@ if has("autocmd")
 
    " Python runners
    autocmd BufRead *.py map <F5> :w<CR>:!python %<CR>
+   autocmd BufRead *.py imap <F5> <Esc>:w<CR>:!python %<CR>
    autocmd BufRead *.py map <S-F5> :w<CR>:!ipython %<CR>
+   autocmd BufRead *.py imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
    " Run a quick static syntax check every time we save a Python file
    autocmd BufWritePost *.py call Pyflakes()
