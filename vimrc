@@ -318,16 +318,9 @@ if has("autocmd")
     endf
     autocmd BufRead *.py set foldtext=PyFoldText()
 
-   " Python (test) runners:
-   " - python    is ran with Ctrl-P, Ctrl-P ('p' for Python)
-   " - ipython   is ran with Ctrl-P, Ctrl-I ('i' for iPython)
-   " - nosetests is ran with Ctrl-P, Ctrl-N ('n' for Nose)
-   " - test      is ran with Ctrl-P, Ctrl-T ('t' for test)
-   "
-   autocmd BufRead *.py map <C-p><C-p> :w<CR>:!python %<CR>
-   autocmd BufRead *.py map <C-p><C-i> :w<CR>:!ipython %<CR>
-   autocmd BufRead *.py map <C-p><C-n> :!(cd $(~/.vim/bin/projroot); nosetests)<CR>
-   autocmd BufRead *.py map <C-p><C-t> :!(cd $(~/.vim/bin/projroot); python setup.py test)<CR>
+   " Python runners
+   autocmd BufRead *.py map <F5> :w<CR>:!python %<CR>
+   autocmd BufRead *.py map <S-F5> :w<CR>:!ipython %<CR>
 
    " Run a quick static syntax check every time we save a Python file
    autocmd BufWritePost *.py call Pyflakes()
