@@ -53,7 +53,7 @@ set scrolloff=4                 " keep 4 lines off the edges of the screen when 
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
-set list                        " show invisible characters
+set nolist                      " don't show invisible characters by default
 set listchars=tab:»·,trail:·,extends:#,nbsp:·
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
@@ -278,27 +278,26 @@ if has("autocmd")
 
     augroup vim_files
         au!
-        autocmd Filetype vim set expandtab    " disallow tabs in Vim files
+        autocmd filetype vim set expandtab    " disallow tabs in Vim files
     augroup end
 
-   " in text files, always limit the width of text to 78 characters
-   autocmd BufRead *.txt,*.tex,*.rst set textwidth=78
+   " always limit the width of text to 78 characters for Python and rst files
+   autocmd filetype python,rst set textwidth=78
 
    " tabs in Python scripts are evil, so expand them to spaces
-   autocmd BufRead *.py,*.rst set expandtab
-   autocmd BufRead *.py,*.rst set number
-   autocmd BufRead *.py set textwidth=78
+   autocmd filetype python,rst set expandtab
+   autocmd filetype python,rst set number
 
    " highlight any line longer than 80 chars
-   autocmd BufRead *.py,*.rst match ErrorMsg '\%>79v.\+'
+   autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
 
    " highlight spaces in python
-   autocmd BufRead *.py,*.rst set list
-   autocmd BufRead *.py,*.rst set listchars=tab:»·,trail:·,extends:#
+   autocmd filetype python,rst set list
+   autocmd filetype python,rst set listchars=tab:»·,trail:·,extends:#
 
    " folding for Python (uses syntax/python.vim for fold definitions)
-   autocmd BufRead *.py set nofoldenable
-   autocmd BufRead *.py set foldmethod=expr
+   autocmd filetype python,rst set nofoldenable
+   autocmd filetype python set foldmethod=expr
 
    fun! PyFoldText()
         let i = v:foldstart
@@ -316,32 +315,24 @@ if has("autocmd")
         endwhile
         return foldtext()
     endf
-    autocmd BufRead *.py set foldtext=PyFoldText()
+    autocmd filetype python set foldtext=PyFoldText()
 
    " Python runners
-   autocmd BufRead *.py map <F5> :w<CR>:!python %<CR>
-   autocmd BufRead *.py imap <F5> <Esc>:w<CR>:!python %<CR>
-   autocmd BufRead *.py map <S-F5> :w<CR>:!ipython %<CR>
-   autocmd BufRead *.py imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
+   autocmd filetype python map <F5> :w<CR>:!python %<CR>
+   autocmd filetype python imap <F5> <Esc>:w<CR>:!python %<CR>
+   autocmd filetype python map <S-F5> :w<CR>:!ipython %<CR>
+   autocmd filetype python imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
    " Run a quick static syntax check every time we save a Python file
    autocmd BufWritePost *.py call Pyflakes()
 
-   " Python static source checkers:
-   " - pyflakes is ran with Ctrl-K, Ctrl-F ('f' for Flakes)
-   " - pep8     is ran with Ctrl-K, Ctrl-P ('p' for PEP8)
-   " - both     are ran with Ctrl-K, Ctrl-K (for the given file)
-   " - both     are ran for all files in the project with Ctrl-K, Ctrl-A
-   " autocmd BufRead *.py map <C-k><C-k> :!(pyflakes %; pep8 -r %)<CR>
-   " autocmd BufRead *.py map <C-k><C-a> :!find $(~/.vim/bin/projroot) -name '*.py' \| xargs pyflakes; find $(~/.vim/bin/projroot) -name '*.py' \| xargs pep8 -r<CR>
-
    " use closetag plugin to auto-close HTML tags
-   autocmd Filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
+   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
 
    " bind <F1> to show the keyword under cursor
    " general help can still be entered manually, with :h
-   autocmd Filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
-   autocmd Filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
+   autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
+   autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
 
 endif " has("autocmd")
 " }}}
@@ -386,7 +377,7 @@ source ~/.vim/autocorrect.vim
 set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
                      " the end during the change
 set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
-au Filetype vim set formatoptions-=o
+au filetype vim set formatoptions-=o
                      " somehow, during vim filetype detection, this gets set,
                      " so explicitly unset it again for vim files
 " }}}
