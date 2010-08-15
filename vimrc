@@ -123,8 +123,9 @@ endif
 " slows the commands down
 nnoremap ; :
 
-" don't use Ex mode, use Q for formatting
-map Q gq
+" Use Q for formatting the current paragraph (or visual selection)
+vmap Q gq
+nmap Q gqap
 
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
