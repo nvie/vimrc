@@ -338,6 +338,10 @@ if has("autocmd")
    autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
    autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
 
+   " render YAML front matter inside Textile documents as comments
+   autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
+   autocmd filetype textile highlight link frontmatter Comment
+
 endif " has("autocmd")
 " }}}
 
