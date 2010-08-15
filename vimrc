@@ -175,6 +175,9 @@ nmap <silent> ,/ :let @/=""<CR>
 nmap ,al :left<CR>
 nmap ,ar :right<CR>
 nmap ,ac :center<CR>
+
+" Sudo to write
+cmap w!! w !sudo tee % >/dev/null
 " }}}
 
 " Working with tabs {{{
