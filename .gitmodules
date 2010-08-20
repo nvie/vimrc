@@ -28,3 +28,6 @@
 [submodule "vim/bundle/pyunit"]
 	path = vim/bundle/pyunit
 	url = git://github.com/nvie/vim-pyunit.git
+[submodule "vim/bundle/rst_tables"]
+	path = vim/bundle/rst_tables
+	url = git://github.com/nvie/vim-rst-tables.git
