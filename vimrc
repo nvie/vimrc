@@ -72,7 +72,6 @@ set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set laststatus=2                " tell VIM to always put a status line in, even
                                 "    if there is only one window
-set showtabline=2               " show a tabbar on top, always
 set cmdheight=2                 " use a status bar that is 2 rows high
 " }}}
 
@@ -81,7 +80,7 @@ set hidden                      " hide buffers instead of closing them this
                                 "    means that the current buffer can be put
                                 "    to background without being written; and
                                 "    that marks and undo history are preserved
-set switchbuf=useopen,usetab    " reveal already opened files from the
+set switchbuf=useopen           " reveal already opened files from the
                                 " quickfix window instead of opening new
                                 " buffers
 set history=1000                " remember more commands and search history
@@ -194,25 +193,6 @@ nmap <leader>ac :center<CR>
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
 " }}}
-
-" Working with tabs {{{
-set tabpagemax=10    " use at most 10 tabs
-nmap <leader>t <Esc>:tabedit .<CR>
-nmap <leader>T <Esc>:tabnew<CR>
-nmap gt <C-w>gf
-nmap gT <C-w>gF
-nmap <leader>1 :tabn 1<CR>
-nmap <leader>2 :tabn 2<CR>
-nmap <leader>3 :tabn 3<CR>
-nmap <leader>4 :tabn 4<CR>
-nmap <leader>5 :tabn 5<CR>
-nmap <leader>6 :tabn 6<CR>
-nmap <leader>7 :tabn 7<CR>
-nmap <leader>8 :tabn 8<CR>
-nmap <leader>9 :tabn 9<CR>
-nmap <leader>0 :tabn 10<CR>
-nmap <leader><Left> :tabprevious<CR>
-nmap <leader><Right> :tabnext<CR>
 
 " Pull word under cursor into LHS of a substitute
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
