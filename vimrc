@@ -181,6 +181,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" Quickly get out of insert mode without your fingers having to leave the
+" home row (either use 'jj' or 'jk')
+inoremap jj <Esc>
+inoremap jk <Esc>
+
 " Quick alignment of text
 nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
