@@ -161,20 +161,20 @@ imap <C-l> <C-x><C-l>
 
 " Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
 " yanked stack (also, in visual mode)
-nmap <silent> ,d "_d
-vmap <silent> ,d "_d
+nmap <silent> <leader>d "_d
+vmap <silent> <leader>d "_d
 
 " Edit the vimrc file
-nmap <silent> ,ev :e $MYVIMRC<CR>
-nmap <silent> ,sv :so $MYVIMRC<CR>
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Clears the search register
-nmap <silent> ,/ :let @/=""<CR>
+nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Quick alignment of text
-nmap ,al :left<CR>
-nmap ,ar :right<CR>
-nmap ,ac :center<CR>
+nmap <leader>al :left<CR>
+nmap <leader>ar :right<CR>
+nmap <leader>ac :center<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
@@ -182,33 +182,33 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Working with tabs {{{
 set tabpagemax=10    " use at most 10 tabs
-nmap ,t <Esc>:tabedit .<CR>
-nmap ,T <Esc>:tabnew<CR>
+nmap <leader>t <Esc>:tabedit .<CR>
+nmap <leader>T <Esc>:tabnew<CR>
 nmap gt <C-w>gf
 nmap gT <C-w>gF
-nmap ,1 :tabn 1<CR>
-nmap ,2 :tabn 2<CR>
-nmap ,3 :tabn 3<CR>
-nmap ,4 :tabn 4<CR>
-nmap ,5 :tabn 5<CR>
-nmap ,6 :tabn 6<CR>
-nmap ,7 :tabn 7<CR>
-nmap ,8 :tabn 8<CR>
-nmap ,9 :tabn 9<CR>
-nmap ,0 :tabn 10<CR>
-nmap ,<Left> :tabprevious<CR>
-nmap ,<Right> :tabnext<CR>
+nmap <leader>1 :tabn 1<CR>
+nmap <leader>2 :tabn 2<CR>
+nmap <leader>3 :tabn 3<CR>
+nmap <leader>4 :tabn 4<CR>
+nmap <leader>5 :tabn 5<CR>
+nmap <leader>6 :tabn 6<CR>
+nmap <leader>7 :tabn 7<CR>
+nmap <leader>8 :tabn 8<CR>
+nmap <leader>9 :tabn 9<CR>
+nmap <leader>0 :tabn 10<CR>
+nmap <leader><Left> :tabprevious<CR>
+nmap <leader><Right> :tabnext<CR>
 
 " Pull word under cursor into LHS of a substitute
-nmap ,z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 " }}}
 
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)
-nmap ,n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nmap ,m :NERDTreeClose<CR>:NERDTreeFind<CR>
-nmap ,N :NERDTreeClose<CR>
+nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+nmap <leader>N :NERDTreeClose<CR>
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
@@ -237,8 +237,8 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 " }}}
 
 " TagList settings {{{
-nmap ,l :TlistClose<CR>:TlistToggle<CR>
-nmap ,L :TlistClose<CR>
+nmap <leader>l :TlistClose<CR>:TlistToggle<CR>
+nmap <leader>L :TlistClose<CR>
 
 " quit Vim when the TagList window is the last open window
 let Tlist_Exit_OnlyWindow=1         " quit when TagList is the last open window
@@ -273,7 +273,7 @@ let Tlist_Use_Right_Window=1
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " shortcut to jump to next conflict marker
-nmap <silent> ,c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
 " Filetype specific handling {{{
