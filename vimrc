@@ -164,6 +164,16 @@ imap <C-l> <C-x><C-l>
 nmap <silent> <leader>d "_d
 vmap <silent> <leader>d "_d
 
+" Quick yanking to the end of the line
+nmap Y y$
+
+" Yank/paste to the OS clipboard with ,y and ,p
+nmap <leader>y "*y
+nmap <leader>Y "*yy
+nmap <leader>p "*p
+nmap <leader>P "*P
+nmap <leader>r :registers<CR>
+
 " Edit the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
