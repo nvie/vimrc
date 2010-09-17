@@ -169,10 +169,10 @@ vmap <silent> <leader>d "_d
 nmap Y y$
 
 " Yank/paste to the OS clipboard with ,y and ,p
-nmap <leader>y "*y
-nmap <leader>Y "*yy
-nmap <leader>p "*p
-nmap <leader>P "*P
+nmap <leader>y "+y
+nmap <leader>Y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
 nmap <leader>r :registers<CR>
 
 " Edit the vimrc file
