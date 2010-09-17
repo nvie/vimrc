@@ -231,6 +231,10 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
+" Managing buffers with LustyJuggler {{{
+map ,b :LustyJuggler<CR>
+" }}}
+
 " TagList settings {{{
 nmap <leader>l :TlistClose<CR>:TlistToggle<CR>
 nmap <leader>L :TlistClose<CR>
