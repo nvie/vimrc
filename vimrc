@@ -332,7 +332,10 @@ if has("autocmd")
    autocmd BufWritePost *.py call Pyflakes()
 
    " use closetag plugin to auto-close HTML tags
-   autocmd filetype html,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
+   autocmd filetype html,htmldjango,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
+   autocmd filetype html,htmldjango,xml,xsl set noexpandtab
+   autocmd filetype html,htmldjango,xml,xsl set tabstop=4
+   autocmd filetype html,htmldjango,xml,xsl set nolist
 
    " bind <F1> to show the keyword under cursor
    " general help can still be entered manually, with :h
