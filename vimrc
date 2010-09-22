@@ -242,11 +242,12 @@ nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
 nmap <leader>ac :center<CR>
 
+" Pull word under cursor into LHS of a substitute (for quick search and
+" replace)
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
-
-" Pull word under cursor into LHS of a substitute
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " Jump to matching pairs easily, with Tab
 nnoremap <Tab> %
