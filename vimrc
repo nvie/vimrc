@@ -31,6 +31,7 @@ filetype plugin indent on       " enable detection, plugins and indenting in one
 
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
+set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
 set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
@@ -38,11 +39,6 @@ set autoindent                  " always set autoindenting on
 set copyindent                  " copy the previous indentation on autoindenting
 set number                      " always show line numbers
 set showmatch                   " set show matching parenthesis
-set foldenable                  " enable folding
-set foldcolumn=2                " add a fold column
-set foldmethod=marker           " detect triple-{ style fold markers
-set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
-                                " which commands trigger auto-unfold
 set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase,
                                 "    case-sensitive otherwise
@@ -52,6 +48,7 @@ set scrolloff=4                 " keep 4 lines off the edges of the screen when 
 set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
+set gdefault                    " search/replace "globally" (on a line) by default
 set nolist                      " don't show invisible characters by default
 set listchars=tab:»·,trail:·,extends:#,nbsp:·
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
@@ -60,9 +57,39 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 
+" Thanks to Steve Losh for this liberating tip
+" See http://stevelosh.com/blog/2010/09/coming-home-to-vim
+nnoremap / /\v
+vnoremap / /\v
+
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
+" }}}
+
+" Folding rules {{{
+set foldenable                  " enable folding
+set foldcolumn=2                " add a fold column
+set foldmethod=marker           " detect triple-{ style fold markers
+set foldlevelstart=0            " start out with everything folded
+set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
+                                " which commands trigger auto-unfold
+function! MyFoldText()
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+    return line . ' …' . repeat(" ",fillcharcount) . foldedlinecount . ' '
+endfunction
+set foldtext=MyFoldText()
 " }}}
 
 " Editor layout {{{
@@ -84,10 +111,11 @@ set switchbuf=useopen           " reveal already opened files from the
                                 " buffers
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
+set undofile                    " keep a persistent backup file
 set nobackup                    " do not keep backup files, it's 70's style cluttering
 set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files anyway?
-set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set directory=~/.vim/tmp,~/tmp,/tmp
                                 " store swap files in one of these directories
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
                                 "    than 80 lines of registers
@@ -120,6 +148,9 @@ endif
 " all Vim commands, since we don't have to press that annoying Shift key that
 " slows the commands down
 nnoremap ; :
+
+" Avoid accidental hits of <F1> while aiming for <Esc>
+map! <F1> <Esc>
 
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
@@ -193,7 +224,6 @@ nmap <leader>ac :center<CR>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
-" }}}
 
 " Pull word under cursor into LHS of a substitute
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
@@ -319,7 +349,7 @@ if has("autocmd")
         endwhile
         return foldtext()
     endf
-    autocmd filetype python set foldtext=PyFoldText()
+    "autocmd filetype python set foldtext=PyFoldText()
 
    " Python runners
    autocmd filetype python map <F5> :w<CR>:!python %<CR>
@@ -396,6 +426,15 @@ au filetype vim set formatoptions-=o
 " Extra user or machine specific settings {{{
 source ~/.vim/user.vim
 " }}}
+
+" Creating underline/overline headings for markup languages
+" Inspired by http://sphinx.pocoo.org/rest.html#sections
+nnoremap <leader>1 yyPVr=jyypVr=
+nnoremap <leader>2 yyPVr*jyypVr*
+nnoremap <leader>3 yypVr=
+nnoremap <leader>4 yypVr-
+nnoremap <leader>5 yypVr^
+nnoremap <leader>6 yypVr"
 
 iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
 iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
