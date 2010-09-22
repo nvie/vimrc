@@ -138,6 +138,20 @@ set showcmd                     " show (partial) command in the last line of the
 set nomodeline                  " disable mode lines (security measure)
 "set ttyfast                     " always use a fast terminal
 set cursorline                  " underline the current line, for quick orientation
+
+" Tame the quickfix window (open/close using ,f)
+nmap <silent> <leader>f :QFix<CR>
+
+command! -bang -nargs=? QFix call QFixToggle(<bang>0)
+function! QFixToggle(forced)
+  if exists("g:qfix_win") && a:forced == 0
+    cclose
+    unlet g:qfix_win
+  else
+    copen 10
+    let g:qfix_win = bufnr("$")
+  endif
+endfunction
 " }}}
 
 " Highlighting {{{
