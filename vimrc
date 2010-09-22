@@ -26,6 +26,9 @@ filetype off                    " force reloading *after* pathogen loaded
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
+" Change the mapleader from \ to ,
+let mapleader=","
+
 " Editing behaviour {{{
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 
@@ -166,9 +169,6 @@ nmap mk :make<CR>
 " column, so swap them
 nnoremap ' `
 nnoremap ` '
-
-" Change the mapleader from \ to ,
-let mapleader=","
 
 " Use the damn hjkl keys
 " map <up> <nop>
