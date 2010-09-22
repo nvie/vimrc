@@ -401,11 +401,6 @@ endif " has("autocmd")
 " Auto save/restore {{{
 au BufWritePost *.* silent mkview!
 au BufReadPost *.* silent loadview
-
-" Quick write session with F2
-map <F2> :mksession! .vim_session<CR>
-" And load session with F3
-map <F3> :source .vim_session<CR>
 " }}}
 
 " Common abbreviations / misspellings {{{
