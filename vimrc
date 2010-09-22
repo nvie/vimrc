@@ -22,13 +22,12 @@ set nocompatible
 
 " Use pathogen to easily modify the runtime path to include all plugins under
 " the ~/.vim/bundle directory
+filetype off                    " force reloading *after* pathogen loaded
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
 
 " Editing behaviour {{{
-filetype on                     " set filetype stuff to on
-filetype plugin on
-filetype indent on
+filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
