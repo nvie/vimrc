@@ -59,6 +59,7 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
 
+
 " Thanks to Steve Losh for this liberating tip
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
@@ -161,6 +162,7 @@ nmap Q gqap
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
+" Shortcut to make
 nmap mk :make<CR>
 
 " Swap implementations of ` and ' jump to markers
@@ -413,8 +415,8 @@ set cpoptions+=$     " when changing a line, don't redisplay, but put a '$' at
                      " the end during the change
 set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
 au filetype vim set formatoptions-=o
-                     " somehow, during vim filetype detection, this gets set,
-                     " so explicitly unset it again for vim files
+                     " somehow, during vim filetype detection, this gets set
+                     " for vim files, so explicitly unset it again
 " }}}
 
 " Extra user or machine specific settings {{{
