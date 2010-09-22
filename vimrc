@@ -31,9 +31,11 @@ filetype plugin indent on       " enable detection, plugins and indenting in one
 let mapleader=","
 
 " Editing behaviour {{{
+set showmode                    " always show what mode we're currently editing in
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
+set expandtab                   " expand tabs by default (overloadable per file type later)
 set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
@@ -115,11 +117,13 @@ set switchbuf=useopen           " reveal already opened files from the
 set history=1000                " remember more commands and search history
 set undolevels=1000             " use many muchos levels of undo
 set undofile                    " keep a persistent backup file
+set undodir=~/.vim/.undo,~/tmp,/tmp
 set nobackup                    " do not keep backup files, it's 70's style cluttering
 set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files anyway?
-set directory=~/.vim/tmp,~/tmp,/tmp
+set directory=~/.vim/.tmp,~/tmp,/tmp
                                 " store swap files in one of these directories
+                                "    (in case swapfile is ever turned on)
 set viminfo='20,\"80            " read/write a .viminfo file, don't store more
                                 "    than 80 lines of registers
 set wildmenu                    " make tab completion for files/buffers act like bash
@@ -131,9 +135,9 @@ set visualbell                  " don't beep
 set noerrorbells                " don't beep
 set showcmd                     " show (partial) command in the last line of the screen
                                 "    this also shows visual selection info
-set modeline                    " allow files to include a 'mode line', to
-                                "    override vim defaults
-set modelines=5                 " check the first 5 lines for a modeline
+set nomodeline                  " disable mode lines (security measure)
+"set ttyfast                     " always use a fast terminal
+set cursorline                  " underline the current line, for quick orientation
 " }}}
 
 " Highlighting {{{
@@ -186,6 +190,7 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+nnoremap <leader>w <C-w>v<C-w>l
 
 " Complete whole filenames/lines with a quicker shortcut key in insert mode
 imap <C-f> <C-x><C-f>
@@ -228,6 +233,26 @@ cmap w!! w !sudo tee % >/dev/null
 
 " Pull word under cursor into LHS of a substitute
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
+" Jump to matching pairs easily, with Tab
+nnoremap <Tab> %
+vnoremap <Tab> %
+
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
+
+" Strip all trailing whitespace from a file, using ,w
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" Run Ack fast (mind the trailing space here, wouldya?)
+nnoremap <leader>a :Ack 
+
+" Creating folds for tags in HTML
+"nnoremap <leader>ft Vatzf
+
+" Reselect text that was just pasted with ,v
+nnoremap <leader>v V`]
 " }}}
 
 " NERDTree settings {{{
