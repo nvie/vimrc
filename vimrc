@@ -25,13 +25,12 @@ set nocompatible
 filetype off                    " force reloading *after* pathogen loaded
 call pathogen#helptags()
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on       " enable detection, plugins and indenting in one step
 
 " Change the mapleader from \ to ,
 let mapleader=","
 
 " Editing behaviour {{{
-filetype plugin indent on       " enable detection, plugins and indenting in one step
-
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
