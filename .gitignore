@@ -6,3 +6,5 @@
 /vim/user.vim
 /vim/view
 /vim/.netrwhist
+/vim/.tmp/*
+/vim/.undo/*
