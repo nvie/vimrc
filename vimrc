@@ -358,73 +358,83 @@ nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " Filetype specific handling {{{
 " only do this part when compiled with support for autocommands
 if has("autocmd")
-    augroup vim_files
+    augroup vim_files "{{{
         au!
 
         " Bind <F1> to show the keyword under cursor
         " general help can still be entered manually, with :h
         autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
         autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
-    augroup end
+    augroup end "}}}
 
-    " Auto-detect Django template files
-    fun! s:DetectHTMLVariant()
-    let n = 1
-    while n < 50 && n < line("$")
-        " check for django
-        if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
-        set ft=htmldjango
-        return
-        endif
-        let n = n + 1
-    endwhile
-    " go with html
-    set ft=html
-    endfun
+    augroup html_files "{{{
+        au!
 
-    autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
+        fun! s:DetectHTMLVariant()
+        let n = 1
+        while n < 50 && n < line("$")
+            " check for django
+            if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
+            set ft=htmldjango
+            return
+            endif
+            let n = n + 1
+        endwhile
+        " go with html
+        set ft=html
+        endfun
 
-    " Auto-closing of HTML/XML tags
-    let g:closetag_default_xml=1
-    autocmd filetype html,htmldjango let b:closetag_html_style=1
-    autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
+        autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
 
-    " use closetag plugin to auto-close HTML tags
-    autocmd filetype html,htmldjango,xml,xsl set tabstop=4
-    autocmd filetype html,htmldjango,xml,xsl set nolist
-    autocmd FileType html,htmldjango,xml,xsl set expandtab shiftwidth=2 tabstop=2 softtabstop=2
+        " Auto-closing of HTML/XML tags
+        let g:closetag_default_xml=1
+        autocmd filetype html,htmldjango let b:closetag_html_style=1
+        autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
 
-   " always limit the width of text to 78 characters for Python and rst files
-   autocmd filetype python,rst set textwidth=78
+        " use closetag plugin to auto-close HTML tags
+        autocmd filetype html,htmldjango,xml,xsl set tabstop=4
+        autocmd filetype html,htmldjango,xml,xsl set nolist
+        autocmd FileType html,htmldjango,xml,xsl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end " }}}
 
-   " tabs in Python scripts are evil, so expand them to spaces
-   autocmd filetype python,rst set expandtab
-   autocmd filetype python,rst set number
+    augroup python_files "{{{
+        au!
 
-   " highlight any line longer than 80 chars
-   autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
+        " Always limit the width of text to 78 characters for Python and rst files
+        autocmd filetype python,rst set textwidth=78
 
-   " highlight spaces in python
-   autocmd filetype python,rst set list
-   autocmd filetype python,rst set listchars=tab:»·,trail:·,extends:#
+        " Tabs in Python scripts are evil, so expand them to spaces
+        autocmd filetype python,rst set expandtab
+        autocmd filetype python,rst set number
 
-   " folding for Python (uses syntax/python.vim for fold definitions)
-   autocmd filetype python,rst set nofoldenable
-   autocmd filetype python set foldmethod=expr
+        " Highlight any line longer than 80 chars
+        autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
 
-   " Python runners
-   autocmd filetype python map <F5> :w<CR>:!python %<CR>
-   autocmd filetype python imap <F5> <Esc>:w<CR>:!python %<CR>
-   autocmd filetype python map <S-F5> :w<CR>:!ipython %<CR>
-   autocmd filetype python imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
+        " Highlight spaces in python
+        autocmd filetype python,rst set list
+        autocmd filetype python,rst set listchars=tab:»·,trail:·,extends:#
 
-   " Run a quick static syntax check every time we save a Python file
-   autocmd BufWritePost *.py call Pyflakes()
+        " Folding for Python (uses syntax/python.vim for fold definitions)
+        autocmd filetype python,rst set nofoldenable
+        autocmd filetype python set foldmethod=expr
 
+        " Python runners
+        autocmd filetype python map <F5> :w<CR>:!python %<CR>
+        autocmd filetype python imap <F5> <Esc>:w<CR>:!python %<CR>
+        autocmd filetype python map <S-F5> :w<CR>:!ipython %<CR>
+        autocmd filetype python imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
-   " render YAML front matter inside Textile documents as comments
-   autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
-   autocmd filetype textile highlight link frontmatter Comment
+        " Run a quick static syntax check every time we save a Python file
+        autocmd BufWritePost *.py call Pyflakes()
+    augroup end " }}}
+
+    augroup textile_files "{{{
+        au!
+
+        " Render YAML front matter inside Textile documents as comments
+        autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
+        autocmd filetype textile highlight link frontmatter Comment
+    augroup end "}}}
 
 endif " has("autocmd")
 " }}}
