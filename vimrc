@@ -374,24 +374,6 @@ if has("autocmd")
    autocmd filetype python,rst set nofoldenable
    autocmd filetype python set foldmethod=expr
 
-   fun! PyFoldText()
-        let i = v:foldstart
-        while i <= v:foldend
-            if match(getline(i), "^[ \t]*@[a-zA-Z_]") == -1
-                let l:text = "+".v:folddashes." "
-                let l:line = substitute(getline(i), " *# *{"."{{", "", "g")
-                let l:line = substitute(l:line, ":", "", "g")
-                let l:line = substitute(l:line, "^\s*", "", "g")
-                let l:line = substitute(l:line, "\s*$", "", "g")
-                let l:text = l:text . l:line
-                return l:text
-            endif
-            let i = i+1
-        endwhile
-        return foldtext()
-    endf
-    "autocmd filetype python set foldtext=PyFoldText()
-
    " Python runners
    autocmd filetype python map <F5> :w<CR>:!python %<CR>
    autocmd filetype python imap <F5> <Esc>:w<CR>:!python %<CR>
