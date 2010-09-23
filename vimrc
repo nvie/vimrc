@@ -176,6 +176,9 @@ map! <F1> <Esc>
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
+" Scratch
+nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
+
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
