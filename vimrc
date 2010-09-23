@@ -230,7 +230,7 @@ nmap <leader>y "+y
 nmap <leader>Y "+yy
 nmap <leader>p "+p
 nmap <leader>P "+P
-nmap <leader>r :registers<CR>
+nmap <leader>r :YRShow<CR>
 
 " Edit the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
