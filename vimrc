@@ -178,9 +178,6 @@ map! <F1> <Esc>
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
-" Scratch
-nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
-
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
@@ -253,6 +250,9 @@ nmap <leader>ac :center<CR>
 " Pull word under cursor into LHS of a substitute (for quick search and
 " replace)
 nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
+" Scratch
+nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
 
 " Sudo to write
 cmap w!! w !sudo tee % >/dev/null
@@ -360,7 +360,11 @@ nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 if has("autocmd")
     augroup vim_files
         au!
-        autocmd filetype vim set expandtab    " disallow tabs in Vim files
+
+        " Bind <F1> to show the keyword under cursor
+        " general help can still be entered manually, with :h
+        autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
+        autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
     augroup end
 
     " Auto-detect Django template files
@@ -417,10 +421,6 @@ if has("autocmd")
    " Run a quick static syntax check every time we save a Python file
    autocmd BufWritePost *.py call Pyflakes()
 
-   " bind <F1> to show the keyword under cursor
-   " general help can still be entered manually, with :h
-   autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
-   autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
 
    " render YAML front matter inside Textile documents as comments
    autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
