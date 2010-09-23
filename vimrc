@@ -62,7 +62,7 @@ set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    that won't be autoindented
 set mouse=a                     " enable using the mouse if terminal emulator
                                 "    supports it (xterm does)
-
+set fileformats="unix,dos,mac"
 
 " Thanks to Steve Losh for this liberating tip
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
