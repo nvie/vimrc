@@ -55,8 +55,10 @@ set virtualedit=all             " allow the cursor to go in to "invalid" places
 set hlsearch                    " highlight search terms
 set incsearch                   " show search matches as you type
 set gdefault                    " search/replace "globally" (on a line) by default
-set nolist                      " don't show invisible characters by default
-set listchars=tab:»·,trail:·,extends:#,nbsp:·
+set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
+
+set nolist                      " don't show invisible characters by default,
+                                " but it is enabled for some file types (see later)
 set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
                                 "    paste mode, where you can paste mass data
                                 "    that won't be autoindented
@@ -358,6 +360,16 @@ nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " Filetype specific handling {{{
 " only do this part when compiled with support for autocommands
 if has("autocmd")
+    augroup invisible_chars "{{{
+        au!
+
+        " Show invisible characters in all of these files
+        autocmd filetype vim setlocal list
+        autocmd filetype python,rst setlocal list
+        autocmd filetype ruby setlocal list
+        autocmd filetype javascript,css setlocal list
+    augroup end "}}}
+
     augroup vim_files "{{{
         au!
 
@@ -395,7 +407,6 @@ if has("autocmd")
 
         " use closetag plugin to auto-close HTML tags
         autocmd filetype html,htmldjango,xml,xsl setlocal tabstop=4
-        autocmd filetype html,htmldjango,xml,xsl setlocal nolist
         autocmd FileType html,htmldjango,xml,xsl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end " }}}
 
@@ -413,8 +424,6 @@ if has("autocmd")
         autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
 
         " Highlight spaces in python
-        autocmd filetype python,rst setlocal list
-        autocmd filetype python,rst setlocal listchars=tab:»·,trail:·,extends:#
 
         " Folding for Python (uses syntax/python.vim for fold definitions)
         autocmd filetype python,rst setlocal nofoldenable
