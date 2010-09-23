@@ -350,11 +350,19 @@ nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " Filetype specific handling {{{
 " only do this part when compiled with support for autocommands
 if has("autocmd")
-
     augroup vim_files
         au!
         autocmd filetype vim set expandtab    " disallow tabs in Vim files
     augroup end
+
+    " Auto-closing of HTML/XML tags
+    let g:closetag_default_xml=1
+    autocmd filetype html let b:closetag_html_style=1
+    autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
+
+    " use closetag plugin to auto-close HTML tags
+    autocmd FileType html,xml,xsl set expandtab nolist
+    autocmd FileType html,xml,xsl set shiftwidth=2 tabstop=2 softtabstop=2
 
    " always limit the width of text to 78 characters for Python and rst files
    autocmd filetype python,rst set textwidth=78
@@ -382,12 +390,6 @@ if has("autocmd")
 
    " Run a quick static syntax check every time we save a Python file
    autocmd BufWritePost *.py call Pyflakes()
-
-   " use closetag plugin to auto-close HTML tags
-   autocmd filetype html,htmldjango,xml,xsl source ~/.vim/scripts/html_autoclosetag.vim
-   autocmd filetype html,htmldjango,xml,xsl set noexpandtab
-   autocmd filetype html,htmldjango,xml,xsl set tabstop=4
-   autocmd filetype html,htmldjango,xml,xsl set nolist
 
    " bind <F1> to show the keyword under cursor
    " general help can still be entered manually, with :h
