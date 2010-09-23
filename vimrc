@@ -404,30 +404,23 @@ if has("autocmd")
         let g:closetag_default_xml=1
         autocmd filetype html,htmldjango let b:closetag_html_style=1
         autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
-
-        " use closetag plugin to auto-close HTML tags
-        autocmd filetype html,htmldjango,xml,xsl setlocal tabstop=4
-        autocmd FileType html,htmldjango,xml,xsl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end " }}}
 
     augroup python_files "{{{
         au!
 
-        " Always limit the width of text to 78 characters for Python and rst files
-        autocmd filetype python,rst setlocal textwidth=78
+        " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
+        " earlier, as it is important)
+        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
+        autocmd filetype python setlocal textwidth=80
+        autocmd filetype python match ErrorMsg '\%>79v.\+'
 
-        " Tabs in Python scripts are evil, so expand them to spaces
-        autocmd filetype python,rst setlocal expandtab
-        autocmd filetype python,rst setlocal number
-
-        " Highlight any line longer than 80 chars
-        autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
-
-        " Highlight spaces in python
+        " But disable autowrapping as it is super annoying
+        autocmd filetype python setlocal formatoptions-=t
 
         " Folding for Python (uses syntax/python.vim for fold definitions)
-        autocmd filetype python,rst setlocal nofoldenable
-        autocmd filetype python setlocal foldmethod=expr
+        "autocmd filetype python,rst setlocal nofoldenable
+        "autocmd filetype python setlocal foldmethod=expr
 
         " Python runners
         autocmd filetype python map <buffer> <F5> :w<CR>:!python %<CR>
@@ -437,6 +430,15 @@ if has("autocmd")
 
         " Run a quick static syntax check every time we save a Python file
         autocmd BufWritePost *.py call Pyflakes()
+    augroup end " }}}
+
+    augroup rst_files "{{{
+        au!
+
+        " Auto-wrap text around 74 chars
+        autocmd filetype rst setlocal textwidth=74
+        autocmd filetype rst setlocal formatoptions+=nqt
+        autocmd filetype rst match ErrorMsg '\%>73v.\+'
     augroup end " }}}
 
     augroup textile_files "{{{
