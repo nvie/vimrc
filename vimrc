@@ -2,12 +2,14 @@
 " Personal preference .vimrc file
 " Maintained by Vincent Driessen <vincent@datafox.nl>
 "
-" My personally preferred version of vim is the one with the "normal" feature
+" My personally preferred version of vim is the one with the "big" feature
 " set, in addition to the following configure options:
 "
-"     ./configure --enable-pythoninterp --enable-multibyte --enable-gui=no \
-"                 --with-x --enable-cscope \
+"     ./configure --with-features=BIG
+"                 --enable-pythoninterp --enable-rubyinterp
+"                 --enable-enablemultibyte --enable-gui=no --with-x --enable-cscope
 "                 --with-compiledby="Vincent Driessen <vincent@datafox.nl>"
+"                 --prefix=/usr
 "
 " To start vim without using this .vimrc file, use:
 "     vim -u NORC
