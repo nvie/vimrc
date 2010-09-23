@@ -435,6 +435,12 @@ if has("autocmd")
         autocmd BufWritePost *.py call Pyflakes()
     augroup end " }}}
 
+    augroup ruby_files "{{{
+        au!
+
+        autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
+    augroup end " }}}
+
     augroup rst_files "{{{
         au!
 
