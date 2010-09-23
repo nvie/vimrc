@@ -173,6 +173,9 @@ nnoremap ; :
 " Avoid accidental hits of <F1> while aiming for <Esc>
 map! <F1> <Esc>
 
+" Quickly close the current window
+nnoremap <leader>q :q<CR>
+
 " Use Q for formatting the current paragraph (or visual selection)
 vmap Q gq
 nmap Q gqap
