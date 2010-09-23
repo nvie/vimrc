@@ -475,11 +475,6 @@ endif " has("autocmd")
 
 " }}}
 
-" Auto save/restore {{{
-au BufWritePost *.* silent mkview!
-au BufReadPost *.* silent loadview
-" }}}
-
 " Common abbreviations / misspellings {{{
 source ~/.vim/autocorrect.vim
 " }}}
