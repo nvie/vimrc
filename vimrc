@@ -363,8 +363,8 @@ if has("autocmd")
 
         " Bind <F1> to show the keyword under cursor
         " general help can still be entered manually, with :h
-        autocmd filetype vim noremap <F1> <Esc>:help <C-r><C-w><CR>
-        autocmd filetype vim noremap! <F1> <Esc>:help <C-r><C-w><CR>
+        autocmd filetype vim noremap <buffer> <F1> <Esc>:help <C-r><C-w><CR>
+        autocmd filetype vim noremap! <buffer> <F1> <Esc>:help <C-r><C-w><CR>
     augroup end "}}}
 
     augroup html_files "{{{
@@ -392,8 +392,8 @@ if has("autocmd")
         autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
 
         " use closetag plugin to auto-close HTML tags
-        autocmd filetype html,htmldjango,xml,xsl set tabstop=4
-        autocmd filetype html,htmldjango,xml,xsl set nolist
+        autocmd filetype html,htmldjango,xml,xsl setlocal tabstop=4
+        autocmd filetype html,htmldjango,xml,xsl setlocal nolist
         autocmd FileType html,htmldjango,xml,xsl setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end " }}}
 
@@ -401,28 +401,28 @@ if has("autocmd")
         au!
 
         " Always limit the width of text to 78 characters for Python and rst files
-        autocmd filetype python,rst set textwidth=78
+        autocmd filetype python,rst setlocal textwidth=78
 
         " Tabs in Python scripts are evil, so expand them to spaces
-        autocmd filetype python,rst set expandtab
-        autocmd filetype python,rst set number
+        autocmd filetype python,rst setlocal expandtab
+        autocmd filetype python,rst setlocal number
 
         " Highlight any line longer than 80 chars
         autocmd filetype python,rst match ErrorMsg '\%>79v.\+'
 
         " Highlight spaces in python
-        autocmd filetype python,rst set list
-        autocmd filetype python,rst set listchars=tab:»·,trail:·,extends:#
+        autocmd filetype python,rst setlocal list
+        autocmd filetype python,rst setlocal listchars=tab:»·,trail:·,extends:#
 
         " Folding for Python (uses syntax/python.vim for fold definitions)
-        autocmd filetype python,rst set nofoldenable
-        autocmd filetype python set foldmethod=expr
+        autocmd filetype python,rst setlocal nofoldenable
+        autocmd filetype python setlocal foldmethod=expr
 
         " Python runners
-        autocmd filetype python map <F5> :w<CR>:!python %<CR>
-        autocmd filetype python imap <F5> <Esc>:w<CR>:!python %<CR>
-        autocmd filetype python map <S-F5> :w<CR>:!ipython %<CR>
-        autocmd filetype python imap <S-F5> <Esc>:w<CR>:!ipython %<CR>
+        autocmd filetype python map <buffer> <F5> :w<CR>:!python %<CR>
+        autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
+        autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
+        autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
         " Run a quick static syntax check every time we save a Python file
         autocmd BufWritePost *.py call Pyflakes()
@@ -435,8 +435,7 @@ if has("autocmd")
         autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
         autocmd filetype textile highlight link frontmatter Comment
     augroup end "}}}
-
-endif " has("autocmd")
+endif
 " }}}
 
 " Skeleton processing {{{
