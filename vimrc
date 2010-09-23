@@ -361,14 +361,32 @@ if has("autocmd")
         autocmd filetype vim set expandtab    " disallow tabs in Vim files
     augroup end
 
+    " Auto-detect Django template files
+    fun! s:DetectHTMLVariant()
+    let n = 1
+    while n < 50 && n < line("$")
+        " check for django
+        if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
+        set ft=htmldjango
+        return
+        endif
+        let n = n + 1
+    endwhile
+    " go with html
+    set ft=html
+    endfun
+
+    autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
+
     " Auto-closing of HTML/XML tags
     let g:closetag_default_xml=1
-    autocmd filetype html let b:closetag_html_style=1
+    autocmd filetype html,htmldjango let b:closetag_html_style=1
     autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
 
     " use closetag plugin to auto-close HTML tags
-    autocmd FileType html,xml,xsl set expandtab nolist
-    autocmd FileType html,xml,xsl set shiftwidth=2 tabstop=2 softtabstop=2
+    autocmd filetype html,htmldjango,xml,xsl set tabstop=4
+    autocmd filetype html,htmldjango,xml,xsl set nolist
+    autocmd FileType html,htmldjango,xml,xsl set expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
    " always limit the width of text to 78 characters for Python and rst files
    autocmd filetype python,rst set textwidth=78
