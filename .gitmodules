@@ -31,3 +31,6 @@
 [submodule "vim/bundle/rst_tables"]
 	path = vim/bundle/rst_tables
 	url = git://github.com/nvie/vim-rst-tables.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git
