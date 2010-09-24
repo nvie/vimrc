@@ -20,4 +20,16 @@ like it.  To do so, please do the following:
 
    	PATH=$PATH:~/.vim/bin
 
+4. Fetch submodules::
+
+   	git submodule init
+   	git submodule update
+
+5. Recompile Command-T Ruby C extension for your platform (if other than
+   Mac OS X)::
+
+   	cd vim/ruby/command-t
+   	ruby vim/ruby/command-t/extconf.rb
+   	make
+
 That's it.
