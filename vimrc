@@ -473,6 +473,12 @@ if has("autocmd")
         autocmd filetype rst match ErrorMsg '\%>73v.\+'
     augroup end " }}}
 
+    augroup css_files "{{{
+        au!
+
+        autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
+    augroup end "}}}
+
     augroup textile_files "{{{
         au!
 
