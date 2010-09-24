@@ -394,8 +394,8 @@ if has("autocmd")
             while n < 50 && n < line("$")
                 " check for django
                 if getline(n) =~ '{%\s*\(extends\|load\|block\|if\|for\|include\|trans\)\>'
-                set ft=htmldjango
-                return
+                    set ft=htmldjango.html
+                    return
                 endif
                 let n = n + 1
             endwhile
@@ -416,6 +416,24 @@ if has("autocmd")
 
     augroup python_files "{{{
         au!
+
+        " This function detects, based on Python content, whether this is a
+        " Django file, which may enabling snippet completion for it
+        fun! s:DetectPythonVariant()
+            let n = 1
+            while n < 50 && n < line("$")
+                " check for django
+                if getline(n) =~ 'import\s\+\<django\>'
+                    set ft=python.django
+                    "set syntax=python
+                    return
+                endif
+                let n = n + 1
+            endwhile
+            " go with html
+            set ft=python
+        endfun
+        autocmd BufNewFile,BufRead *.py call s:DetectPythonVariant()
 
         " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
         " earlier, as it is important)
