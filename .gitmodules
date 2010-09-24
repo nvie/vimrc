@@ -15,7 +15,7 @@
 	url = git://github.com/mileszs/ack.vim.git
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
-	url = git://github.com/tpope/vim-abolish.git
+	url = git://github.com/nvie/vim-abolish.git
 [submodule "vim/bundle/pep8"]
 	path = vim/bundle/pep8
 	url = git://github.com/nvie/vim-pep8.git
