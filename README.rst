@@ -29,7 +29,7 @@ like it.  To do so, please do the following:
    Mac OS X)::
 
    	cd vim/ruby/command-t
-   	ruby vim/ruby/command-t/extconf.rb
-   	make
+   	ruby extconf.rb
+   	make clean; make
 
 That's it.
