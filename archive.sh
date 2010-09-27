@@ -1,7 +1,7 @@
 #!/bin/sh
 cd $(dirname $0)
 cd ..
-tar -czvf vimrc.tgz \
+tar -czvLf vimrc.tgz \
     --exclude='vimrc/vim/view' \
     --exclude='.git' \
     --exclude='*.DS_Store' \
