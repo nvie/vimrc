@@ -484,6 +484,8 @@ if has("autocmd")
     augroup textile_files "{{{
         au!
 
+        autocmd filetype textile set tw=78 wrap
+
         " Render YAML front matter inside Textile documents as comments
         autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
         autocmd filetype textile highlight link frontmatter Comment
