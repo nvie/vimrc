@@ -561,4 +561,11 @@ if has("gui_running")
     set guioptions-=L
     set guioptions-=r
     set guioptions-=R
+
+    " Screen recording mode
+    function! ScreenRecordMode()
+        set columns=86
+        set guifont=Droid\ Sans\ Mono:h18
+    endfunction
+    command! -bang -nargs=0 ScreenRecordMode call ScreenRecordMode()
 endif
