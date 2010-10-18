@@ -285,6 +285,9 @@ nnoremap <leader>a :Ack
 
 " Reselect text that was just pasted with ,v
 nnoremap <leader>v V`]
+
+" Gundo.vim
+nnoremap <F5> :GundoToggle<CR>
 " }}}
 
 " NERDTree settings {{{
