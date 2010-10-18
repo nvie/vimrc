@@ -576,7 +576,9 @@ if has("gui_running")
     " Screen recording mode
     function! ScreenRecordMode()
         set columns=86
-        set guifont=Droid\ Sans\ Mono:h18
+        set guifont=Droid\ Sans\ Mono:h14
+        set cmdheight=1
+        colorscheme molokai_deep
     endfunction
     command! -bang -nargs=0 ScreenRecordMode call ScreenRecordMode()
 endif
