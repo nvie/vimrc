@@ -484,6 +484,14 @@ if has("autocmd")
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
     augroup end "}}}
 
+    augroup javascript_files "{{{
+        au!
+
+        autocmd filetype javascript setlocal expandtab
+        autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
+        autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
+    augroup end "}}}
+
     augroup textile_files "{{{
         au!
 
