@@ -1,14 +1,20 @@
 #!/bin/sh
 INSTALL_TO=~/Projects
 
-warn() { echo "$1" >&2 }
-die() { warn "$1"; exit 1 }
+warn() {
+    echo "$1" >&2
+}
+
+die() {
+    warn "$1"
+    exit 1
+}
 
 [ -e "$INSTALL_TO/vimrc" ] && die "$INSTALL_TO/vimrc already exists."
 [ -e "~/.vim" ] && die "~/.vim already exists."
 [ -e "~/.vimrc" ] && die "~/.vimrc already exists."
 
-cd $INSTALL_TO
+cd "$INSTALL_TO"
 git clone git://github.com/nvie/vimrc.git
 cd vimrc
 
