@@ -1,5 +1,12 @@
-Using this vimrc
-================
+Quick installation
+==================
+Simply run this script to install and configure this vimrc in your `$HOME`
+dir:
+
+	wget -q0 - https://github.com/nvie/vimrc/blob/master/autoinstall.sh | sh
+
+Installing this vimrc manually
+==============================
 Although a vimrc is a very personal thing, you may use mine if you
 like it.  To do so, please do the following:
 
@@ -15,21 +22,20 @@ like it.  To do so, please do the following:
 
    	source ~/path/to/vimrc/vimrc
 
-3. To use the Vim macro's that use the project folder detection script,
-   add it to your PATH::
-
-   	PATH=$PATH:~/.vim/bin
-
-4. Fetch submodules::
+3. Fetch submodules::
 
    	git submodule init
    	git submodule update
 
-5. Recompile Command-T Ruby C extension for your platform (if other than
+4. Recompile Command-T Ruby C extension for your platform (if other than
    Mac OS X)::
 
    	cd vim/ruby/command-t
    	ruby extconf.rb
    	make clean; make
+
+5. Touch::
+
+   	touch ~/.vim/user.vim
 
 That's it.
