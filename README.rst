@@ -3,7 +3,7 @@ Quick installation
 Simply run this script to install and configure this vimrc in your `$HOME`
 dir::
 
-	wget -q0 - https://github.com/nvie/vimrc/blob/master/autoinstall.sh | sh
+	wget -q - https://github.com/nvie/vimrc/raw/master/autoinstall.sh | sh
 
 Installing this vimrc manually
 ==============================
