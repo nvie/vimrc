@@ -277,8 +277,8 @@ vnoremap <Space> za
 " Strip all trailing whitespace from a file, using ,w
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
 
-" Run Ack fast (mind the trailing space here, wouldya?)
-nnoremap <leader>a :Ack 
+" Run Ack fast
+nnoremap <leader>a :Ack<Space>
 
 " Creating folds for tags in HTML
 "nnoremap <leader>ft Vatzf
