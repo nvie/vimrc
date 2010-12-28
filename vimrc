@@ -275,7 +275,7 @@ nnoremap <Space> za
 vnoremap <Space> za
 
 " Strip all trailing whitespace from a file, using ,w
-nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
 " Run Ack fast
 nnoremap <leader>a :Ack<Space>
