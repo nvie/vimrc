@@ -508,18 +508,18 @@ endif
 
 if has("autocmd")
 
-    if !exists('*LoadTemplate')
-    function LoadTemplate(file)
-        " Add skeleton fillings for Python (normal and unittest) files
-        if a:file =~ 'test_.*\.py$'
-            execute "0r ~/.vim/skeleton/test_template.py"
-        elseif a:file =~ '.*\.py$'
-            execute "0r ~/.vim/skeleton/template.py"
-        endif
-    endfunction
-    endif
+    "if !exists('*LoadTemplate')
+    "function LoadTemplate(file)
+        "" Add skeleton fillings for Python (normal and unittest) files
+        "if a:file =~ 'test_.*\.py$'
+            "execute "0r ~/.vim/skeleton/test_template.py"
+        "elseif a:file =~ '.*\.py$'
+            "execute "0r ~/.vim/skeleton/template.py"
+        "endif
+    "endfunction
+    "endif
 
-    autocmd BufNewFile * call LoadTemplate(@%)
+    "autocmd BufNewFile * call LoadTemplate(@%)
 
 endif " has("autocmd")
 
