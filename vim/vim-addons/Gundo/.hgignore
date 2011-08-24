@@ -1,0 +1,6 @@
+syntax:glob
+
+*.un~
+*.pyc
+tags
+.DS_Store
