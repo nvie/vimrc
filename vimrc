@@ -37,7 +37,7 @@ set showmode                    " always show what mode we're currently editing 
 set nowrap                      " don't wrap lines
 set tabstop=4                   " a tab is four spaces
 set softtabstop=4               " when hitting <BS>, pretend like a tab is removed, even if spaces
-set expandtab                   " expand tabs by default (overloadable per file type later)
+set noexpandtab                 " do not expand tabs by default per crowdfavorite preferences (overloadable per file type later)
 set shiftwidth=4                " number of spaces to use for autoindenting
 set shiftround                  " use multiple of shiftwidth when indenting with '<' and '>'
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
@@ -207,8 +207,8 @@ nnoremap ` '
 " map <right> <nop>
 
 " Remap j and k to act as expected when used on long, wrapped, lines
-nnoremap j gj
-nnoremap k gk
+"nnoremap j gj
+"nnoremap k gk
 
 " Easy window navigation
 map <C-h> <C-w>h
