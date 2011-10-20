@@ -7,9 +7,9 @@ for submodule in *; do
 		cd "$submodule"
 		echo "--- $submodule:"
 		if [ "$submodule" = "pyunit" ]; then
-			git co develop
+			git checkout develop
 		else
-			git co master
+			git checkout master
 		fi
 		git pull
 		cd ..
