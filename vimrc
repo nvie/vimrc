@@ -246,6 +246,15 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 " Clears the search register
 nmap <silent> <leader>/ :nohlsearch<CR>
 
+" Pull word under cursor into LHS of a substitute (for quick search and
+" replace)
+nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+
+" Keep search matches in the middle of the window and pulse the line when moving
+" to them.
+nnoremap n n:call PulseCursorLine()<cr>
+nnoremap N N:call PulseCursorLine()<cr>
+
 " Quickly get out of insert mode without your fingers having to leave the
 " home row (either use 'jj' or 'jk')
 inoremap jj <Esc>
@@ -255,10 +264,6 @@ inoremap jk <Esc>
 nmap <leader>al :left<CR>
 nmap <leader>ar :right<CR>
 nmap <leader>ac :center<CR>
-
-" Pull word under cursor into LHS of a substitute (for quick search and
-" replace)
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " Scratch
 nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
@@ -584,3 +589,48 @@ else
     let g:solarized_termcolors=256
     colorscheme solarized
 endif
+
+" Pulse ------------------------------------------------------------------- {{{
+
+function! PulseCursorLine()
+    let current_window = winnr()
+
+    windo set nocursorline
+    execute current_window . 'wincmd w'
+
+    setlocal cursorline
+
+    redir => old_hi
+        silent execute 'hi CursorLine'
+    redir END
+    let old_hi = split(old_hi, '\n')[0]
+    let old_hi = substitute(old_hi, 'xxx', '', '')
+
+    hi CursorLine guibg=#2a2a2a
+    redraw
+    sleep 5m
+
+    hi CursorLine guibg=#3a3a3a
+    redraw
+    sleep 5m
+
+    hi CursorLine guibg=#4a4a4a
+    redraw
+    sleep 5m
+
+    hi CursorLine guibg=#3a3a3a
+    redraw
+    sleep 5m
+
+    hi CursorLine guibg=#2a2a2a
+    redraw
+    sleep 5m
+
+    execute 'hi ' . old_hi
+
+    windo set cursorline
+    execute current_window . 'wincmd w'
+endfunction
+
+" }}}
+
