@@ -563,11 +563,6 @@ if has("gui_running")
     "colorscheme baycomb
     "colorscheme mustang
     colorscheme molokai
-    "let g:solarized_termcolors=256
-    "let g:solarized_bold = 1
-    "let g:solarized_underline = 1
-    "let g:solarized_italic = 1
-    "colorscheme solarized
 
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
@@ -586,8 +581,7 @@ if has("gui_running")
     command! -bang -nargs=0 ScreenRecordMode call ScreenRecordMode()
 else
     set bg=dark
-    let g:solarized_termcolors=256
-    colorscheme solarized
+    colorscheme molokai
 endif
 
 " Pulse ------------------------------------------------------------------- {{{
