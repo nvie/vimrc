@@ -561,13 +561,7 @@ if has("gui_running")
     set linespace=2
     "colorscheme mustang
     "colorscheme molokai
-    "colorscheme molokai_deep
     colorscheme railscat
-    "let g:solarized_termcolors=256
-    "let g:solarized_bold = 1
-    "let g:solarized_underline = 1
-    "let g:solarized_italic = 1
-    "colorscheme solarized
 
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
@@ -577,8 +571,7 @@ if has("gui_running")
     set guioptions-=R
 else
     set bg=dark
-    let g:solarized_termcolors=256
-    colorscheme solarized
+    colorscheme molokai
 endif
 
 " Pulse ------------------------------------------------------------------- {{{
