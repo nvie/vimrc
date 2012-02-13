@@ -16,12 +16,6 @@
 [submodule "vim/bundle/abolish"]
 	path = vim/bundle/abolish
 	url = git://github.com/nvie/vim-abolish.git
-[submodule "vim/bundle/pep8"]
-	path = vim/bundle/pep8
-	url = git://github.com/nvie/vim-pep8.git
-[submodule "vim/bundle/pyflakes"]
-	path = vim/bundle/pyflakes
-	url = git://github.com/nvie/vim-pyflakes.git
 [submodule "vim/bundle/toggle_mouse"]
 	path = vim/bundle/toggle_mouse
 	url = git://github.com/nvie/vim-togglemouse.git
@@ -40,3 +34,6 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/bundle/flake8"]
+	path = vim/bundle/flake8
+	url = git@github.com:nvie/vim-flake8.git
