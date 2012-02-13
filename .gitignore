@@ -2,10 +2,9 @@
 /vim/.VimballRecord
 /vim/NERDTreeBookmarks
 /vim/cache
-/vim/doc/tags
 /vim/user.vim
 /vim/view
 /vim/.netrwhist
 /vim/.tmp/*
 /vim/.undo/*
-/vim/bundle/yankring_110/doc/tags
+tags
