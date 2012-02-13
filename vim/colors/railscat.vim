@@ -31,7 +31,7 @@ let g:colors_name = "railscat"
 hi Normal                    guifg=#E6E1DC guibg=#2B2B2B
 hi Cursor                    guibg=#FFFFFF
 hi CursorLine                guibg=#262626
-hi Search                    guibg=#5A647E
+hi Search                    guifg=#FFFE66 guibg=#2B2B2B gui=underline
 hi LineNr                    guifg=#888888 guibg=#DEDEDE
 hi Visual                    guibg=#5A647E
 
