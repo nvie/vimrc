@@ -557,7 +557,7 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 if has("gui_running")
     "set guifont=Droid\ Sans\ Mono:h12
     "set guifont=saxMono:h12
-    set guifont=Anonymous:h12
+    set guifont=Anonymous\ for\ Powerline:h11
     set linespace=2
     "colorscheme mustang
     "colorscheme molokai
@@ -616,7 +616,7 @@ endfunction
 
 " Powerline configuration ------------------------------------------------- {{{
 
-let g:Powerline_symbols = 'compatible'
-"let g:Powerline_symbols = 'fancy'
+"let g:Powerline_symbols = 'compatible'
+let g:Powerline_symbols = 'fancy'
 
 " }}}
