@@ -490,6 +490,9 @@ if has("autocmd")
         autocmd filetype javascript setlocal expandtab
         autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
         autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
+
+        " Toggling True/False
+        autocmd filetype javascript nnoremap <silent> <C-t> mmviw:s/true\\|false/\={'true':'false','false':'true'}[submatch(0)]/<CR>`m:nohlsearch<CR>
     augroup end "}}}
 
     augroup textile_files "{{{
