@@ -162,7 +162,7 @@ snippet form
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
 snippet h1
-	<h1 id="${1:heading}">${2:$1}</h1>
+	<h1>${1:Hello, world!}</h1>
 snippet input
 	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
 snippet label
@@ -182,9 +182,23 @@ snippet select
 		<option value="${3:option}">${4:$3}</option>
 	</select>${5}
 snippet table
-	<table border="${1:0}">
-		<tr><th>${2:Header}</th></tr>
-		<tr><th>${3:Data}</th></tr>
-	</table>${4}
+	<table class="table ${1:table-bordered table-striped table-condensed}">
+	<thead>
+		<tr>
+			<th>${2}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>${3}</td>
+		</tr>
+	</tbody>
+	</table>
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+snippet ul
+	<ul class="${1:unstyled}">
+		${2}
+	</ul>
+snippet li
+	<li>${1}</li>
