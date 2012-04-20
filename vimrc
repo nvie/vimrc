@@ -68,6 +68,10 @@ set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                 "    with 1-letter words (looks stupid)
 
+set nrformats=                  " make <C-a> and <C-x> play well with
+                                "    zero-padded numbers (i.e. don't consider
+                                "    them octal or hex)
+
 " Thanks to Steve Losh for this liberating tip
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
