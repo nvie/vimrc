@@ -86,7 +86,7 @@ nnoremap <C-y> 2<C-y>
 set foldenable                  " enable folding
 set foldcolumn=2                " add a fold column
 set foldmethod=marker           " detect triple-{ style fold markers
-set foldlevelstart=0            " start out with everything folded
+set foldlevelstart=99           " start out with everything folded
 set foldopen=block,hor,insert,jump,mark,percent,quickfix,search,tag,undo
                                 " which commands trigger auto-unfold
 function! MyFoldText()
@@ -258,7 +258,6 @@ nnoremap N N:call PulseCursorLine()<cr>
 " Quickly get out of insert mode without your fingers having to leave the
 " home row (either use 'jj' or 'jk')
 inoremap jj <Esc>
-inoremap jk <Esc>
 
 " Quick alignment of text
 nmap <leader>al :left<CR>
@@ -441,7 +440,7 @@ if has("autocmd")
         " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
         " earlier, as it is important)
         autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
-        autocmd filetype python setlocal textwidth=80
+        autocmd filetype python setlocal textwidth=78
         autocmd filetype python match ErrorMsg '\%>80v.\+'
 
         " But disable autowrapping as it is super annoying
@@ -456,6 +455,9 @@ if has("autocmd")
         autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
         autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
         autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
+
+        " Toggling True/False
+        autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
         " Run a quick static syntax check every time we save a Python file
         autocmd BufWritePost *.py call Flake8()

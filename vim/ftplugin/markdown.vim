@@ -39,5 +39,5 @@ setlocal foldmethod=expr
 " change the following fold options to your liking
 " see ':help fold-options' for more
 setlocal foldenable
-setlocal foldlevel=0
+setlocal foldlevel=99
 setlocal foldcolumn=0
