@@ -463,6 +463,12 @@ if has("autocmd")
         autocmd BufWritePost *.py call Flake8()
     augroup end " }}}
 
+    augroup markdown_files "{{{
+        au!
+
+        autocmd filetype markdown map <buffer> <leader>p :w<CR>:!open -a Marked %<CR><CR>
+    augroup end " }}}
+
     augroup ruby_files "{{{
         au!
 
