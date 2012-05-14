@@ -573,10 +573,10 @@ iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus
 iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
 
 if has("gui_running")
-    "set guifont=Droid\ Sans\ Mono:h12
-    "set guifont=saxMono:h12
-    set guifont=Anonymous\ for\ Powerline:h11
-    set linespace=2
+    set guifont=Droid\ Sans\ Mono:h14
+    "set guifont=saxMono:h14
+    "set guifont=Anonymous\ for\ Powerline:h12 | set linespace=2
+    "set guifont=Mensch\ for\ Powerline:h14
     "colorscheme mustang
     "colorscheme molokai
     colorscheme railscat
