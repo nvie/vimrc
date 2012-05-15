@@ -19,8 +19,7 @@ git clone git://github.com/nvie/vimrc.git
 cd vimrc
 
 # Download vim plugin bundles
-git submodule init
-git submodule update
+git submodule update --init
 
 # Compile command-t for the current platform
 cd vim/ruby/command-t
