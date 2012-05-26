@@ -456,6 +456,9 @@ if has("autocmd")
         autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
         autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
+        " Automatic insertion of breakpoints
+        autocmd filetype python nmap <buffer> <leader>bp :normal Oimport pdb; pdb.set_trace()<Esc>
+
         " Toggling True/False
         autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
