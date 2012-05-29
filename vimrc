@@ -591,8 +591,10 @@ if has("gui_running")
 
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
-    set guioptions-=lL
-    set guioptions-=rR
+    set guioptions-=l
+    set guioptions-=L
+    set guioptions-=r
+    set guioptions-=R
 else
     set bg=dark
     colorscheme molokai_deep
