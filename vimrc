@@ -582,9 +582,11 @@ if has("gui_running")
     "set guifont=Droid\ Sans\ Mono:h14 linespace=0
     "set guifont=Ubuntu\ Mono:h15 linespace=2
 
-    colorscheme mustang
+    "colorscheme mustang
+    colorscheme mustang_silent
     "colorscheme molokai
     "colorscheme railscat
+    "colorscheme kellys
 
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
@@ -592,7 +594,7 @@ if has("gui_running")
     set guioptions-=rR
 else
     set bg=dark
-    colorscheme molokai
+    colorscheme molokai_deep
 endif
 
 " Pulse ------------------------------------------------------------------- {{{
