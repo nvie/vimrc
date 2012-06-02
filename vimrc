@@ -153,7 +153,7 @@ set nomodeline                  " disable mode lines (security measure)
 set cursorline                  " underline the current line, for quick orientation
 
 " Tame the quickfix window (open/close using ,f)
-nmap <silent> <leader>f :QFix<CR>
+nnoremap <silent> <leader>f :QFix<CR>
 
 command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
@@ -180,20 +180,20 @@ endif
 nnoremap ; :
 
 " Avoid accidental hits of <F1> while aiming for <Esc>
-map! <F1> <Esc>
+noremap! <F1> <Esc>
 
 " Quickly close the current window
 nnoremap <leader>q :q<CR>
 
 " Use Q for formatting the current paragraph (or visual selection)
-vmap Q gq
-nmap Q gqap
+vnoremap Q gq
+nnoremap Q gqap
 
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
 " Shortcut to make
-nmap mk :make<CR>
+nnoremap mk :make<CR>
 
 " Swap implementations of ` and ' jump to markers
 " By default, ' jumps to the marked line, ` jumps to the marked line and
@@ -202,54 +202,54 @@ nnoremap ' `
 nnoremap ` '
 
 " Use the damn hjkl keys
-" map <up> <nop>
-" map <down> <nop>
-" map <left> <nop>
-" map <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
 
 " Remap j and k to act as expected when used on long, wrapped, lines
 nnoremap j gj
 nnoremap k gk
 
 " Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 nnoremap <leader>w <C-w>v<C-w>l
 
 " Complete whole filenames/lines with a quicker shortcut key in insert mode
-imap <C-f> <C-x><C-f>
-imap <C-l> <C-x><C-l>
+inoremap <C-f> <C-x><C-f>
+inoremap <C-l> <C-x><C-l>
 
 " Use ,d (or ,dd or ,dj or 20,dd) to delete a line without adding it to the
 " yanked stack (also, in visual mode)
-nmap <silent> <leader>d "_d
-vmap <silent> <leader>d "_d
+nnoremap <silent> <leader>d "_d
+vnoremap <silent> <leader>d "_d
 
 " Quick yanking to the end of the line
-nmap Y y$
+nnoremap Y y$
 
 " Yank/paste to the OS clipboard with ,y and ,p
-nmap <leader>y "+y
-nmap <leader>Y "+yy
-nmap <leader>p "+p
-nmap <leader>P "+P
+nnoremap <leader>y "+y
+nnoremap <leader>Y "+yy
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
 
 " YankRing stuff
 let g:yankring_history_dir = '$HOME/.vim/.tmp'
-nmap <leader>r :YRShow<CR>
+nnoremap <leader>r :YRShow<CR>
 
 " Edit the vimrc file
-nmap <silent> <leader>ev :e $MYVIMRC<CR>
-nmap <silent> <leader>sv :so $MYVIMRC<CR>
+nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
+nnoremap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " Clears the search register
-nmap <silent> <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 
 " Pull word under cursor into LHS of a substitute (for quick search and
 " replace)
-nmap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
+nnoremap <leader>z :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " Keep search matches in the middle of the window and pulse the line when moving
 " to them.
@@ -261,15 +261,15 @@ nnoremap N N:call PulseCursorLine()<cr>
 inoremap jj <Esc>
 
 " Quick alignment of text
-nmap <leader>al :left<CR>
-nmap <leader>ar :right<CR>
-nmap <leader>ac :center<CR>
+nnoremap <leader>al :left<CR>
+nnoremap <leader>ar :right<CR>
+nnoremap <leader>ac :center<CR>
 
 " Scratch
-nmap <leader><tab> :Sscratch<CR><C-W>x<C-J>
+nnoremap <leader><tab> :Sscratch<CR><C-W>x<C-J>
 
 " Sudo to write
-cmap w!! w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee % >/dev/null
 
 " Jump to matching pairs easily, with Tab
 nnoremap <Tab> %
@@ -298,9 +298,9 @@ nnoremap <F5> :GundoToggle<CR>
 " NERDTree settings {{{
 " Put focus to the NERD Tree with F3 (tricked by quickly closing it and
 " immediately showing it again, since there is no :NERDTreeFocus command)
-nmap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
-nmap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
-nmap <leader>N :NERDTreeClose<CR>
+nnoremap <leader>n :NERDTreeClose<CR>:NERDTreeToggle<CR>
+nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
+nnoremap <leader>N :NERDTreeClose<CR>
 
 " Store the bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
@@ -329,8 +329,8 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 " }}}
 
 " TagList settings {{{
-nmap <leader>l :TlistClose<CR>:TlistToggle<CR>
-nmap <leader>L :TlistClose<CR>
+nnoremap <leader>l :TlistClose<CR>:TlistToggle<CR>
+nnoremap <leader>L :TlistClose<CR>
 
 " quit Vim when the TagList window is the last open window
 let Tlist_Exit_OnlyWindow=1         " quit when TagList is the last open window
@@ -365,7 +365,7 @@ let Tlist_Use_Right_Window=1
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " shortcut to jump to next conflict marker
-nmap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
 " }}}
 
 " Filetype specific handling {{{
@@ -452,13 +452,13 @@ if has("autocmd")
         "autocmd filetype python setlocal foldmethod=expr
 
         " Python runners
-        autocmd filetype python map <buffer> <F5> :w<CR>:!python %<CR>
-        autocmd filetype python imap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
-        autocmd filetype python map <buffer> <S-F5> :w<CR>:!ipython %<CR>
-        autocmd filetype python imap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
+        autocmd filetype python noremap <buffer> <F5> :w<CR>:!python %<CR>
+        autocmd filetype python inoremap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
+        autocmd filetype python noremap <buffer> <S-F5> :w<CR>:!ipython %<CR>
+        autocmd filetype python inoremap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
         " Automatic insertion of breakpoints
-        autocmd filetype python nmap <buffer> <leader>bp :normal Oimport pdb; pdb.set_trace()<Esc>
+        autocmd filetype python nnoremap <buffer> <leader>bp :normal Oimport pdb; pdb.set_trace()<Esc>
 
         " Toggling True/False
         autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
@@ -470,7 +470,7 @@ if has("autocmd")
     augroup markdown_files "{{{
         au!
 
-        autocmd filetype markdown map <buffer> <leader>p :w<CR>:!open -a Marked %<CR><CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a Marked %<CR><CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
