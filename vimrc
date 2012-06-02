@@ -265,9 +265,6 @@ nnoremap <leader>al :left<CR>
 nnoremap <leader>ar :right<CR>
 nnoremap <leader>ac :center<CR>
 
-" Scratch
-nnoremap <leader><tab> :Sscratch<CR><C-W>x<C-J>
-
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
