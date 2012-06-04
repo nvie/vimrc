@@ -175,9 +175,10 @@ endif
 
 " Shortcut mappings {{{
 " Since I never use the ; key anyway, this is a real optimization for almost
-" all Vim commands, since we don't have to press that annoying Shift key that
-" slows the commands down
+" all Vim commands, as I don't have to press the Shift key to form chords to
+" enter ex mode.
 nnoremap ; :
+nnoremap <leader>; ;
 
 " Avoid accidental hits of <F1> while aiming for <Esc>
 noremap! <F1> <Esc>
