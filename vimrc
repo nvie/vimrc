@@ -737,3 +737,7 @@ nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
 " Grep searches
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape('<cword>') . " ."<cr>:copen 12<cr>
 "nnoremap <leader>G :silent execute "grep! -R " . shellescape('<cWORD>') . " ."<cr>:copen 12<cr>
+
+" Run tests
+inoremap <leader>w <esc>:write<cr>:!./run_tests.sh %<cr>
+nnoremap <leader>w :!./run_tests.sh<cr>
