@@ -32,6 +32,7 @@ syntax on
 
 " Change the mapleader from \ to ,
 let mapleader=","
+let maplocalleader="\\"
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
