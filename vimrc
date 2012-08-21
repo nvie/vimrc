@@ -680,3 +680,12 @@ endfunction
 let g:Powerline_symbols = 'fancy'
 
 " }}}
+
+" Python mode configuration ----------------------------------------------- {{{
+
+" Don't run pylint on every save
+let g:pymode_lint = 0
+let g:pymode_lint_write = 0
+
+" }}}
+
