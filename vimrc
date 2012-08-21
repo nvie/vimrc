@@ -493,6 +493,12 @@ if has("autocmd")
         autocmd BufWritePost *.py call Flake8()
     augroup end " }}}
 
+    augroup supervisord_files "{{{
+        au!
+
+        autocmd BufNewFile,BufRead supervisord.conf set ft=dosini
+    augroup end " }}}
+
     augroup markdown_files "{{{
         au!
 
