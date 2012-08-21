@@ -434,7 +434,7 @@ if has("autocmd")
             set ft=html
         endfun
 
-        autocmd BufNewFile,BufRead *.html,*.htm call s:DetectHTMLVariant()
+        autocmd BufNewFile,BufRead *.html,*.htm,*.j2 call s:DetectHTMLVariant()
 
         " Auto-closing of HTML/XML tags
         let g:closetag_default_xml=1
