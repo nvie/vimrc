@@ -690,3 +690,50 @@ let g:pymode_lint_write = 0
 
 " }}}
 
+" Learn Vim Script the Hard Way Exercises
+"noremap - ddp
+"noremap _ ddkP
+
+" C-U in insert/normal mode, to uppercase the word under cursor
+inoremap <c-u> <esc>viwUea
+nnoremap <c-u> viwUe
+
+iabbr m@@ me@nvie.com
+iabbr v@@ vincent@3rdcloud.com
+iabbr ssig --<cr>Vincent Driessen<cr>vincent@3rdcloud.com
+
+" Quote words under cursor
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
+" Quote current selection
+" TODO: This only works for selections that are created "forwardly"
+vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll
+vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvo<esc>ll
+
+" Use shift-H and shift-L for move to beginning/end
+nnoremap H 0
+nnoremap L $
+
+" Define operator-pending mappings to quickly apply commands to function names
+" and/or parameter lists in the current line
+onoremap inf :<c-u>normal! 0f(hviw<cr>
+onoremap anf :<c-u>normal! 0f(hvaw<cr>
+onoremap in( :<c-u>normal! 0f(vi(<cr>
+onoremap an( :<c-u>normal! 0f(va(<cr>
+
+" "Next" tag
+onoremap int :<c-u>normal! 0f<vit<cr>
+onoremap ant :<c-u>normal! 0f<vat<cr>
+
+" Function argument selection (change "around argument", change "inside argument")
+onoremap ia :<c-u>execute "normal! ?[,(]\rwv/[),]\rh"<cr>
+vnoremap ia :<c-u>execute "normal! ?[,(]\rwv/[),]\rh"<cr>
+
+" Split previously opened file ('#') in a split window
+nnoremap <leader>sh :execute "leftabove vsplit" bufname('#')<cr>
+nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
+
+" Grep searches
+"nnoremap <leader>g :silent execute "grep! -R " . shellescape('<cword>') . " ."<cr>:copen 12<cr>
+"nnoremap <leader>G :silent execute "grep! -R " . shellescape('<cWORD>') . " ."<cr>:copen 12<cr>
