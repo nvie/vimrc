@@ -49,9 +49,6 @@
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = git://github.com/klen/python-mode.git
-[submodule "vim/bundle/js-mode"]
-	path = vim/bundle/js-mode
-	url = https://github.com/klen/vim-jsmode.git
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
