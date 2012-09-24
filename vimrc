@@ -386,6 +386,9 @@ let Tlist_Use_Right_Window=1
 
 " }}}
 
+" vim-flake8 default configuration
+let g:flake8_max_line_length=120
+
 " Conflict markers {{{
 " highlight conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
