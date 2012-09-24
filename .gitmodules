@@ -58,3 +58,6 @@
 [submodule "vim/bundle/webapi-vim"]
 	path = vim/bundle/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "vim/bundle/vim-flake8"]
+	path = vim/bundle/vim-flake8
+	url = git://github.com/nvie/vim-flake8.git
