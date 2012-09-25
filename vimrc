@@ -471,7 +471,7 @@ if has("autocmd")
         " earlier, as it is important)
         autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
         autocmd filetype python setlocal textwidth=78
-        autocmd filetype python match ErrorMsg '\%>80v.\+'
+        autocmd filetype python match ErrorMsg '\%>120v.\+'
 
         " But disable autowrapping as it is super annoying
         autocmd filetype python setlocal formatoptions-=t
