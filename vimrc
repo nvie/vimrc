@@ -581,7 +581,7 @@ autocmd BufReadPost *
 " }}}
 
 " Common abbreviations / misspellings {{{
-source ~/.vim/autocorrect.vim
+"source ~/.vim/autocorrect.vim
 " }}}
 
 " Extra vi-compatibility {{{
@@ -644,7 +644,7 @@ else
     "colorscheme wombat256
     "colorscheme mustang
     "colorscheme mustang_silent
-    colorscheme badwolf
+    "colorscheme badwolf
 endif
 
 " Pulse ------------------------------------------------------------------- {{{
