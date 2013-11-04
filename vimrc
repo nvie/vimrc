@@ -718,6 +718,10 @@ let g:pymode_lint_write = 0
 
 " }}}
 
+" Invoke CtrlP, but CommandT style
+nnoremap <leader>t :CtrlP<cr>
+nnoremap <leader>. :CtrlPTag<cr>
+
 " Learn Vim Script the Hard Way Exercises
 "noremap - ddp
 "noremap _ ddkP
