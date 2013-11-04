@@ -64,6 +64,9 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = https://github.com/sjl/splice.vim.git
+[submodule "vim/bundle/fish"]
+	path = vim/bundle/fish
+	url = git://github.com/vim-scripts/fish.vim.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
