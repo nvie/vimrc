@@ -5,6 +5,7 @@ dir::
 
 	wget -O - https://github.com/nvie/vimrc/raw/master/autoinstall.sh | sh
 
+
 Installing this vimrc manually
 ==============================
 Although a vimrc is a very personal thing, you may use mine if you
@@ -27,14 +28,7 @@ like it.  To do so, please do the following:
    	git submodule init
    	git submodule update
 
-4. Recompile Command-T Ruby C extension for your platform (if other than
-   Mac OS X)::
-
-   	cd vim/ruby/command-t
-   	ruby extconf.rb
-   	make clean; make
-
-5. Touch::
+4. Touch::
 
    	touch ~/.vim/user.vim
 
