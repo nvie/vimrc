@@ -268,12 +268,6 @@ vnoremap <silent> <leader>d "_d
 " Quick yanking to the end of the line
 nnoremap Y y$
 
-" Yank/paste to the OS clipboard with ,y and ,p
-nnoremap <leader>y "+y
-nnoremap <leader>Y "+yy
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-
 " YankRing stuff
 let g:yankring_history_dir = '$HOME/.vim/.tmp'
 nnoremap <leader>r :YRShow<CR>
