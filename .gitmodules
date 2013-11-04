@@ -64,3 +64,6 @@
 [submodule "vim/bundle/splice"]
 	path = vim/bundle/splice
 	url = https://github.com/sjl/splice.vim.git
+[submodule "vim/bundle/vim-repeat"]
+	path = vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
