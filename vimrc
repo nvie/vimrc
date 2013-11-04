@@ -735,8 +735,8 @@ iabbr v@@ vincent@3rdcloud.com
 iabbr ssig --<cr>Vincent Driessen<cr>vincent@3rdcloud.com
 
 " Quote words under cursor
-nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
-nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
+nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
 
 " Quote current selection
 " TODO: This only works for selections that are created "forwardly"
