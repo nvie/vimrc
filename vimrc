@@ -77,6 +77,9 @@ set nrformats=                  " make <C-a> and <C-x> play well with
                                 "    zero-padded numbers (i.e. don't consider
                                 "    them octal or hex)
 
+set shortmess+=I                " hide the launch screen
+set clipboard=unnamed           " normal OS clipboard interaction
+
 " Toggle show/hide invisible chars
 nnoremap <leader>i :set list!<cr>
 
