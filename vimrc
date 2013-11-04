@@ -223,6 +223,10 @@ nnoremap <leader>q :q<CR>
 vnoremap Q gq
 nnoremap Q gqap
 
+" Sort paragraphs (useful to sort Python import blocks)
+vnoremap <leader>s !sort -f<CR>gv
+nnoremap <leader>s vip!sort -f<CR><Esc>
+
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
 
