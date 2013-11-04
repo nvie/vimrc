@@ -30,6 +30,9 @@ call pathogen#helptags()
 filetype plugin indent on       " enable detection, plugins and indenting in one step
 syntax on
 
+" Change shell
+set shell=bash                  " Vim expects a POSIX-compliant shell, which Fish (my default shell) is not
+
 " Change the mapleader from \ to ,
 let mapleader=","
 let maplocalleader="\\"
