@@ -8,7 +8,7 @@ set -e
 				cd "$submodule"
 				echo "--- $submodule:"
 
-				if [ "$submodule" = "pyunit" ]; then
+				if git local-branches | grep -q develop; then
 					git checkout -q develop
 				else
 					git checkout -q master
