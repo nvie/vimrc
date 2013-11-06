@@ -448,7 +448,6 @@ if has("autocmd")
         let g:closetag_default_xml=1
         autocmd filetype html,htmldjango let b:closetag_html_style=1
         autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
-        autocmd filetype html,htmldjango setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
     augroup end " }}}
 
     augroup python_files "{{{
@@ -474,7 +473,6 @@ if has("autocmd")
 
         " PEP8 compliance (set 1 tab = 4 chars explicitly, even if set
         " earlier, as it is important)
-        autocmd filetype python setlocal expandtab shiftwidth=4 tabstop=4 softtabstop=4
         autocmd filetype python setlocal textwidth=78
         autocmd filetype python match ErrorMsg '\%>120v.\+'
 
@@ -516,7 +514,6 @@ if has("autocmd")
     augroup ruby_files "{{{
         au!
 
-        autocmd filetype ruby setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end " }}}
 
     augroup rst_files "{{{
@@ -532,7 +529,6 @@ if has("autocmd")
         au!
 
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
-        autocmd filetype css,less setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
     augroup end "}}}
 
     augroup javascript_files "{{{
@@ -544,10 +540,6 @@ if has("autocmd")
 
         " Toggling True/False
         autocmd filetype javascript nnoremap <silent> <C-t> mmviw:s/true\\|false/\={'true':'false','false':'true'}[submatch(0)]/<CR>`m:nohlsearch<CR>
-
-        " YesGraph-specific settings
-        autocmd BufNewFile,BufRead /Users/nvie/Projects/yes/*.sh setlocal sw=2 ts=2 sts=2 et
-        autocmd BufNewFile,BufRead /Users/nvie/Projects/yes/*.js setlocal sw=2 ts=2 sts=2 et
     augroup end "}}}
 
     augroup textile_files "{{{
