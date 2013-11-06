@@ -5,4 +5,4 @@ if [ $# -lt 1 ]; then
 else
     url="$1"
 fi
-git submodule add "$url" vim/bundle/$(basename "$url" | sed 's/\.git$//')
+git submodule add --force "$url" vim/bundle/$(basename "$url" | sed 's/\.git$//')
