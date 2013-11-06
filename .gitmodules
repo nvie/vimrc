@@ -13,9 +13,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/bundle/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/abolish"]
-	path = vim/bundle/abolish
-	url = git://github.com/nvie/vim-abolish.git
 [submodule "vim/bundle/toggle_mouse"]
 	path = vim/bundle/toggle_mouse
 	url = git://github.com/nvie/vim-togglemouse.git
@@ -106,3 +103,6 @@
 [submodule "vim/bundle/vim-characterize"]
 	path = vim/bundle/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
