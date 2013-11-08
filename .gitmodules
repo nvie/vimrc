@@ -106,3 +106,9 @@
 [submodule "vim/bundle/vim-abolish"]
 	path = vim/bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/bundle/linters.vim"]
+	path = vim/bundle/linters.vim
+	url = https://bitbucket.org/tim_heap/linters.vim
+[submodule "vim/bundle/vim-mkdir-on-write"]
+	path = vim/bundle/vim-mkdir-on-write
+	url = https://github.com/scy/vim-mkdir-on-write.git
