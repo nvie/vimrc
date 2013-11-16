@@ -293,9 +293,9 @@ nnoremap N N:call PulseCursorLine()<cr>
 inoremap jj <Esc>
 
 " Quick alignment of text
-nnoremap <leader>al :left<CR>
-nnoremap <leader>ar :right<CR>
-nnoremap <leader>ac :center<CR>
+" nnoremap <leader>al :left<CR>
+" nnoremap <leader>ar :right<CR>
+" nnoremap <leader>ac :center<CR>
 
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
