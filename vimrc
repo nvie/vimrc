@@ -700,6 +700,22 @@ let g:pymode_lint = 0
 let g:pymode_lint_write = 0
 let g:pymode_breakpoint_key = '<leader>B'
 
+" }}}
+
+" Linters configuration -------------------------------------------------- {{{
+
+" Don't run linters for Python (conflicts with vim-flake8)
+let g:linters_disabled_filetypes = ['python']
+
+" To add more linters, do this:
+"
+" let g:linters_extra = []
+
+" if executable('jshint')
+"     let g:linters_extra += [
+"     \   ['javascript', 'jshint %s > %s', ["%f: line %l, col %c, %m"]],
+"     \]
+" endif
 
 " }}}
 
