@@ -775,3 +775,6 @@ nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
 " Run tests
 inoremap <leader>w <esc>:write<cr>:!./run_tests.sh %<cr>
 nnoremap <leader>w :!./run_tests.sh<cr>
+
+" Rope config
+nnoremap <leader>A :RopeAutoImport<cr>
