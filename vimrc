@@ -704,8 +704,8 @@ let g:pymode_breakpoint_key = '<leader>B'
 
 " Linters configuration -------------------------------------------------- {{{
 
-" Don't run linters for Python (conflicts with vim-flake8)
-let g:linters_disabled_filetypes = ['python']
+" Don't run linters for Python (conflicts with vim-flake8 and lint.vim plugins)
+let g:linters_disabled_filetypes = ['python', 'javascript']
 
 " To add more linters, do this:
 "
