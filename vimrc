@@ -778,3 +778,8 @@ nnoremap <leader>w :!./run_tests.sh<cr>
 
 " Rope config
 nnoremap <leader>A :RopeAutoImport<cr>
+
+" Switch from block-cursor to vertical-line-cursor when going into/out of
+" insert mode
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
