@@ -624,7 +624,8 @@ if has("gui_running")
     "colorscheme wombat256
     "colorscheme mustang
     "colorscheme mustang_silent
-    colorscheme badwolf
+    "colorscheme badwolf
+    colorscheme jellybeans
 
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
@@ -643,7 +644,8 @@ else
     "colorscheme wombat256
     "colorscheme mustang
     "colorscheme mustang_silent
-    colorscheme badwolf
+    "colorscheme badwolf
+    colorscheme jellybeans
 endif
 
 " Pulse ------------------------------------------------------------------- {{{
