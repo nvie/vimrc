@@ -16,9 +16,6 @@
 [submodule "vim/bundle/toggle_mouse"]
 	path = vim/bundle/toggle_mouse
 	url = git://github.com/nvie/vim-togglemouse.git
-[submodule "vim/bundle/pyunit"]
-	path = vim/bundle/pyunit
-	url = git://github.com/nvie/vim-pyunit.git
 [submodule "vim/bundle/rst_tables"]
 	path = vim/bundle/rst_tables
 	url = git://github.com/nvie/vim-rst-tables.git
@@ -115,3 +112,6 @@
 [submodule "vim/bundle/jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
+[submodule "vim/bundle/vim-pyunit"]
+	path = vim/bundle/vim-pyunit
+	url = git@github.com:nvie/vim-pyunit.git
