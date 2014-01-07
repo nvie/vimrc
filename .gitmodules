@@ -112,3 +112,6 @@
 [submodule "vim/bundle/vim-mkdir-on-write"]
 	path = vim/bundle/vim-mkdir-on-write
 	url = https://github.com/scy/vim-mkdir-on-write.git
+[submodule "vim/bundle/vim-bufferline"]
+	path = vim/bundle/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git

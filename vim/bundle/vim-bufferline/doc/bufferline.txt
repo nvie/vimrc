@@ -1,0 +1,114 @@
+*bufferline.txt*  Simple plugin for generating buffer list names
+
+==============================================================================
+INTRODUCTION                                                    *bufferline*
+
+vim-bufferline is a simple plugin that helps you keep track of all your open
+buffers.  It also integrates nicely with vim-airline.
+
+==============================================================================
+CONFIGURATION                                     *bufferline-configuration*
+
+There are a couple configuration values available (shown with their default
+values):
+
+* denotes whether bufferline should automatically echo to the command bar
+>
+  let g:bufferline_echo = 1
+<
+
+* the separator used on the left side of a buffer
+>
+  let g:bufferline_active_buffer_left = '['
+<
+
+* the separator used on the right side of a buffer
+>
+  let g:bufferline_active_buffer_right = ']'
+<
+
+* the symbol to denote that a buffer is modified
+>
+  let g:bufferline_modified = '+'
+<
+
+* denotes whether buffer numbers should be displayed
+>
+  let g:bufferline_show_bufnr = 1
+<
+
+* denotes whether the bufferline should have rotation applied
+>
+  " default, no rotate, no scrolling
+  let g:bufferline_rotate = 0
+
+  " scrolling with fixed current buffer position
+  let g:bufferline_rotate = 1
+
+  " scrolling without fixed current buffer position
+  let g:bufferline_rotate = 2
+<
+
+* only valid when `g:bufferline_rotate` is set to 1:
+>
+  let g:bufferline_fixed_index =  0 "always first
+  let g:bufferline_fixed_index =  1 "always second (default)
+  let g:bufferline_fixed_index = -1 "always last
+<
+
+* denotes how to display the filename of a buffer (see |filename-modifiers|
+  for more details)
+>
+  let g:bufferline_fname_mod = ':t'
+<
+
+* denotes the highlight group for inactive buffers when used in the
+  |statusline|
+>
+  let g:bufferline_inactive_highlight = 'StatusLineNC'
+<
+
+* denotes the highlight group for the active buffer when used in the
+  |statusline|
+>
+  let g:bufferline_active_highlight = 'StatusLine'
+<
+
+* denotes whether the active highlight should be used when there is only one
+  buffer.
+>
+  let g:bufferline_solo_highlight = 0
+<
+
+* denotes any exclude patterns.
+>
+  let g:bufferline_excludes = [] "see source for defaults
+<
+
+==============================================================================
+STATUSLINE INTEGRATION                               *bufferline-statusline*
+
+>
+  let g:bufferline_echo = 0
+  autocmd VimEnter *
+    \ let &statusline='%{bufferline#refresh_status()}'
+      \ .bufferline#get_status_string()
+<
+
+The function refresh_status() returns an empty string and only exists to
+populate some global variables.  Since it is inside an %{} block, the
+variables will get updated whenever the statusline needs to be drawn.
+get_status_string() creates a string which references these variables.
+
+==============================================================================
+CONTRIBUTIONS                                     *bufferline-contributions*
+
+Contributions and pull requests are welcome.
+
+==============================================================================
+LICENSE                                                 *bufferline-license*
+
+MIT License. Copyright © 2013 Bailey Ling.
+
+
+ vim:tw=78:ts=8:ft=help:norl:
