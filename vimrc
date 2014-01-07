@@ -311,9 +311,27 @@ vnoremap <Space> za
 " Strip all trailing whitespace from a file, using ,W
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Ack for the word under cursor
-"nnoremap <leader>a :Ack<Space>
-nnoremap <leader>a :Ack<Space><c-r><c-W>
+" Use The Silver Searcher over grep, iff possible
+if executable('ag')
+   " Use ag over grep
+   set grepprg=ag\ --nogroup\ --nocolor
+
+   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+   " ag is fast enough that CtrlP doesn't need to cache
+   let g:ctrlp_use_caching = 0
+endif
+
+" grep/Ack/Ag for the word under cursor
+nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
+nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
+
+" Define "Ag" command
+command -nargs=+ -complete=file -bar Ag silent! grep! <args> | cwindow | redraw!
+
+" bind \ (backward slash) to grep shortcut
+nnoremap \ :Ag<SPACE>
 
 " Creating folds for tags in HTML
 "nnoremap <leader>ft Vatzf
