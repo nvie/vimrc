@@ -42,7 +42,7 @@
 	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
-	url = git://github.com/klen/python-mode.git
+	url = git@github.com:klen/python-mode.git
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
