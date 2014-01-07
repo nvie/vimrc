@@ -719,6 +719,11 @@ let g:linters_disabled_filetypes = ['python', 'javascript']
 
 " }}}
 
+" Ignore common directories
+let g:ctrlp_custom_ignore = {
+   \ 'dir': 'node_modules\|bower_components',
+   \ }
+
 " Invoke CtrlP, but CommandT style
 nnoremap <leader>t :CtrlP<cr>
 nnoremap <leader>. :CtrlPTag<cr>
