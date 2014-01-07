@@ -6,14 +6,14 @@ set -e
 		if [ -e "$submodule/.git" ]; then
 			(
 				cd "$submodule"
-				echo "--- $submodule:"
+				echo "===> $submodule"
 
 				if git local-branches | grep -q develop; then
-					git checkout -q develop
+					git checkout --quiet develop
 				else
-					git checkout -q master
+					git checkout --quiet master
 				fi
-				git pull
+				git pull --quiet
 			)
 		fi
 	done
