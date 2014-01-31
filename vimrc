@@ -223,7 +223,7 @@ nnoremap <leader>q :q<CR>
 vnoremap Q gq
 nnoremap Q gqap
 
-" Sort paragraphs (useful to sort Python import blocks)
+" Sort paragraphs
 vnoremap <leader>s !sort -f<CR>gv
 nnoremap <leader>s vip!sort -f<CR><Esc>
 
@@ -510,6 +510,9 @@ if has("autocmd")
 
         " Run a quick static syntax check every time we save a Python file
         autocmd BufWritePost *.py call Flake8()
+
+        " Defer to isort for sorting headers (instead of using Unix sort)
+        autocmd filetype python nnoremap <leader>s :Isort<cr>
     augroup end " }}}
 
     augroup supervisord_files "{{{
