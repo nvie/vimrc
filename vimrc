@@ -324,6 +324,7 @@ if executable('ag')
 endif
 
 " grep/Ack/Ag for the word under cursor
+vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
 nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
 nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
