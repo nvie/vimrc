@@ -336,6 +336,9 @@ vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
 nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
 nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
+" Allow quick additions to the spelling dict
+nnoremap <leader>g :spellgood <c-r><c-w>
+
 " Define "Ag" command
 command -nargs=+ -complete=file -bar Ag silent! grep! <args> | cwindow | redraw!
 
