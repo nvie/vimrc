@@ -308,6 +308,9 @@ inoremap jj <Esc>
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
+" Ctrl+W to redraw
+nnoremap <C-w> :redraw!<cr>
+
 " Jump to matching pairs easily, with Tab
 nnoremap <Tab> %
 vnoremap <Tab> %
