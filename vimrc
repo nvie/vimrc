@@ -473,6 +473,9 @@ if has("autocmd")
             set ft=html
         endfun
 
+        " Auto-tidy selection
+        vnoremap <leader>x :!tidy -q -i --show-errors 0 --show-body-only 1 --wrap 0<cr><cr>
+
         autocmd BufNewFile,BufRead *.html,*.htm,*.j2 call s:DetectHTMLVariant()
 
         " Auto-closing of HTML/XML tags
