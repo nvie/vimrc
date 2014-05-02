@@ -737,6 +737,7 @@ let g:Powerline_symbols = 'fancy'
 " Don't run pylint on every save
 let g:pymode_lint = 0
 let g:pymode_lint_write = 0
+let g:pymode_lint_on_write = 0
 let g:pymode_breakpoint_key = '<leader>B'
 
 " }}}
