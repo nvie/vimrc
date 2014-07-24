@@ -575,6 +575,9 @@ if has("autocmd")
 
         " Toggling True/False
         autocmd filetype javascript nnoremap <silent> <C-t> mmviw:s/true\\|false/\={'true':'false','false':'true'}[submatch(0)]/<CR>`m:nohlsearch<CR>
+
+        " Enable insertion of "debugger" statement in JS files
+        autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
     augroup end "}}}
 
     augroup textile_files "{{{
