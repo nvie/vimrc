@@ -224,8 +224,8 @@ nnoremap <leader>; ;
 " Avoid accidental hits of <F1> while aiming for <Esc>
 noremap! <F1> <Esc>
 
-" Quickly close the current window
-nnoremap <leader>q :q<CR>
+nnoremap <leader>Q :q<CR>    " Quickly close the current window
+nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
 
 " Use Q for formatting the current paragraph (or visual selection)
 vnoremap Q gq
