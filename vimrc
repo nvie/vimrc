@@ -230,6 +230,7 @@ nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
 " Use Q for formatting the current paragraph (or visual selection)
 vnoremap Q gq
 nnoremap Q gqap
+" set breakindent on  " keep paragraph indentation when re-wrapping text
 
 " Sort paragraphs
 vnoremap <leader>s !sort -f<CR>gv
