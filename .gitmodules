@@ -55,9 +55,6 @@
 [submodule "vim/bundle/fish"]
 	path = vim/bundle/fish
 	url = git://github.com/vim-scripts/fish.vim.git
-[submodule "vim/bundle/lint.vim"]
-	path = vim/bundle/lint.vim
-	url = git@github.com:joestelmach/lint.vim.git
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
