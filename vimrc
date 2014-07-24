@@ -677,10 +677,8 @@ if has("gui_running")
 else
     set bg=dark
 
-    "colorscheme mustang_silent
     "colorscheme molokai
     "colorscheme railscat
-    "colorscheme kellys
     "colorscheme molokai_deep
     "colorscheme wombat256
     "colorscheme mustang
