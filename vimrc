@@ -737,10 +737,31 @@ let g:Powerline_symbols = 'compatible'
 " Python mode configuration ----------------------------------------------- {{{
 
 " Don't run pylint on every save
+let g:pymode = 1
+let g:pymode_breakpoint = 0
+let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_doc = 0
+let g:pymode_doc_bind = 'K'
+let g:pymode_folding = 0
+let g:pymode_indent = 0
 let g:pymode_lint = 0
-let g:pymode_lint_write = 0
+let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
+let g:pymode_lint_cwindow = 1
+let g:pymode_lint_ignore = ''
+let g:pymode_lint_message = 1
+let g:pymode_lint_on_fly = 0
 let g:pymode_lint_on_write = 0
-let g:pymode_breakpoint_key = '<leader>B'
+let g:pymode_lint_select = ''
+let g:pymode_lint_signs = 1
+let g:pymode_motion = 0
+let g:pymode_options = 0
+let g:pymode_paths = []
+let g:pymode_quickfix_maxheight = 6
+let g:pymode_quickfix_minheight = 3
+let g:pymode_rope = 0
+let g:pymode_run = 0
+let g:pymode_run_bind = '<leader>r'
+let g:pymode_trim_whitespaces = 0
 
 " }}}
 
