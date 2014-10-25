@@ -424,6 +424,7 @@ let Tlist_Use_Right_Window=1
 
 " vim-flake8 default configuration
 let g:flake8_max_line_length=120
+let g:flake8_show_in_gutter=1
 
 " Conflict markers {{{
 " highlight conflict markers

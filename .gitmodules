@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-powerline"]
 	path = vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/flake8"]
-	path = vim/bundle/flake8
-	url = git://github.com/nvie/vim-flake8.git
 [submodule "vim/bundle/vim-commentary"]
 	path = vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -49,9 +46,6 @@
 [submodule "webapi-vim"]
 	path = webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
-[submodule "vim/bundle/vim-flake8"]
-	path = vim/bundle/vim-flake8
-	url = git://github.com/nvie/vim-flake8.git
 [submodule "vim/bundle/fish"]
 	path = vim/bundle/fish
 	url = git://github.com/vim-scripts/fish.vim.git
@@ -112,3 +106,9 @@
 [submodule "vim/bundle/vim-isort"]
 	path = vim/bundle/vim-isort
 	url = https://github.com/fisadev/vim-isort
+[submodule "vim/bundle/rust.vim"]
+	path = vim/bundle/rust.vim
+	url = https://github.com/wting/rust.vim
+[submodule "vim/bundle/vim-flake8"]
+	path = vim/bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8
