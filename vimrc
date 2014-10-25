@@ -738,7 +738,7 @@ let g:Powerline_symbols = 'compatible'
 " Python mode configuration ----------------------------------------------- {{{
 
 " Don't run pylint on every save
-let g:pymode = 1
+let g:pymode = 0
 let g:pymode_breakpoint = 0
 let g:pymode_breakpoint_bind = '<leader>b'
 let g:pymode_doc = 0
