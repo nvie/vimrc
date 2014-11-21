@@ -79,6 +79,7 @@ set nrformats=                  " make <C-a> and <C-x> play well with
 
 set shortmess+=I                " hide the launch screen
 set clipboard=unnamed           " normal OS clipboard interaction
+set autoread                    " automatically reload files changed outside of Vim
 
 " Toggle show/hide invisible chars
 nnoremap <leader>i :set list!<cr>
