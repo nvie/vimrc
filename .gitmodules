@@ -39,7 +39,7 @@
 	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
-	url = git@github.com:klen/python-mode.git
+	url = https://github.com/klen/python-mode.git
 [submodule "vim/bundle/gist-vim"]
 	path = vim/bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
@@ -99,10 +99,10 @@
 	url = https://github.com/bling/vim-bufferline.git
 [submodule "vim/bundle/jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
-	url = git@github.com:nanotech/jellybeans.vim.git
+	url = https://github.com/nanotech/jellybeans.vim.git
 [submodule "vim/bundle/vim-pyunit"]
 	path = vim/bundle/vim-pyunit
-	url = git@github.com:nvie/vim-pyunit.git
+	url = https://github.com/nvie/vim-pyunit.git
 [submodule "vim/bundle/vim-isort"]
 	path = vim/bundle/vim-isort
 	url = https://github.com/fisadev/vim-isort
