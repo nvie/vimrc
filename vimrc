@@ -660,41 +660,29 @@ iab lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit
 iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi
 iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
 
-    "set guifont=Anonymous\ for\ Powerline:h12 linespace=2
-    "set guifont=Droid\ Sans\ Mono:h14 linespace=0
-    "set guifont=Mensch\ for\ Powerline:h14 linespace=0
-    "set guifont=saxMono:h14 linespace=3
-    "set guifont=Ubuntu\ Mono:h18 linespace=3
-    set guifont=Source\ Code\ Pro\ Light:h10 linespace=0
+"set guifont=Anonymous\ for\ Powerline:h12 linespace=2
+"set guifont=Droid\ Sans\ Mono:h14 linespace=0
+"set guifont=Mensch\ for\ Powerline:h14 linespace=0
+"set guifont=saxMono:h14 linespace=3
+"set guifont=Ubuntu\ Mono:h18 linespace=3
+set guifont=Source\ Code\ Pro\ Light:h10 linespace=0
+
 if has("gui_running")
-
-    "colorscheme molokai
-    "colorscheme railscat
-    "colorscheme kellys
-    "colorscheme wombat256
-    "colorscheme mustang
-    "colorscheme mustang_silent
-    colorscheme badwolf
-    "colorscheme jellybeans
-
     " Remove toolbar, left scrollbar and right scrollbar
     set guioptions-=T
     set guioptions-=l
     set guioptions-=L
     set guioptions-=r
     set guioptions-=R
+    set guifont=Source\ Code\ Pro\ Light:h13 linespace=0
 else
     set bg=dark
-
-    "colorscheme molokai
-    "colorscheme railscat
-    "colorscheme molokai_deep
-    "colorscheme wombat256
-    "colorscheme mustang
-    "colorscheme mustang_silent
-    "colorscheme badwolf
-    colorscheme jellybeans
 endif
+
+"colorscheme mustang
+"colorscheme mustang_silent
+"colorscheme wombat256
+colorscheme jellybeans
 
 " Pulse ------------------------------------------------------------------- {{{
 
