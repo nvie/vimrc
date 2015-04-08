@@ -590,6 +590,14 @@ if has("autocmd")
         autocmd filetype textile syntax region frontmatter start=/\%^---$/ end=/^---$/
         autocmd filetype textile highlight link frontmatter Comment
     augroup end "}}}
+
+    augroup git_files "{{{
+        au!
+
+        " Don't remember the last cursor position when editing commit
+        " messages, always start on line 1
+        autocmd filetype gitcommit call setpos('.', [0, 1, 1, 0])
+    augroup end "}}}
 endif
 " }}}
 
@@ -616,7 +624,7 @@ endif " has("autocmd")
 
 " Restore cursor position upon reopening files {{{
 autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \ if &filetype != "gitcommit" && line("'\"") > 0 && line("'\"") <= line("$") |
     \   exe "normal! g`\"" |
     \ endif
 " }}}
