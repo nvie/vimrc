@@ -525,14 +525,17 @@ if has("autocmd")
         autocmd filetype python noremap <buffer> <S-F5> :w<CR>:!ipython %<CR>
         autocmd filetype python inoremap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
 
+        " Automatic insertion of breakpoints
+        autocmd filetype python nnoremap <buffer> <leader>bp :normal oimport pdb; pdb.set_trace()  # TODO: BREAKPOINT  # noqa<Esc>
+
         " Toggling True/False
         autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
         " Run a quick static syntax check every time we save a Python file
         autocmd BufWritePost *.py call Flake8()
 
-        " Defer to isort for sorting headers (instead of using Unix sort)
-        autocmd filetype python nnoremap <leader>s :Isort<cr>
+        " Defer to isort for sorting Python imports (instead of using Unix sort)
+        autocmd filetype python nnoremap <leader>s :!isort %<cr>
     augroup end " }}}
 
     augroup supervisord_files "{{{

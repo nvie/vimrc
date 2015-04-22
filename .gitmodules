@@ -103,9 +103,6 @@
 [submodule "vim/bundle/vim-pyunit"]
 	path = vim/bundle/vim-pyunit
 	url = git@github.com:nvie/vim-pyunit.git
-[submodule "vim/bundle/vim-isort"]
-	path = vim/bundle/vim-isort
-	url = https://github.com/fisadev/vim-isort
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = https://github.com/wting/rust.vim
