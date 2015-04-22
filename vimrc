@@ -535,7 +535,7 @@ if has("autocmd")
         autocmd BufWritePost *.py call Flake8()
 
         " Defer to isort for sorting Python imports (instead of using Unix sort)
-        autocmd filetype python nnoremap <leader>s :!isort %<cr>
+        autocmd filetype python nnoremap <leader>s mX:%! isort -<cr>`X
     augroup end " }}}
 
     augroup supervisord_files "{{{
