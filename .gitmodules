@@ -112,3 +112,15 @@
 [submodule "vim/bundle/splitjoin.vim"]
 	path = vim/bundle/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
+[submodule "vim/bundle/vim-fireplace"]
+	path = vim/bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git
+[submodule "vim/bundle/vim-sexp-mappings-for-regular-people"]
+	path = vim/bundle/vim-sexp-mappings-for-regular-people
+	url = git://github.com/tpope/vim-sexp-mappings-for-regular-people.git
+[submodule "vim/bundle/vim-sexp"]
+	path = vim/bundle/vim-sexp
+	url = git://github.com/guns/vim-sexp.git
+[submodule "vim/bundle/rainbow_parentheses.vim"]
+	path = vim/bundle/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim.git

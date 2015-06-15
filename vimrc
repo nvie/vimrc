@@ -538,6 +538,17 @@ if has("autocmd")
         autocmd filetype python nnoremap <leader>s mX:%! isort -<cr>`X
     augroup end " }}}
 
+    augroup clojure_files "{{{
+        au!
+
+        " Set up <leader>r to run the entire file with vim-fireplace
+        autocmd filetype clojure nnoremap <leader>r :%Eval<cr>
+        autocmd filetype clojure RainbowParenthesesActivate
+        autocmd filetype clojure RainbowParenthesesLoadRound
+        autocmd filetype clojure RainbowParenthesesLoadSquare
+        autocmd filetype clojure RainbowParenthesesLoadBraces
+    augroup end " }}}
+
     augroup supervisord_files "{{{
         au!
 
