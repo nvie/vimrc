@@ -124,3 +124,6 @@
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
 	url = git@github.com:kien/rainbow_parentheses.vim.git
+[submodule "vim/bundle/one-dark.vim"]
+	path = vim/bundle/one-dark.vim
+	url = https://github.com/nvie/one-dark.vim

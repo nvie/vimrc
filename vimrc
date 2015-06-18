@@ -696,7 +696,8 @@ endif
 "colorscheme mustang
 "colorscheme mustang_silent
 "colorscheme wombat256
-colorscheme jellybeans
+"colorscheme jellybeans
+colorscheme onedark
 
 " Pulse ------------------------------------------------------------------- {{{
 
