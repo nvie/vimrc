@@ -100,9 +100,6 @@
 [submodule "vim/bundle/jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "vim/bundle/vim-pyunit"]
-	path = vim/bundle/vim-pyunit
-	url = git@github.com:nvie/vim-pyunit.git
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = https://github.com/wting/rust.vim
