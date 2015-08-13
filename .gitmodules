@@ -124,3 +124,6 @@
 [submodule "vim/bundle/one-dark.vim"]
 	path = vim/bundle/one-dark.vim
 	url = https://github.com/nvie/one-dark.vim
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab
