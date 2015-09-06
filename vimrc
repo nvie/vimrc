@@ -863,3 +863,28 @@ nnoremap <leader>A :RopeAutoImport<cr>
 " insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Configure vim-expand-region, for easy selection precision
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
+" Default settings. (NOTE: Remove comments in dictionary before sourcing)
+let g:expand_region_text_objects = {
+   \ 'iw' :0,
+   \ 'i"' :0,
+   \ 'i''' :0,
+   \ 'a"' :0,
+   \ 'a''' :0,
+   \ 'i)' :1,
+   \ 'i}' :1,
+   \ 'i]' :1,
+   \ 'a)' :1,
+   \ 'a}' :1,
+   \ 'a]' :1,
+   \ }
+
+" HTML specific region expansions
+call expand_region#custom_text_objects('html', {
+   \ 'it': 1,
+   \ 'at': 1,
+   \ })
