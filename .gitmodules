@@ -34,9 +34,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/taglist"]
-	path = vim/bundle/taglist
-	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "vim/bundle/python-mode"]
 	path = vim/bundle/python-mode
 	url = git@github.com:klen/python-mode.git
@@ -106,9 +103,6 @@
 [submodule "vim/bundle/splitjoin.vim"]
 	path = vim/bundle/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
-[submodule "vim/bundle/rainbow_parentheses.vim"]
-	path = vim/bundle/rainbow_parentheses.vim
-	url = git@github.com:kien/rainbow_parentheses.vim.git
 [submodule "vim/bundle/one-dark.vim"]
 	path = vim/bundle/one-dark.vim
 	url = https://github.com/nvie/one-dark.vim
