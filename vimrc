@@ -736,6 +736,7 @@ let g:pymode_paths = []
 let g:pymode_quickfix_maxheight = 6
 let g:pymode_quickfix_minheight = 3
 let g:pymode_rope = 1
+let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_run = 0
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_trim_whitespaces = 0
