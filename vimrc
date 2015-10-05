@@ -744,23 +744,6 @@ let g:pymode_trim_whitespaces = 0
 
 " }}}
 
-" Linters configuration -------------------------------------------------- {{{
-
-" Don't run linters for Python (conflicts with vim-flake8 and lint.vim plugins)
-let g:linters_disabled_filetypes = ['python', 'html']
-
-" To add more linters, do this:
-"
-" let g:linters_extra = []
-
-" if executable('jshint')
-"     let g:linters_extra += [
-"     \   ['javascript', 'jshint %s > %s', ["%f: line %l, col %c, %m"]],
-"     \]
-" endif
-
-" }}}
-
 " Ignore common directories
 let g:ctrlp_custom_ignore = {
    \ 'dir': 'node_modules\|bower_components',
@@ -855,3 +838,18 @@ call expand_region#custom_text_objects('html', {
    \ 'it': 1,
    \ 'at': 1,
    \ })
+
+" Syntastic config {{{
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint', 'jscs']
+
+" }}}
