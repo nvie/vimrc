@@ -130,3 +130,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
+[submodule "vim/bundle/SimpylFold"]
+	path = vim/bundle/SimpylFold
+	url = https://github.com/tmhedberg/SimpylFold
