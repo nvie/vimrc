@@ -274,6 +274,7 @@ inoremap <C-l> <C-x><C-l>
 " yanked stack (also, in visual mode)
 nnoremap <silent> <leader>d "_d
 vnoremap <silent> <leader>d "_d
+" vnoremap <silent> x "_x  TODODODOOo
 
 " Quick yanking to the end of the line
 nnoremap Y y$
@@ -337,8 +338,10 @@ if executable('ag')
 endif
 
 " grep/Ack/Ag for the word under cursor
-vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
-nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
+" vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
+" nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
+vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
+nnoremap <leader>a :Ag <c-r><c-w>
 nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 " Allow quick additions to the spelling dict
