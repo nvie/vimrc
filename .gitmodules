@@ -139,3 +139,6 @@
 [submodule "vim/bundle/vim-python-pep8-indent"]
 	path = vim/bundle/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent
+[submodule "vim/bundle/vim-argwrap"]
+	path = vim/bundle/vim-argwrap
+	url = https://github.com/FooSoft/vim-argwrap

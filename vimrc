@@ -264,7 +264,7 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
-nnoremap <leader>w <C-w>v<C-w>l
+" nnoremap <leader>w <C-w>v<C-w>l
 
 " Complete whole filenames/lines with a quicker shortcut key in insert mode
 inoremap <C-f> <C-x><C-f>
@@ -805,10 +805,6 @@ nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape('<cword>') . " ."<cr>:copen 12<cr>
 "nnoremap <leader>G :silent execute "grep! -R " . shellescape('<cWORD>') . " ."<cr>:copen 12<cr>
 
-" Run tests
-inoremap <leader>w <esc>:write<cr>:!./run_tests.sh %<cr>
-nnoremap <leader>w :!./run_tests.sh<cr>
-
 " Rope config
 nnoremap <leader>A :RopeAutoImport<cr>
 
@@ -820,6 +816,10 @@ let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 " Configure vim-expand-region, for easy selection precision
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+" Configure ArgWrap
+let g:argwrap_tail_comma = 1
+nnoremap <leader>w :ArgWrap<cr>
 
 " Default settings. (NOTE: Remove comments in dictionary before sourcing)
 let g:expand_region_text_objects = {
