@@ -142,3 +142,6 @@
 [submodule "vim/bundle/vim-argwrap"]
 	path = vim/bundle/vim-argwrap
 	url = https://github.com/FooSoft/vim-argwrap
+[submodule "vim/bundle/elm-vim"]
+	path = vim/bundle/elm-vim
+	url = https://github.com/ElmCast/elm-vim
