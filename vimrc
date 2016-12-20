@@ -854,7 +854,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_html_checkers = []
-let g:syntastic_javascript_checkers = ['jshint']   " TODO: disable 'jscs' for now, until it's sane again
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_tsc_args = '--target ES2015'
 
 " }}}
