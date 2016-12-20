@@ -506,6 +506,13 @@ if has("autocmd")
         autocmd filetype python nnoremap <leader>s mX:%!isort -<cr>`X:redraw!<cr>
     augroup end " }}}
 
+    augroup js_files "{{{
+
+        " Defer to import-sort for sorting JavaScript imports (instead of using Unix sort)
+        autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --overwrite %<cr>:edit!<cr>`X
+
+    augroup end " }}}
+
     augroup clojure_files "{{{
         au!
 
