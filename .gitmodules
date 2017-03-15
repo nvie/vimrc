@@ -40,9 +40,6 @@
 [submodule "vim/bundle/fish"]
 	path = vim/bundle/fish
 	url = git://github.com/vim-scripts/fish.vim.git
-[submodule "vim/bundle/ctrlp.vim"]
-	path = vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
