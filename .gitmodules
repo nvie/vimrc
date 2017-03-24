@@ -145,3 +145,6 @@
 [submodule "vim/bundle/ctrlp.vim"]
 	path = vim/bundle/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
+[submodule "vim/bundle/vim-flow"]
+	path = vim/bundle/vim-flow
+	url = https://github.com/flowtype/vim-flow
