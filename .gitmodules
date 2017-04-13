@@ -148,3 +148,6 @@
 [submodule "vim/bundle/vim-flow"]
 	path = vim/bundle/vim-flow
 	url = https://github.com/nvie/vim-flow
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx
