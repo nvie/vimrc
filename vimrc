@@ -568,6 +568,11 @@ if has("autocmd")
 
         " Enable insertion of "debugger" statement in JS files
         autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
+
+        " Use prettier to format JS files
+        autocmd FileType javascript set formatprg=bin/prettier-stdin
+        autocmd BufWritePre *.js,*.jsx Neoformat
+
     augroup end "}}}
 
     augroup textile_files "{{{
@@ -881,5 +886,11 @@ let g:flow#errjmp = 1
 
 " let g:typescript_compiler_binary = 'tsc'
 " let g:typescript_compiler_options = '--target es2015'
+
+" }}}
+
+" NeoFormat rules {{{
+
+let g:neoformat_try_formatprg = 1
 
 " }}}
