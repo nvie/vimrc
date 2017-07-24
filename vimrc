@@ -877,7 +877,6 @@ let g:elm_format_autosave = 1
 
 " {{{ Check JS with Flow
 " let g:flow#enable = 0
-let g:flow#flowpath = 'bin/flow-from-vim'
 let g:flow#autoclose = 1
 let g:flow#errjmp = 1
 " }}}
