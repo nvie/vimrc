@@ -556,7 +556,7 @@ if has("autocmd")
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
 
         " Use prettier to format JS files
-        " autocmd filetype css,less set formatprg="prettier --stdin"
+        autocmd filetype css,less set formatprg="prettier --stdin"
         autocmd BufWritePre *.css,*.less Neoformat
     augroup end "}}}
 
@@ -574,7 +574,7 @@ if has("autocmd")
         autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
 
         " Use prettier to format JS files
-        " autocmd FileType javascript set formatprg="prettier --stdin"
+        autocmd FileType javascript set formatprg="prettier --stdin"
         autocmd BufWritePre *.js,*.jsx Neoformat
 
     augroup end "}}}
@@ -895,9 +895,5 @@ let g:flow#errjmp = 1
 " NeoFormat rules {{{
 
 let g:neoformat_try_formatprg = 1
-let g:neoformat_jsx_prettier        = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_javascript_prettier = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_css_prettier        = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_less_prettier       = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
 
 " }}}
