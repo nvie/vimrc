@@ -554,6 +554,10 @@ if has("autocmd")
         au!
 
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
+
+        " Use prettier to format JS files
+        autocmd filetype css,less set formatprg="prettier --stdin"
+        autocmd BufWritePre *.css,*.less Neoformat
     augroup end "}}}
 
     augroup javascript_files "{{{
@@ -570,7 +574,7 @@ if has("autocmd")
         autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
 
         " Use prettier to format JS files
-        autocmd FileType javascript set formatprg=bin/prettier-stdin
+        autocmd FileType javascript set formatprg="prettier --stdin"
         autocmd BufWritePre *.js,*.jsx Neoformat
 
     augroup end "}}}
