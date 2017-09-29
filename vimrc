@@ -556,7 +556,7 @@ if has("autocmd")
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
 
         " Use prettier to format JS files
-        autocmd filetype css,less set formatprg="prettier --stdin"
+        autocmd filetype css,less set formatprg="prettier --parser=css --stdin"
         autocmd BufWritePre *.css,*.less Neoformat
     augroup end "}}}
 
