@@ -642,6 +642,8 @@ set formatoptions-=o " don't start new lines w/ comment leader on pressing 'o'
 au filetype vim set formatoptions-=o
                      " somehow, during vim filetype detection, this gets set
                      " for vim files, so explicitly unset it again
+au filetype crontab setlocal backupcopy=yes
+                     " editing crontab files needs to happen in-place
 " }}}
 
 " Extra user or machine specific settings {{{
