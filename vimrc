@@ -507,9 +507,12 @@ if has("autocmd")
     augroup end " }}}
 
     augroup js_files "{{{
+        au!
+
+        autocmd filetype javascript setlocal foldmethod=syntax
 
         " Defer to import-sort for sorting JavaScript imports (instead of using Unix sort)
-        autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --overwrite %<cr>:edit!<cr>`X:redraw!<cr>
+        autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --write %<cr>:edit!<cr>`X:redraw!<cr>
 
     augroup end " }}}
 
@@ -760,6 +763,13 @@ let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_run = 0
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_trim_whitespaces = 0
+
+" }}}
+
+" JavaScript configuration ------------------------------------------------ {{{
+
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
 
 " }}}
 
