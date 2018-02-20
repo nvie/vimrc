@@ -157,3 +157,6 @@
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
+[submodule "vim/bundle/vim-sort-imports"]
+	path = vim/bundle/vim-sort-imports
+	url = https://github.com/ruanyl/vim-sort-imports

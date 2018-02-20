@@ -391,6 +391,12 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
+" import-sort config {{{
+
+let g:import_sort_auto = 1
+
+" }}}
+
 " vim-flake8 default configuration
 let g:flake8_show_in_gutter=1
 
@@ -512,7 +518,8 @@ if has("autocmd")
         autocmd filetype javascript setlocal foldmethod=syntax
 
         " Defer to import-sort for sorting JavaScript imports (instead of using Unix sort)
-        autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --write %<cr>:edit!<cr>`X:redraw!<cr>
+        " autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --write %<cr>:edit!<cr>`X:redraw!<cr>
+        autocmd filetype javascript nnoremap <leader>s :SortImport<cr>
 
     augroup end " }}}
 
