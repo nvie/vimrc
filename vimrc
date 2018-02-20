@@ -589,6 +589,15 @@ if has("autocmd")
 
     augroup end "}}}
 
+    augroup json_files "{{{
+        au!
+
+        " Use prettier to format JSON files
+        autocmd FileType json set formatprg="prettier --stdin"
+        autocmd BufWritePre *.json Neoformat
+
+    augroup end "}}}
+
     augroup textile_files "{{{
         au!
 
