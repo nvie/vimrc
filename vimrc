@@ -518,8 +518,8 @@ if has("autocmd")
         autocmd filetype javascript setlocal foldmethod=syntax
 
         " Defer to import-sort for sorting JavaScript imports (instead of using Unix sort)
-        " autocmd filetype javascript nnoremap <leader>s :write<cr>mX:!import-sort --write %<cr>:edit!<cr>`X:redraw!<cr>
-        autocmd filetype javascript nnoremap <leader>s :SortImport<cr>
+        " autocmd filetype javascript nnoremap <leader>s :StopAutoSortImport<cr>:w<cr>:SortImport<cr>:StartAutoSortImport<cr>
+        autocmd filetype javascript nnoremap <leader>s :write<cr>
 
     augroup end " }}}
 
