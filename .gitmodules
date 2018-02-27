@@ -25,9 +25,6 @@
 [submodule "webapi-vim"]
 	path = webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
-[submodule "vim/bundle/fish"]
-	path = vim/pack/nvie/start/fish
-	url = git://github.com/vim-scripts/fish.vim.git
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/pack/nvie/start/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
@@ -139,3 +136,6 @@
 [submodule "vim/pack/nvie/start/vim-nginx"]
 	path = vim/pack/nvie/start/vim-nginx
 	url = https://github.com/tsl0922/vim-nginx
+[submodule "vim/pack/nvie/start/vim-fish"]
+	path = vim/pack/nvie/start/vim-fish
+	url = https://github.com/dag/vim-fish
