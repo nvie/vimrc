@@ -73,9 +73,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/pack/nvie/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/bundle/tlib_vim"]
-	path = vim/pack/nvie/start/tlib_vim
-	url = https://github.com/tomtom/tlib_vim
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/pack/nvie/start/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
