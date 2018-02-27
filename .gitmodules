@@ -88,9 +88,6 @@
 [submodule "vim/bundle/splitjoin.vim"]
 	path = vim/pack/nvie/start/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
-[submodule "vim/bundle/one-dark.vim"]
-	path = vim/pack/nvie/start/one-dark.vim
-	url = https://github.com/nvie/one-dark.vim
 [submodule "vim/bundle/supertab"]
 	path = vim/pack/nvie/start/supertab
 	url = https://github.com/ervandew/supertab
