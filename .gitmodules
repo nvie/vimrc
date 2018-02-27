@@ -91,9 +91,6 @@
 [submodule "vim/bundle/one-dark.vim"]
 	path = vim/pack/nvie/start/one-dark.vim
 	url = https://github.com/nvie/one-dark.vim
-[submodule "vim/bundle/vim-expand-region"]
-	path = vim/pack/nvie/start/vim-expand-region
-	url = https://github.com/terryma/vim-expand-region
 [submodule "vim/bundle/supertab"]
 	path = vim/pack/nvie/start/supertab
 	url = https://github.com/ervandew/supertab
@@ -157,3 +154,6 @@
 [submodule "vim/bundle/oceanic-next"]
 	path = vim/pack/nvie/start/oceanic-next
 	url = https://github.com/mhartington/oceanic-next
+[submodule "vim/pack/nvie/start/vim-expand-region"]
+	path = vim/pack/nvie/start/vim-expand-region
+	url = https://github.com/terryma/vim-expand-region
