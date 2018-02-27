@@ -73,9 +73,6 @@
 [submodule "vim/bundle/jellybeans.vim"]
 	path = vim/bundle/jellybeans.vim
 	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "vim/bundle/rust.vim"]
-	path = vim/pack/nvie/start/rust.vim
-	url = https://github.com/wting/rust.vim
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/pack/nvie/start/vim-flake8
 	url = https://github.com/nvie/vim-flake8
