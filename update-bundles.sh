@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 (
-	cd vim/bundle
+	cd vim/pack/nvie/start
 	for submodule in *; do
 		if [ -e "$submodule/.git" ]; then
 			(
