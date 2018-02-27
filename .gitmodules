@@ -151,3 +151,6 @@
 [submodule "vim/pack/nvie/start/vim-bufferline"]
 	path = vim/pack/nvie/start/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
+[submodule "vim/pack/nvie/start/YankRing.vim"]
+	path = vim/pack/nvie/start/YankRing.vim
+	url = https://github.com/vim-scripts/YankRing.vim
