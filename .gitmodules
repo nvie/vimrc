@@ -79,9 +79,6 @@
 [submodule "vim/bundle/python-mode"]
 	path = vim/pack/nvie/start/python-mode
 	url = https://github.com/nvie/python-mode
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/pack/nvie/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
 [submodule "vim/bundle/html5-syntax.vim"]
 	path = vim/pack/nvie/start/html5-syntax.vim
 	url = https://github.com/othree/html5-syntax.vim
@@ -103,9 +100,6 @@
 [submodule "vim/bundle/vim-flow"]
 	path = vim/pack/nvie/start/vim-flow
 	url = https://github.com/nvie/vim-flow
-[submodule "vim/bundle/vim-jsx"]
-	path = vim/pack/nvie/start/vim-jsx
-	url = https://github.com/mxw/vim-jsx
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/pack/nvie/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
@@ -130,3 +124,9 @@
 [submodule "vim/pack/nvie/start/vim-prettier"]
 	path = vim/pack/nvie/start/vim-prettier
 	url = https://github.com/prettier/vim-prettier
+[submodule "vim/pack/nvie/start/vim-jsx"]
+	path = vim/pack/nvie/start/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule "vim/pack/nvie/start/vim-javascript"]
+	path = vim/pack/nvie/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
