@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-unimpaired"]
 	path = vim/pack/nvie/start/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/bundle/gist-vim"]
-	path = vim/pack/nvie/start/gist-vim
-	url = git://github.com/mattn/gist-vim.git
 [submodule "webapi-vim"]
 	path = webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
