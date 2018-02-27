@@ -453,11 +453,6 @@ if has("autocmd")
         vnoremap <leader>x :!tidy -q -i --show-errors 0 --show-body-only 1 --wrap 0<cr><cr>
 
         autocmd BufNewFile,BufRead *.html,*.htm,*.j2 call s:DetectHTMLVariant()
-
-        " Auto-closing of HTML/XML tags
-        let g:closetag_default_xml=1
-        autocmd filetype html,htmldjango let b:closetag_html_style=1
-        autocmd filetype html,xhtml,xml source ~/.vim/scripts/closetag.vim
     augroup end " }}}
 
     augroup python_files "{{{
