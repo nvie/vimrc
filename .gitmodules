@@ -106,9 +106,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/pack/nvie/start/vim-less
 	url = https://github.com/groenewege/vim-less
-[submodule "vim/bundle/vim-easymotion"]
-	path = vim/pack/nvie/start/vim-easymotion
-	url = https://github.com/easymotion/vim-easymotion
 [submodule "vim/bundle/syntastic"]
 	path = vim/pack/nvie/start/syntastic
 	url = https://github.com/scrooloose/syntastic
