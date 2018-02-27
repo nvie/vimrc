@@ -872,26 +872,19 @@ vmap <C-v> <Plug>(expand_region_shrink)
 let g:argwrap_tail_comma = 1
 nnoremap <leader>w :ArgWrap<cr>
 
-" Default settings. (NOTE: Remove comments in dictionary before sourcing)
 let g:expand_region_text_objects = {
-   \ 'iw' :0,
-   \ 'i"' :0,
-   \ 'i''' :0,
-   \ 'a"' :0,
-   \ 'a''' :0,
-   \ 'i)' :1,
-   \ 'i}' :1,
-   \ 'i]' :1,
-   \ 'a)' :1,
-   \ 'a}' :1,
-   \ 'a]' :1,
+   \ 'iw'  : 0,
+   \ 'i"'  : 0,
+   \ 'i''' : 0,
+   \ 'a"'  : 0,
+   \ 'a''' : 0,
+   \ 'i)'  : 1,
+   \ 'i}'  : 1,
+   \ 'i]'  : 1,
+   \ 'a)'  : 1,
+   \ 'a}'  : 1,
+   \ 'a]'  : 1,
    \ }
-
-" HTML specific region expansions
-call expand_region#custom_text_objects('html', {
-   \ 'it': 1,
-   \ 'at': 1,
-   \ })
 
 " Syntastic config {{{
 
