@@ -127,3 +127,6 @@
 [submodule "vim/pack/nvie/start/YankRing.vim"]
 	path = vim/pack/nvie/start/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "vim/pack/nvie/start/vim-prettier"]
+	path = vim/pack/nvie/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier

@@ -400,6 +400,15 @@ let g:import_sort_auto = 1
 " vim-flake8 default configuration
 let g:flake8_show_in_gutter=1
 
+" vim-prettier config
+let g:prettier#exec_cmd_async = 1
+
+" By default, vim-prettier will only auto-trigger for files that contain the
+" // @format directive.  This is super laborious for vim-prettier, as we want
+" to typically use it everywhere.
+let g:prettier#autoformat = 0
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+
 " Conflict markers {{{
 " highlight conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
