@@ -88,9 +88,6 @@
 [submodule "vim/bundle/supertab"]
 	path = vim/pack/nvie/start/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/pack/nvie/start/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate
 [submodule "vim/bundle/tlib_vim"]
 	path = vim/pack/nvie/start/tlib_vim
 	url = https://github.com/tomtom/tlib_vim
