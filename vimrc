@@ -210,9 +210,15 @@ endfunction
 " }}}
 
 " Highlighting {{{
+
+if (has("termguicolors"))
+   set termguicolors
+endif
+
 if &t_Co > 2 || has("gui_running")
    syntax on                    " switch syntax highlighting on, when the terminal has colors
 endif
+
 " }}}
 
 " Shortcut mappings {{{
@@ -702,7 +708,8 @@ endif
 "colorscheme mustang_silent
 "colorscheme wombat256
 "colorscheme jellybeans
-colorscheme onedark
+"colorscheme onedark
+colorscheme OceanicNext
 
 " Pulse ------------------------------------------------------------------- {{{
 

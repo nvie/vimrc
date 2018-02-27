@@ -160,3 +160,6 @@
 [submodule "vim/bundle/vim-sort-imports"]
 	path = vim/bundle/vim-sort-imports
 	url = https://github.com/ruanyl/vim-sort-imports
+[submodule "vim/bundle/oceanic-next"]
+	path = vim/bundle/oceanic-next
+	url = https://github.com/mhartington/oceanic-next
