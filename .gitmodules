@@ -112,9 +112,6 @@
 [submodule "vim/bundle/SimpylFold"]
 	path = vim/pack/nvie/start/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold
-[submodule "vim/bundle/typescript-vim"]
-	path = vim/pack/nvie/start/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim
 [submodule "vim/bundle/vim-python-pep8-indent"]
 	path = vim/pack/nvie/start/vim-python-pep8-indent
 	url = https://github.com/hynek/vim-python-pep8-indent
