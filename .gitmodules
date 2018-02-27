@@ -136,3 +136,6 @@
 [submodule "vim/pack/nvie/start/matchit"]
 	path = vim/pack/nvie/start/matchit
 	url = https://github.com/tmhedberg/matchit
+[submodule "vim/pack/nvie/start/vim-nginx"]
+	path = vim/pack/nvie/start/vim-nginx
+	url = https://github.com/tsl0922/vim-nginx
