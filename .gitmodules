@@ -10,9 +10,6 @@
 [submodule "vim/bundle/ack"]
 	path = vim/pack/nvie/start/ack
 	url = git://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/toggle_mouse"]
-	path = vim/pack/nvie/start/toggle_mouse
-	url = git://github.com/nvie/vim-togglemouse.git
 [submodule "vim/bundle/nerdcommenter"]
 	path = vim/bundle/nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
