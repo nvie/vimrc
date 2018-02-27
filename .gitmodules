@@ -82,9 +82,6 @@
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/pack/nvie/start/vim-flake8
 	url = https://github.com/nvie/vim-flake8
-[submodule "vim/bundle/splitjoin.vim"]
-	path = vim/pack/nvie/start/splitjoin.vim
-	url = https://github.com/AndrewRadev/splitjoin.vim
 [submodule "vim/bundle/supertab"]
 	path = vim/pack/nvie/start/supertab
 	url = https://github.com/ervandew/supertab
