@@ -559,10 +559,6 @@ if has("autocmd")
         au!
 
         autocmd filetype css,less setlocal foldmethod=marker foldmarker={,}
-
-        " Use prettier to format JS files
-        autocmd filetype css,less set formatprg="prettier --parser=less --stdin"
-        autocmd BufWritePre *.css,*.less Neoformat
     augroup end "}}}
 
     augroup javascript_files "{{{
@@ -577,19 +573,6 @@ if has("autocmd")
 
         " Enable insertion of "debugger" statement in JS files
         autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
-
-        " Use prettier to format JS files
-        autocmd FileType javascript set formatprg="prettier --stdin"
-        autocmd BufWritePre *.js,*.jsx Neoformat
-
-    augroup end "}}}
-
-    augroup json_files "{{{
-        au!
-
-        " Use prettier to format JSON files
-        autocmd FileType json set formatprg="prettier --stdin"
-        autocmd BufWritePre *.json Neoformat
 
     augroup end "}}}
 
@@ -882,11 +865,5 @@ let g:flow#errjmp = 1
 
 " let g:typescript_compiler_binary = 'tsc'
 " let g:typescript_compiler_options = '--target es2015'
-
-" }}}
-
-" NeoFormat rules {{{
-
-let g:neoformat_try_formatprg = 1
 
 " }}}

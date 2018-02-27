@@ -106,9 +106,6 @@
 [submodule "vim/bundle/vim-jsx"]
 	path = vim/pack/nvie/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx
-[submodule "vim/bundle/neoformat"]
-	path = vim/pack/nvie/start/neoformat
-	url = https://github.com/sbdchd/neoformat
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/pack/nvie/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
