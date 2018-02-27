@@ -109,6 +109,9 @@
 [submodule "vim/pack/nvie/start/vim-expand-region"]
 	path = vim/pack/nvie/start/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region
+[submodule "vim/pack/nvie/start/ctrlp.vim"]
+	path = vim/pack/nvie/start/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "vim/pack/nvie/start/vim-bufferline"]
 	path = vim/pack/nvie/start/vim-bufferline
 	url = https://github.com/bling/vim-bufferline.git
@@ -136,6 +139,3 @@
 [submodule "vim/pack/nvie/start/vim-fish"]
 	path = vim/pack/nvie/start/vim-fish
 	url = https://github.com/dag/vim-fish
-[submodule "vim/pack/nvie/start/fzf.vim"]
-	path = vim/pack/nvie/start/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
