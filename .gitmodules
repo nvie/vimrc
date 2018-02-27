@@ -133,3 +133,6 @@
 [submodule "vim/pack/nvie/start/vim-javascript"]
 	path = vim/pack/nvie/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/pack/nvie/start/matchit"]
+	path = vim/pack/nvie/start/matchit
+	url = https://github.com/tmhedberg/matchit
