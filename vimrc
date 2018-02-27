@@ -628,10 +628,6 @@ au filetype crontab setlocal backupcopy=yes
                      " editing crontab files needs to happen in-place
 " }}}
 
-" Extra user or machine specific settings {{{
-source ~/.vim/user.vim
-" }}}
-
 " Creating underline/overline headings for markup languages
 " Inspired by http://sphinx.pocoo.org/rest.html#sections
 nnoremap <leader>1 yyPVr=jyypVr=
