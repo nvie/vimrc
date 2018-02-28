@@ -761,10 +761,6 @@ nnoremap <leader>b :Buffers<cr>
 inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwUe
 
-iabbr m@@ me@nvie.com
-iabbr v@@ vincent@3rdcloud.com
-iabbr ssig --<cr>Vincent Driessen<cr>vincent@3rdcloud.com
-
 " Quote words under cursor
 nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
 nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
