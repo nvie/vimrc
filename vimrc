@@ -845,10 +845,6 @@ let g:syntastic_typescript_tsc_args = '--target ES2015'
 
 " }}}
 
-" {{{ Auto-format Elm source files upon save
-let g:elm_format_autosave = 1
-" }}}
-
 " {{{ Check JS with Flow
 " let g:flow#enable = 0
 let g:flow#autoclose = 1
