@@ -853,6 +853,18 @@ let g:flow#autoclose = 1
 let g:flow#errjmp = 1
 let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow omnifunciness to vim-lsp
 
+" Uncomment this if it gets annoying
+" let g:asyncomplete_auto_popup = 0
+" let g:asyncomplete_remove_duplicates = 1
+
+" Tab completion for vim-lsp
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+" Force refresh completion
+imap <c-space> <Plug>(asyncomplete_force_refresh)
+
 " vim-lsp configuration for IDE-like Flow help
 " See https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow
 if executable('flow-language-server')

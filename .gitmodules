@@ -67,9 +67,6 @@
 [submodule "vim/bundle/vim-flake8"]
 	path = vim/pack/nvie/start/vim-flake8
 	url = https://github.com/nvie/vim-flake8
-[submodule "vim/bundle/supertab"]
-	path = vim/pack/nvie/start/supertab
-	url = https://github.com/ervandew/supertab
 [submodule "vim/bundle/vim-addon-mw-utils"]
 	path = vim/pack/nvie/start/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
@@ -148,3 +145,9 @@
 [submodule "vim/pack/nvie/start/vim-flow"]
 	path = vim/pack/nvie/start/vim-flow
 	url = https://github.com/flowtype/vim-flow
+[submodule "vim/pack/nvie/start/asyncomplete.vim"]
+	path = vim/pack/nvie/start/asyncomplete.vim
+	url = https://github.com/prabirshrestha/asyncomplete.vim
+[submodule "vim/pack/nvie/start/asyncomplete-lsp.vim"]
+	path = vim/pack/nvie/start/asyncomplete-lsp.vim
+	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
