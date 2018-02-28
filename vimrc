@@ -76,7 +76,7 @@ set clipboard=unnamed           " normal OS clipboard interaction
 set autoread                    " automatically reload files changed outside of Vim
 
 " Toggle show/hide invisible chars
-nnoremap <leader>i :set list!<cr>
+nnoremap <leader>I :set list!<cr>
 
 " Toggle line numbers
 nnoremap <leader>N :setlocal number!<cr>
@@ -856,6 +856,8 @@ let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow
 " vim-lsp configuration for IDE-like Flow help
 " See https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow
 if executable('flow-language-server')
+   nnoremap gd :LspDefinition<cr>
+   nnoremap <leader>i :LspHover<cr>
    autocmd FileType javascript setlocal omnifunc=lsp#complete
    autocmd FileType javascript.jsx setlocal omnifunc=lsp#complete
 
