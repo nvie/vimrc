@@ -329,12 +329,6 @@ nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 if executable('ag')
    " Use ag over grep
    set grepprg=ag\ --nogroup\ --nocolor
-
-   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-   " ag is fast enough that CtrlP doesn't need to cache
-   let g:ctrlp_use_caching = 0
 endif
 
 " grep/Ack/Ag for the word under cursor
@@ -750,15 +744,14 @@ let g:javascript_plugin_flow = 1
 
 " }}}
 
-" Ignore common directories
-let g:ctrlp_custom_ignore = {
-   \ 'dir': 'node_modules\|bower_components',
-   \ }
+" fzf config -------------------------------------------------------------- {{{
 
-" Invoke CtrlP, but CommandT style
-nnoremap <leader>t :CtrlP<cr>
-nnoremap <leader>. :CtrlPTag<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
+" Invoke fzf, but CommandT style
+nnoremap <leader>t :Files<cr>
+nnoremap <leader>. :Tags<cr>
+nnoremap <leader>b :Buffers<cr>
+
+" ------------------------------------------------------------------------- }}}
 
 " Learn Vim Script the Hard Way Exercises
 "noremap - ddp
