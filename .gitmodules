@@ -94,9 +94,6 @@
 [submodule "vim/bundle/vim-argwrap"]
 	path = vim/pack/nvie/start/vim-argwrap
 	url = https://github.com/FooSoft/vim-argwrap
-[submodule "vim/bundle/vim-flow"]
-	path = vim/pack/nvie/start/vim-flow
-	url = https://github.com/nvie/vim-flow
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/pack/nvie/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
@@ -142,3 +139,12 @@
 [submodule "vim/pack/nvie/start/fzf"]
 	path = vim/pack/nvie/start/fzf
 	url = https://github.com/junegunn/fzf
+[submodule "vim/pack/nvie/start/async.vim"]
+	path = vim/pack/nvie/start/async.vim
+	url = https://github.com/prabirshrestha/async.vim
+[submodule "vim/pack/nvie/start/vim-lsp"]
+	path = vim/pack/nvie/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp
+[submodule "vim/pack/nvie/start/vim-flow"]
+	path = vim/pack/nvie/start/vim-flow
+	url = https://github.com/flowtype/vim-flow

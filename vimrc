@@ -846,14 +846,25 @@ let g:syntastic_typescript_tsc_args = '--target ES2015'
 " }}}
 
 " {{{ Check JS with Flow
-" let g:flow#enable = 0
+
+" vim-flow configuration, for invoking Flow upon file saves
+let g:flow#enable = 1      " Run Flow upon file save
 let g:flow#autoclose = 1
 let g:flow#errjmp = 1
-" }}}
+let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow omnifunciness to vim-lsp
 
-" TypeScript settings {{{
+" vim-lsp configuration for IDE-like Flow help
+" See https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow
+if executable('flow-language-server')
+   autocmd FileType javascript setlocal omnifunc=lsp#complete
+   autocmd FileType javascript.jsx setlocal omnifunc=lsp#complete
 
-" let g:typescript_compiler_binary = 'tsc'
-" let g:typescript_compiler_options = '--target es2015'
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'flow-language-server',
+      \ 'cmd': {server_info->[&shell, &shellcmdflag, 'flow-language-server --stdio']},
+      \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
+      \ 'whitelist': ['javascript', 'javascript.jsx'],
+      \ })
+endif
 
 " }}}
