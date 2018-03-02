@@ -311,8 +311,20 @@ inoremap jj <Esc>
 " Sudo to write
 cnoremap w!! w !sudo tee % >/dev/null
 
-" Ctrl+W to redraw
-nnoremap <C-w> :redraw!<cr>
+" Ctrl+W to redraw the buffer's contents
+"
+" For some reason unclear to me, new files opened via the quickfix window
+" (for example Flow errors triggered in unopened files) don't get
+" their file types detected automatically.  For these new buffers, the
+" filetype= (empty).
+"
+" This can be fixed by running
+"
+"     :filetype detect
+"
+" In those buffers, but this is super laborious.  This just plugs that
+" under my existing "refresh the screen" shortcut <c-w>.
+nnoremap <C-w> :filetype detect<cr>:redraw!<cr>
 
 " Jump to matching pairs easily, with Tab
 nnoremap <Tab> %
