@@ -858,9 +858,11 @@ let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow
 " let g:asyncomplete_remove_duplicates = 1
 
 " Tab completion for vim-lsp
-inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <tab> <c-n>
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
+set completeopt+=preview
 
 " Force refresh completion
 imap <s-space> <Plug>(asyncomplete_force_refresh)
