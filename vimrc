@@ -874,7 +874,7 @@ let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow
 inoremap <tab> <c-n>
 inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
-set completeopt+=preview
+set completeopt=menu,longest,preview
 
 " Force refresh completion
 imap <s-space> <Plug>(asyncomplete_force_refresh)
