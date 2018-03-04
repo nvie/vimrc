@@ -740,9 +740,6 @@ let g:pymode_options = 0
 let g:pymode_paths = []
 let g:pymode_quickfix_maxheight = 6
 let g:pymode_quickfix_minheight = 3
-let g:pymode_rope = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_regenerate_on_write = 0
 let g:pymode_run = 0
 let g:pymode_run_bind = '<leader>r'
 let g:pymode_trim_whitespaces = 0
@@ -808,9 +805,6 @@ nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
 " Grep searches
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape('<cword>') . " ."<cr>:copen 12<cr>
 "nnoremap <leader>G :silent execute "grep! -R " . shellescape('<cWORD>') . " ."<cr>:copen 12<cr>
-
-" Rope config
-nnoremap <leader>A :RopeAutoImport<cr>
 
 " Switch from block-cursor to vertical-line-cursor when going into/out of
 " insert mode
