@@ -79,9 +79,6 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/pack/nvie/start/vim-less
 	url = https://github.com/groenewege/vim-less
-[submodule "vim/bundle/syntastic"]
-	path = vim/pack/nvie/start/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "vim/bundle/SimpylFold"]
 	path = vim/pack/nvie/start/SimpylFold
 	url = https://github.com/tmhedberg/SimpylFold
@@ -94,9 +91,6 @@
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/pack/nvie/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
-[submodule "vim/bundle/vim-sort-imports"]
-	path = vim/pack/nvie/start/vim-sort-imports
-	url = https://github.com/ruanyl/vim-sort-imports
 [submodule "vim/bundle/oceanic-next"]
 	path = vim/pack/nvie/start/oceanic-next
 	url = https://github.com/mhartington/oceanic-next
@@ -109,9 +103,6 @@
 [submodule "vim/pack/nvie/start/YankRing.vim"]
 	path = vim/pack/nvie/start/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
-[submodule "vim/pack/nvie/start/vim-prettier"]
-	path = vim/pack/nvie/start/vim-prettier
-	url = https://github.com/prettier/vim-prettier
 [submodule "vim/pack/nvie/start/vim-jsx"]
 	path = vim/pack/nvie/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx
@@ -142,12 +133,15 @@
 [submodule "vim/pack/nvie/start/vim-lsp"]
 	path = vim/pack/nvie/start/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
-[submodule "vim/pack/nvie/start/vim-flow"]
-	path = vim/pack/nvie/start/vim-flow
-	url = https://github.com/flowtype/vim-flow
 [submodule "vim/pack/nvie/start/asyncomplete.vim"]
 	path = vim/pack/nvie/start/asyncomplete.vim
 	url = https://github.com/prabirshrestha/asyncomplete.vim
 [submodule "vim/pack/nvie/start/asyncomplete-lsp.vim"]
 	path = vim/pack/nvie/start/asyncomplete-lsp.vim
 	url = https://github.com/prabirshrestha/asyncomplete-lsp.vim
+[submodule "vim/pack/nvie/start/ale"]
+	path = vim/pack/nvie/start/ale
+	url = https://github.com/w0rp/ale
+[submodule "vim/pack/nvie/start/vim-sort-imports"]
+	path = vim/pack/nvie/start/vim-sort-imports
+	url = https://github.com/ruanyl/vim-sort-imports

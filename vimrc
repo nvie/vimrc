@@ -397,23 +397,16 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
-" import-sort config {{{
+" vim-sort-imports config (import-sort fixer) {{{
 
+" TODO: Ideally, this command would be run as an ALE fixer, so we can get rid
+" of the vim-sort-imports plugin.
 let g:import_sort_auto = 1
 
 " }}}
 
 " vim-flake8 default configuration
 let g:flake8_show_in_gutter=1
-
-" vim-prettier config
-let g:prettier#exec_cmd_async = 1
-
-" By default, vim-prettier will only auto-trigger for files that contain the
-" // @format directive.  This is super laborious for vim-prettier, as we want
-" to typically use it everywhere.
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 
 " Conflict markers {{{
 " highlight conflict markers
@@ -833,31 +826,35 @@ let g:expand_region_text_objects = {
    \ 'a]'  : 1,
    \ }
 
-" Syntastic config {{{
+" ALE config {{{
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" let g:ale_enabled = 1
+let g:ale_completion_enabled = 0
+let g:ale_lint_delay = 200   " millisecs
+" let g:ale_lint_on_text_changed = 'always'  " never/insert/normal/always
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_filetype_changed = 1
+let g:ale_lint_on_save = 1
+let g:ale_fix_on_save = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+" jlet g:ale_open_list = 1
+"
+let g:ale_linters = {
+\   'javascript.jsx': ['eslint', 'flow'],
+\   'javascript': ['eslint', 'flow'],
+\}
+let g:ale_fixers = {
+\   'javascript.jsx': ['eslint', 'prettier'],
+\   'javascript': ['eslint', 'prettier'],
+\}
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_html_checkers = []
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_args = '--report-unused-disable-directives'
-let g:syntastic_typescript_tsc_args = '--target ES2015'
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " }}}
 
 " {{{ Check JS with Flow
-
-" vim-flow configuration, for invoking Flow upon file saves
-let g:flow#enable = 1      " Run Flow upon file save
-let g:flow#autoclose = 1
-let g:flow#errjmp = 1
-let g:flow#omnifunc = 0    " Don't try to omnifunc me, vim-flow. I'll leave Flow omnifunciness to vim-lsp
 
 " Uncomment this if it gets annoying
 " let g:asyncomplete_auto_popup = 0
