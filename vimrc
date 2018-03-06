@@ -667,11 +667,6 @@ colorscheme OceanicNext
 " Pulse ------------------------------------------------------------------- {{{
 
 function! PulseCursorLine()
-    let current_window = winnr()
-
-    windo set nocursorline
-    execute current_window . 'wincmd w'
-
     setlocal cursorline
 
     redir => old_hi
@@ -682,24 +677,22 @@ function! PulseCursorLine()
 
     hi CursorLine guibg=#3a3a3a
     redraw
-    sleep 20m
+    sleep 14m
 
     hi CursorLine guibg=#4a4a4a
     redraw
-    sleep 30m
+    sleep 10m
 
     hi CursorLine guibg=#3a3a3a
     redraw
-    sleep 30m
+    sleep 14m
 
     hi CursorLine guibg=#2a2a2a
     redraw
-    sleep 20m
+    sleep 10m
 
     execute 'hi ' . old_hi
-
-    windo set cursorline
-    execute current_window . 'wincmd w'
+    setlocal nocursorline
 endfunction
 
 " }}}
