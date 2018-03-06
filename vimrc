@@ -166,8 +166,10 @@ set showcmd                     " show (partial) command in the last line of the
                                 "    this also shows visual selection info
 set nomodeline                  " disable mode lines (security measure)
 "set ttyfast                     " always use a fast terminal
-set cursorline                  " underline the current line, for quick orientation
+set nocursorline                " don't highlight the current line (useful for quick orientation, but also slow to redraw)
 " }}}
+
+nnoremap <leader>, :set cursorline!<cr>  " toggle highlighting the cursor line
 
 " Toggle the quickfix window {{{
 " From Steve Losh, http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
