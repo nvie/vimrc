@@ -75,6 +75,10 @@ set shortmess+=I                " hide the launch screen
 set clipboard=unnamed           " normal OS clipboard interaction
 set autoread                    " automatically reload files changed outside of Vim
 
+" Make the keyboard faaaaaaast
+set ttyfast
+set timeout timeoutlen=1000 ttimeoutlen=50
+
 " Toggle show/hide invisible chars
 nnoremap <leader>I :set list!<cr>
 
