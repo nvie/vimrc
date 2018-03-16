@@ -416,10 +416,10 @@ let g:flake8_show_in_gutter=1
 
 " Conflict markers {{{
 " highlight conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+match ErrorMsg '\v^[<\|=|>]{7}([^=].+)?$'
 
 " shortcut to jump to next conflict marker
-nnoremap <silent> <leader>c /^\(<\\|=\\|>\)\{7\}\([^=].\+\)\?$<CR>
+nnoremap <silent> <leader>c /\v^[<\|=>]{7}([^=].+)?$<CR>
 " }}}
 
 " Filetype specific handling {{{
