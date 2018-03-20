@@ -809,18 +809,15 @@ nnoremap <leader>A :RopeAutoImport<cr>
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-" Configure vim-expand-region, for easy selection precision
+" Configure vim-expand-region, for easy selection precision {{{
+
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
-" Configure ArgWrap
-let g:argwrap_tail_comma = 1
-nnoremap <leader>w :ArgWrap<cr>
-
 let g:expand_region_text_objects = {
    \ 'iw'  : 0,
-   \ 'i"'  : 0,
-   \ 'i''' : 0,
+   \ 'i"'  : 1,
+   \ 'i''' : 1,
    \ 'a"'  : 0,
    \ 'a''' : 0,
    \ 'i)'  : 1,
@@ -830,6 +827,12 @@ let g:expand_region_text_objects = {
    \ 'a}'  : 1,
    \ 'a]'  : 1,
    \ }
+
+" }}}
+
+" Configure ArgWrap
+let g:argwrap_tail_comma = 1
+nnoremap <leader>w :ArgWrap<cr>
 
 " ALE config {{{
 
