@@ -75,6 +75,8 @@ set shortmess+=I                " hide the launch screen
 set clipboard=unnamed           " normal OS clipboard interaction
 set autoread                    " automatically reload files changed outside of Vim
 
+set updatetime=1000             " Speed up the updatetime so gitgutter and friends are quicker
+
 " Make the keyboard faaaaaaast
 set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
