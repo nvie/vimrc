@@ -145,3 +145,6 @@
 [submodule "vim/pack/nvie/start/vim-sort-imports"]
 	path = vim/pack/nvie/start/vim-sort-imports
 	url = https://github.com/ruanyl/vim-sort-imports
+[submodule "vim/pack/nvie/start/pegjs-vim"]
+	path = vim/pack/nvie/start/pegjs-vim
+	url = https://github.com/alunny/pegjs-vim
