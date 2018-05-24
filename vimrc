@@ -237,8 +237,11 @@ nnoremap <leader>Q :q<CR>    " Quickly close the current window
 nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
 
 " Use Q for formatting the current paragraph (or visual selection)
-vnoremap Q gq
-nnoremap Q gqap
+" This used to be `gq` and `gqap`, but the "w" variant is the same, but puts
+" the cursor back at the original position after performing the
+" transformation. See https://github.com/nvie/vimrc/issues/16
+vnoremap Q gw
+nnoremap Q gwap
 " set breakindent on  " keep paragraph indentation when re-wrapping text
 
 " Sort paragraphs
