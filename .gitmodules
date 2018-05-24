@@ -148,3 +148,6 @@
 [submodule "vim/pack/nvie/start/pegjs-vim"]
 	path = vim/pack/nvie/start/pegjs-vim
 	url = https://github.com/alunny/pegjs-vim
+[submodule "vim/pack/nvie/start/Align"]
+	path = vim/pack/nvie/start/Align
+	url = https://github.com/vim-scripts/Align
