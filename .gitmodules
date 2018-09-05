@@ -151,3 +151,6 @@
 [submodule "vim/pack/nvie/start/Align"]
 	path = vim/pack/nvie/start/Align
 	url = https://github.com/vim-scripts/Align
+[submodule "vim/pack/nvie/start/vim-graphql"]
+	path = vim/pack/nvie/start/vim-graphql
+	url = https://github.com/jparise/vim-graphql
