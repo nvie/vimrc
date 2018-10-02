@@ -412,7 +412,7 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " TODO: Ideally, this command would be run as an ALE fixer, so we can get rid
 " of the vim-sort-imports plugin.
-let g:import_sort_auto = 1
+let g:import_sort_auto = 0
 
 " }}}
 
@@ -855,6 +855,9 @@ let g:ale_fix_on_save = 1
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 " let g:ale_open_list = 1
+
+" TODO: Temporary hack until our eslint is configured correctly
+let g:ale_javascript_eslint_options = '--rulesdir eslint'
 
 let g:ale_linters = {
 \   'javascript.jsx': ['eslint', 'flow'],
