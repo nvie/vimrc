@@ -154,3 +154,6 @@
 [submodule "vim/pack/nvie/start/vim-graphql"]
 	path = vim/pack/nvie/start/vim-graphql
 	url = https://github.com/jparise/vim-graphql
+[submodule "vim/pack/nvie/start/typescript-vim"]
+	path = vim/pack/nvie/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
