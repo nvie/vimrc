@@ -154,3 +154,6 @@
 [submodule "vim/pack/nvie/start/typescript-vim"]
 	path = vim/pack/nvie/start/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
+[submodule "vim/pack/nvie/start/vim-align"]
+	path = vim/pack/nvie/start/vim-align
+	url = https://github.com/nvie/vim-align
