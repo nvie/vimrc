@@ -91,9 +91,6 @@
 [submodule "vim/bundle/vim-rhubarb"]
 	path = vim/pack/nvie/start/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb
-[submodule "vim/bundle/oceanic-next"]
-	path = vim/pack/nvie/start/oceanic-next
-	url = https://github.com/mhartington/oceanic-next
 [submodule "vim/pack/nvie/start/vim-expand-region"]
 	path = vim/pack/nvie/start/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region
@@ -157,3 +154,6 @@
 [submodule "vim/pack/nvie/start/vim-align"]
 	path = vim/pack/nvie/start/vim-align
 	url = https://github.com/nvie/vim-align
+[submodule "vim/pack/nvie/start/vim-oceanic-next"]
+	path = vim/pack/nvie/start/vim-oceanic-next
+	url = https://github.com/nvie/vim-oceanic-next
