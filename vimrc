@@ -916,3 +916,6 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " }}}
+
+" Elm!
+let g:elm_format_autosave = 1

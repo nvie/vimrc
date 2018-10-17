@@ -157,3 +157,6 @@
 [submodule "vim/pack/nvie/start/vim-oceanic-next"]
 	path = vim/pack/nvie/start/vim-oceanic-next
 	url = https://github.com/nvie/vim-oceanic-next
+[submodule "vim/pack/nvie/start/elm-vim"]
+	path = vim/pack/nvie/start/elm-vim
+	url = https://github.com/ElmCast/elm-vim
