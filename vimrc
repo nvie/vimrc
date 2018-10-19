@@ -919,3 +919,6 @@ nmap ga <Plug>(EasyAlign)
 
 " Elm!
 let g:elm_format_autosave = 1
+
+" Store localvimrc decisions
+let g:localvimrc_persistent=2  " See https://github.com/embear/vim-localvimrc#the-glocalvimrc_persistent-setting
