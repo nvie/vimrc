@@ -160,6 +160,3 @@
 [submodule "vim/pack/nvie/start/elm-vim"]
 	path = vim/pack/nvie/start/elm-vim
 	url = https://github.com/ElmCast/elm-vim
-[submodule "vim/pack/nvie/start/vim-localvimrc"]
-	path = vim/pack/nvie/start/vim-localvimrc
-	url = https://github.com/embear/vim-localvimrc

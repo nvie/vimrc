@@ -412,7 +412,7 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " TODO: Ideally, this command would be run as an ALE fixer, so we can get rid
 " of the vim-sort-imports plugin.
-let g:import_sort_auto = 0
+let g:import_sort_auto = 1
 
 " }}}
 
@@ -919,6 +919,3 @@ nmap ga <Plug>(EasyAlign)
 
 " Elm!
 let g:elm_format_autosave = 1
-
-" Store localvimrc decisions
-let g:localvimrc_persistent=2  " See https://github.com/embear/vim-localvimrc#the-glocalvimrc_persistent-setting
