@@ -412,12 +412,12 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " TODO: Ideally, this command would be run as an ALE fixer, so we can get rid
 " of the vim-sort-imports plugin.
-let g:import_sort_auto = 1
+let g:import_sort_auto = 0
 
 " }}}
 
 " vim-flake8 default configuration
-let g:flake8_show_in_gutter=1
+let g:flake8_show_in_gutter=0
 
 " Conflict markers {{{
 " highlight conflict markers
@@ -520,7 +520,7 @@ if has("autocmd")
         autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
         " Run a quick static syntax check every time we save a Python file
-        autocmd BufWritePost *.py call Flake8()
+        " autocmd BufWritePost *.py call Flake8()
 
         " Defer to isort for sorting Python imports (instead of using Unix sort)
         autocmd filetype python nnoremap <leader>s mX:%!isort -<cr>`X:redraw!<cr>
