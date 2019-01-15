@@ -516,9 +516,6 @@ if has("autocmd")
         " Automatic insertion of breakpoints
         autocmd filetype python nnoremap <buffer> <leader>bp :normal oimport pdb; pdb.set_trace()  # TODO: BREAKPOINT  # noqa<Esc>
 
-        " Toggling True/False
-        autocmd filetype python nnoremap <silent> <C-t> mmviw:s/True\\|False/\={'True':'False','False':'True'}[submatch(0)]/<CR>`m:nohlsearch<CR>
-
         " Run a quick static syntax check every time we save a Python file
         " autocmd BufWritePost *.py call Flake8()
 
@@ -586,9 +583,6 @@ if has("autocmd")
         autocmd filetype javascript setlocal expandtab
         autocmd filetype javascript setlocal listchars=trail:·,extends:#,nbsp:·
         autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
-
-        " Toggling True/False
-        autocmd filetype javascript nnoremap <silent> <C-t> mmviw:s/true\\|false/\={'true':'false','false':'true'}[submatch(0)]/<CR>`m:nohlsearch<CR>
 
         " Enable insertion of "debugger" statement in JS files
         autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
@@ -919,3 +913,22 @@ nmap ga <Plug>(EasyAlign)
 
 " Elm!
 let g:elm_format_autosave = 1
+
+" Switch.vim! {{{
+
+let g:switch_mapping = "!"
+let g:switch_custom_definitions =
+  \ [
+  \   {
+  \     'x\(\d\*\)\?': 'y\1',
+  \     'y\(\d\*\)\?': 'x\1',
+  \   },
+  \   ['width', 'height'],
+  \ ]
+
+autocmd FileType gitrebase let b:switch_custom_definitions =
+   \ [
+   \   ['pick', 'fixup', 'squash', 'reword', 'edit', 'exec']
+   \ ]
+
+" }}}

@@ -160,3 +160,6 @@
 [submodule "vim/pack/nvie/start/elm-vim"]
 	path = vim/pack/nvie/start/elm-vim
 	url = https://github.com/ElmCast/elm-vim
+[submodule "vim/pack/nvie/start/switch.vim"]
+	path = vim/pack/nvie/start/switch.vim
+	url = https://github.com/AndrewRadev/switch.vim
