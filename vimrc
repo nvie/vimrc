@@ -901,16 +901,6 @@ endif
 
 " }}}
 
-" Easy align plugin {{{
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" }}}
-
 " Elm!
 let g:elm_format_autosave = 1
 
