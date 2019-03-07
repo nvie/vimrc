@@ -154,6 +154,7 @@ if v:version >= 730
     set undodir=~/.vim/.undo,~/tmp,/tmp
 endif
 set nobackup                    " do not keep backup files, it's 70's style cluttering
+set nowritebackup               " do not write out changes via backup files
 set noswapfile                  " do not write annoying intermediate swap files,
                                 "    who did ever restore from swap files anyway?
 set directory=~/.vim/.tmp,~/tmp,/tmp
