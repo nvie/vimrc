@@ -92,6 +92,10 @@ nnoremap <leader>N :setlocal number!<cr>
 nnoremap / /\v
 vnoremap / /\v
 
+" Triggers global-search-and-replace. Prompts for a replacement string and
+" will replace all matches from the previous search command.
+nnoremap <leader>r :%s//
+
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
 nnoremap <C-y> 2<C-y>
