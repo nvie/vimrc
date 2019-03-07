@@ -292,7 +292,6 @@ nnoremap Y y$
 
 " YankRing stuff
 let g:yankring_history_dir = '$HOME/.vim/.tmp'
-nnoremap <leader>r :YRShow<CR>
 
 " Edit the vimrc file
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
