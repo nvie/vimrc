@@ -94,7 +94,8 @@ vnoremap / /\v
 
 " Triggers global-search-and-replace. Prompts for a replacement string and
 " will replace all matches from the previous search command.
-nnoremap <leader>r :%s//
+" nnoremap <leader>r :%s//
+nnoremap <leader>r :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>:%s//
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
