@@ -859,12 +859,16 @@ let g:ale_set_quickfix = 1
 let g:ale_javascript_eslint_options = '--rulesdir eslint --no-ignore'
 
 let g:ale_linters = {
+\   'graphql': ['eslint', 'flow'],
 \   'javascript.jsx': ['eslint', 'flow'],
 \   'javascript': ['eslint', 'flow'],
+\   'typescript': ['typescript'],
 \}
 let g:ale_fixers = {
+\   'graphql': ['eslint', 'prettier'],
 \   'javascript.jsx': ['eslint', 'prettier'],
 \   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier'],
 \}
 
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
