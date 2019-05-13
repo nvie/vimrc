@@ -750,7 +750,7 @@ let g:pymode_trim_whitespaces = 0
 
 " JavaScript configuration ------------------------------------------------ {{{
 
-let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_jsdoc = 0
 let g:javascript_plugin_flow = 1
 
 " }}}
