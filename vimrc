@@ -590,7 +590,7 @@ if has("autocmd")
         autocmd filetype javascript setlocal foldmethod=marker foldmarker={,}
 
         " Enable insertion of "debugger" statement in JS files
-        autocmd filetype javascript nnoremap <leader>b Odebugger;<esc>
+        autocmd filetype javascript nnoremap <leader>b Odebugger; // eslint-disable-line<esc>
 
     augroup end "}}}
 
