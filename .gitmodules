@@ -100,9 +100,6 @@
 [submodule "vim/pack/nvie/start/YankRing.vim"]
 	path = vim/pack/nvie/start/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
-[submodule "vim/pack/nvie/start/vim-jsx"]
-	path = vim/pack/nvie/start/vim-jsx
-	url = https://github.com/mxw/vim-jsx
 [submodule "vim/pack/nvie/start/vim-json"]
 	path = vim/pack/nvie/start/vim-json
 	url = https://github.com/leshill/vim-json
@@ -163,3 +160,6 @@
 [submodule "vim/pack/nvie/start/switch.vim"]
 	path = vim/pack/nvie/start/switch.vim
 	url = https://github.com/AndrewRadev/switch.vim
+[submodule "vim/pack/nvie/start/vim-jsx-pretty"]
+	path = vim/pack/nvie/start/vim-jsx-pretty
+	url = https://github.com/MaxMEllon/vim-jsx-pretty
