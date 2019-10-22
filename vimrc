@@ -912,8 +912,51 @@ let g:ale_fixers = {
 
 " {{{ Check JS with Flow (vim-lsc)
 
-" Config here
+" inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <tab> <c-n>
+inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
 
+let g:lsc_server_commands = {
+   \ 'javascript': 'flow lsp',
+   \ }
+
+" Use all the defaults (recommended)
+let g:lsc_auto_map = {
+ \  'GoToDefinition': 'gd',
+ \  'FindReferences': 'gr',
+ \  'Rename': 'gR',
+ \  'ShowHover': '<leader>i',
+ \  'Completion': 'omnifunc',
+ \}
+
+let g:lsc_preview_split_direction = 'below'
+let g:lsc_enable_autocomplete  = v:true
+let b:vcm_tab_complete = "omni"
+
+" Apply the defaults with a few overrides:
+"let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
+
+" Setting a value to a blank string leaves that command unmapped:
+"let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
+
+" ... or set only the commands you want mapped without defaults.
+" Complete default mappings are:
+"let g:lsc_auto_map = {
+"   \ 'GoToDefinition': '<C-]>',
+"   \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
+"   \ 'FindReferences': 'gr',
+"   \ 'NextReference': '<C-n>',
+"   \ 'PreviousReference': '<C-p>',
+"   \ 'FindImplementations': 'gI',
+"   \ 'FindCodeActions': 'ga',
+"   \ 'Rename': 'gR',
+"   \ 'ShowHover': v:true,
+"   \ 'DocumentSymbol': 'go',
+"   \ 'WorkspaceSymbol': 'gS',
+"   \ 'SignatureHelp': 'gm',
+"   \ 'Completion': 'completefunc',
+"   \}
 
 " }}}
 

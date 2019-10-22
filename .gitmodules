@@ -160,3 +160,6 @@
 [submodule "vim/pack/nvie/start/vim-jsx-pretty"]
 	path = vim/pack/nvie/start/vim-jsx-pretty
 	url = https://github.com/MaxMEllon/vim-jsx-pretty
+[submodule "vim/pack/nvie/start/vim-lsc"]
+	path = vim/pack/nvie/start/vim-lsc
+	url = https://github.com/natebosch/vim-lsc
