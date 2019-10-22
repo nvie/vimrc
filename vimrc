@@ -884,29 +884,36 @@ let g:ale_fixers = {
 
 " Tab completion for vim-lsp
 " inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <tab> <c-n>
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
-set completeopt=menu,longest,preview
+"inoremap <tab> <c-n>
+"inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+"inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
+"set completeopt=menu,longest,preview
 
 " Force refresh completion
-imap <s-space> <Plug>(asyncomplete_force_refresh)
+"imap <s-space> <Plug>(asyncomplete_force_refresh)
 
 " vim-lsp configuration for IDE-like Flow help
 " See https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow
-if executable('flow-language-server')
-   nnoremap gd :LspDefinition<cr>
-   nnoremap <leader>i :LspHover<cr>
-   autocmd FileType javascript setlocal omnifunc=lsp#complete
-   autocmd FileType javascript.jsx setlocal omnifunc=lsp#complete
+"if executable('flow-language-server')
+"   nnoremap gd :LspDefinition<cr>
+"   nnoremap <leader>i :LspHover<cr>
+"   autocmd FileType javascript setlocal omnifunc=lsp#complete
+"   autocmd FileType javascript.jsx setlocal omnifunc=lsp#complete
+"
+"   au User lsp_setup call lsp#register_server({
+"      \ 'name': 'flow-language-server',
+"      \ 'cmd': {server_info->[&shell, &shellcmdflag, 'flow-language-server --stdio']},
+"      \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
+"      \ 'whitelist': ['javascript', 'javascript.jsx'],
+"      \ })
+"endif
 
-   au User lsp_setup call lsp#register_server({
-      \ 'name': 'flow-language-server',
-      \ 'cmd': {server_info->[&shell, &shellcmdflag, 'flow-language-server --stdio']},
-      \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
-      \ 'whitelist': ['javascript', 'javascript.jsx'],
-      \ })
-endif
+" }}}
+
+" {{{ Check JS with Flow (vim-lsc)
+
+" Config here
+
 
 " }}}
 

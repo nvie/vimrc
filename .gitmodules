@@ -124,9 +124,6 @@
 [submodule "vim/pack/nvie/start/async.vim"]
 	path = vim/pack/nvie/start/async.vim
 	url = https://github.com/prabirshrestha/async.vim
-[submodule "vim/pack/nvie/start/vim-lsp"]
-	path = vim/pack/nvie/start/vim-lsp
-	url = https://github.com/prabirshrestha/vim-lsp
 [submodule "vim/pack/nvie/start/asyncomplete.vim"]
 	path = vim/pack/nvie/start/asyncomplete.vim
 	url = https://github.com/prabirshrestha/asyncomplete.vim
