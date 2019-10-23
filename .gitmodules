@@ -160,3 +160,6 @@
 [submodule "vim/pack/nvie/start/vim-lsc"]
 	path = vim/pack/nvie/start/vim-lsc
 	url = https://github.com/natebosch/vim-lsc
+[submodule "vim/pack/nvie/start/vim-json"]
+	path = vim/pack/nvie/start/vim-json
+	url = https://github.com/elzr/vim-json

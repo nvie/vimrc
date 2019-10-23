@@ -753,6 +753,9 @@ let g:pymode_trim_whitespaces = 0
 let g:javascript_plugin_jsdoc = 0
 let g:javascript_plugin_flow = 1
 
+" See https://github.com/elzr/vim-json#specific-customizations
+let g:vim_json_syntax_conceal = 0
+
 " }}}
 
 " fzf config -------------------------------------------------------------- {{{
