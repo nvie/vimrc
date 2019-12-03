@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-eunuch"]
 	path = vim/pack/nvie/start/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule "vim/bundle/vim-git"]
-	path = vim/pack/nvie/start/vim-git
-	url = https://github.com/tpope/vim-git
 [submodule "vim/bundle/vim-repeat"]
 	path = vim/pack/nvie/start/vim-repeat
 	url = https://github.com/tpope/vim-repeat
@@ -157,3 +154,6 @@
 [submodule "vim/pack/nvie/start/vim-json"]
 	path = vim/pack/nvie/start/vim-json
 	url = https://github.com/elzr/vim-json
+[submodule "vim/pack/nvie/start/vim-git"]
+	path = vim/pack/nvie/start/vim-git
+	url = https://github.com/tpope/vim-git
