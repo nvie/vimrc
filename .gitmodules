@@ -1,93 +1,6 @@
-[submodule "vim/bundles/snipmate_for_django"]
-	path = vim/bundles/snipmate_for_django
-	url = git://github.com/robhudson/snipmate_for_django.git
-[submodule "vim/bundle/fugitive"]
-	path = vim/pack/nvie/start/fugitive
-	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/nerdtree"]
-	path = vim/pack/nvie/start/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/ack"]
-	path = vim/pack/nvie/start/ack
-	url = git://github.com/mileszs/ack.vim.git
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = http://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/bundle/vim-powerline"]
-	path = vim/pack/nvie/start/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "vim/bundle/vim-commentary"]
-	path = vim/pack/nvie/start/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vim/bundle/vim-unimpaired"]
-	path = vim/pack/nvie/start/vim-unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "webapi-vim"]
-	path = webapi-vim
-	url = git://github.com/mattn/webapi-vim.git
-[submodule "vim/bundle/vim-eunuch"]
-	path = vim/pack/nvie/start/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
-[submodule "vim/bundle/vim-repeat"]
-	path = vim/pack/nvie/start/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule "vim/bundle/vim-gitgutter"]
-	path = vim/pack/nvie/start/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-dispatch"]
-	path = vim/pack/nvie/start/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch.git
-[submodule "vim/bundle/vim-sleuth"]
-	path = vim/pack/nvie/start/vim-sleuth
-	url = https://github.com/tpope/vim-sleuth.git
-[submodule "vim/bundle/vim-surround"]
-	path = vim/pack/nvie/start/vim-surround
-	url = https://github.com/tpope/vim-surround.git
-[submodule "vim/bundle/vim-markdown"]
-	path = vim/pack/nvie/start/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "vim/bundle/vim-abolish"]
-	path = vim/pack/nvie/start/vim-abolish
-	url = https://github.com/tpope/vim-abolish.git
-[submodule "vim/bundle/vim-mkdir-on-write"]
-	path = vim/pack/nvie/start/vim-mkdir-on-write
-	url = https://github.com/scy/vim-mkdir-on-write.git
-[submodule "vim/bundle/vim-bufferline"]
-	path = vim/bundle/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
-[submodule "vim/bundle/jellybeans.vim"]
-	path = vim/bundle/jellybeans.vim
-	url = git@github.com:nanotech/jellybeans.vim.git
-[submodule "vim/bundle/vim-flake8"]
-	path = vim/pack/nvie/start/vim-flake8
-	url = https://github.com/nvie/vim-flake8
-[submodule "vim/bundle/vim-addon-mw-utils"]
-	path = vim/pack/nvie/start/vim-addon-mw-utils
-	url = https://github.com/MarcWeber/vim-addon-mw-utils
-[submodule "vim/bundle/python-mode"]
-	path = vim/pack/nvie/start/python-mode
-	url = https://github.com/nvie/python-mode
-[submodule "vim/bundle/html5-syntax.vim"]
-	path = vim/pack/nvie/start/html5-syntax.vim
-	url = https://github.com/othree/html5-syntax.vim
-[submodule "vim/bundle/vim-less"]
-	path = vim/pack/nvie/start/vim-less
-	url = https://github.com/groenewege/vim-less
-[submodule "vim/bundle/vim-python-pep8-indent"]
-	path = vim/pack/nvie/start/vim-python-pep8-indent
-	url = https://github.com/hynek/vim-python-pep8-indent
-[submodule "vim/bundle/vim-argwrap"]
-	path = vim/pack/nvie/start/vim-argwrap
-	url = https://github.com/FooSoft/vim-argwrap
-[submodule "vim/bundle/vim-rhubarb"]
-	path = vim/pack/nvie/start/vim-rhubarb
-	url = https://github.com/tpope/vim-rhubarb
 [submodule "vim/pack/nvie/start/vim-expand-region"]
 	path = vim/pack/nvie/start/vim-expand-region
 	url = https://github.com/terryma/vim-expand-region
-[submodule "vim/pack/nvie/start/vim-bufferline"]
-	path = vim/pack/nvie/start/vim-bufferline
-	url = https://github.com/bling/vim-bufferline.git
 [submodule "vim/pack/nvie/start/YankRing.vim"]
 	path = vim/pack/nvie/start/YankRing.vim
 	url = https://github.com/vim-scripts/YankRing.vim
@@ -157,3 +70,66 @@
 [submodule "vim/pack/nvie/start/vim-git"]
 	path = vim/pack/nvie/start/vim-git
 	url = https://github.com/tpope/vim-git
+[submodule "vim/pack/nvie/start/vim-powerline"]
+	path = vim/pack/nvie/start/vim-powerline
+	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vim/pack/nvie/start/vim-fugitive"]
+	path = vim/pack/nvie/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/pack/nvie/start/nerdtree"]
+	path = vim/pack/nvie/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/pack/nvie/start/python-mode"]
+	path = vim/pack/nvie/start/python-mode
+	url = https://github.com/nvie/python-mode
+[submodule "vim/pack/nvie/start/vim-sleuth"]
+	path = vim/pack/nvie/start/vim-sleuth
+	url = https://github.com/tpope/vim-sleuth.git
+[submodule "vim/pack/nvie/start/vim-commentary"]
+	path = vim/pack/nvie/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/pack/nvie/start/vim-unimpaired"]
+	path = vim/pack/nvie/start/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "vim/pack/nvie/start/vim-eunuch"]
+	path = vim/pack/nvie/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
+[submodule "vim/pack/nvie/start/vim-repeat"]
+	path = vim/pack/nvie/start/vim-repeat
+	url = https://github.com/tpope/vim-repeat.git
+[submodule "vim/pack/nvie/start/vim-gitgutter"]
+	path = vim/pack/nvie/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/pack/nvie/start/vim-surround"]
+	path = vim/pack/nvie/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/pack/nvie/start/vim-markdown"]
+	path = vim/pack/nvie/start/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "vim/pack/nvie/start/vim-argwrap"]
+	path = vim/pack/nvie/start/vim-argwrap
+	url = https://github.com/FooSoft/vim-argwrap
+[submodule "vim/pack/nvie/start/ack.vim"]
+	path = vim/pack/nvie/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vim/pack/nvie/start/vim-flake8"]
+	path = vim/pack/nvie/start/vim-flake8
+	url = https://github.com/nvie/vim-flake8
+[submodule "vim/pack/nvie/start/vim-abolish"]
+	path = vim/pack/nvie/start/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
+[submodule "vim/pack/nvie/start/vim-mkdir-on-write"]
+	path = vim/pack/nvie/start/vim-mkdir-on-write
+	url = https://github.com/scy/vim-mkdir-on-write.git
+[submodule "vim/pack/nvie/start/vim-bufferline"]
+	path = vim/pack/nvie/start/vim-bufferline
+	url = https://github.com/bling/vim-bufferline.git
+[submodule "vim/pack/nvie/start/vim-rhubarb"]
+	path = vim/pack/nvie/start/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "vim/pack/nvie/start/html5-syntax.vim"]
+	path = vim/pack/nvie/start/html5-syntax.vim
+	url = https://github.com/othree/html5-syntax.vim
+[submodule "vim/pack/nvie/start/vim-python-pep8-indent"]
+	path = vim/pack/nvie/start/vim-python-pep8-indent
+	url = https://github.com/hynek/vim-python-pep8-indent.git
