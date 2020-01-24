@@ -672,7 +672,6 @@ else
     set bg=dark
 endif
 
-"colorscheme onedark
 colorscheme OceanicNext
 
 " Pulse ------------------------------------------------------------------- {{{
