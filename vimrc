@@ -860,13 +860,16 @@ let g:ale_linters = {
 \   'graphql': ['eslint', 'flow'],
 \   'javascript.jsx': ['eslint', 'flow'],
 \   'javascript': ['eslint', 'flow'],
+\   'typescriptreact': ['typescript'],
 \   'typescript': ['typescript'],
 \}
 let g:ale_fixers = {
 \   'graphql': ['eslint', 'prettier'],
 \   'javascript.jsx': ['eslint', 'prettier'],
 \   'javascript': ['eslint', 'prettier'],
+\   'typescriptreact': ['eslint', 'prettier'],
 \   'typescript': ['eslint', 'prettier'],
+\   'markdown': ['prettier'],
 \}
 
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -917,6 +920,8 @@ inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
 
 let g:lsc_server_commands = {
    \ 'javascript': 'flow lsp',
+   \ 'typescript': 'typescript-language-server --stdio',
+   \ 'typescriptreact': 'typescript-language-server --stdio',
    \ }
 
 " Use all the defaults (recommended)
