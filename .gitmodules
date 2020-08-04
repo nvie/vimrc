@@ -136,3 +136,6 @@
 [submodule "vim/pack/nvie/start/splitjoin.vim"]
 	path = vim/pack/nvie/start/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim
+[submodule "vim/pack/nvie/start/vim-rule-of-law"]
+	path = vim/pack/nvie/start/vim-rule-of-law
+	url = https://github.com/nvie/vim-rule-of-law
