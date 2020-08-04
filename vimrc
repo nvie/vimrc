@@ -999,3 +999,9 @@ endfunction
 map gm :call SynStack()<CR>
 
 " }}}
+
+" Convert current filename to the clipboard
+" ,cs = copy short name (relative path)
+" ,cl = copy long name  (fully expanded absolute path)
+nmap ,cs :let @*=expand("%")<CR>
+nmap ,cl :let @*=expand("%:p")<CR>
