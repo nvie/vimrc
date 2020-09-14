@@ -530,9 +530,12 @@ if has("autocmd")
 
     augroup js_files "{{{
         au!
-
         autocmd filetype javascript setlocal foldmethod=syntax
+    augroup end " }}}
 
+    augroup ts_files "{{{
+        au!
+        autocmd filetype typescript setlocal foldmethod=syntax
     augroup end " }}}
 
     augroup clojure_files "{{{
