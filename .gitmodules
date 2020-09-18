@@ -139,3 +139,6 @@
 [submodule "vim/pack/nvie/start/vim-rule-of-law"]
 	path = vim/pack/nvie/start/vim-rule-of-law
 	url = https://github.com/nvie/vim-rule-of-law
+[submodule "vim/pack/nvie/start/vim-nox"]
+	path = vim/pack/nvie/start/vim-nox
+	url = https://github.com/nvie/vim-nox
