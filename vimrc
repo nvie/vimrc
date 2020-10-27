@@ -857,7 +857,7 @@ let g:ale_set_quickfix = 1
 " let g:ale_open_list = 1
 
 " TODO: Temporary hack until our eslint is configured correctly
-" let g:ale_javascript_eslint_options = '--rulesdir eslint'
+let g:ale_javascript_eslint_options = '--no-ignore --rulesdir eslint'
 
 let g:ale_linters = {
 \   'graphql': ['eslint', 'flow'],
