@@ -1,5 +1,5 @@
 #!/bin/sh
-INSTALL_TO=~/Projects
+INSTALL_TO=$(pwd)
 
 warn() {
     echo "$1" >&2
