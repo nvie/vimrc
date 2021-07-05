@@ -2,8 +2,57 @@
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Plug 'tpope/vim-surround'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'ElmCast/elm-vim'
+Plug 'FooSoft/vim-argwrap'
+Plug 'Lokaltog/vim-powerline'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'airblade/vim-gitgutter'
+Plug 'alunny/pegjs-vim'
+Plug 'bling/vim-bufferline'
+Plug 'dag/vim-fish'
+Plug 'elzr/vim-json'
+Plug 'jparise/vim-graphql'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'mileszs/ack.vim'
+Plug 'nvie/vim-align'
+Plug 'nvie/vim-nox'
 Plug 'nvie/vim-oceanic-next'
+Plug 'nvie/vim-rule-of-law'
+Plug 'othree/html5-syntax.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'ruanyl/vim-sort-imports'
+Plug 'scrooloose/nerdtree'
+Plug 'scy/vim-mkdir-on-write'
+Plug 'terryma/vim-expand-region'
+Plug 'tmhedberg/matchit' " Jump to matching paren with '%'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tsl0922/vim-nginx'
+Plug 'vim-scripts/YankRing.vim'
+Plug 'w0rp/ale'
+
+" Perhaps no longer necessary now with neovim?
+" Plug 'natebosch/vim-lsc'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/asyncomplete-lsp.vim'
+" Plug 'prabirshrestha/asyncomplete.vim'
+
+" PYthon-related plugins
+" Plug 'nvie/python-mode'
+" Plug 'nvie/vim-flake8'
 
 call plug#end()
 
