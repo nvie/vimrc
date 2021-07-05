@@ -20,6 +20,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'mileszs/ack.vim'
+Plug 'neomake/neomake'
 Plug 'nvie/vim-align'
 Plug 'nvie/vim-nox'
 Plug 'nvie/vim-oceanic-next'
@@ -1092,6 +1093,35 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
 augroup END
+
+" }}}
+
+" Neomake {{{
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+
+" let g:neomake_javascriptreact_eslint_d_maker = {
+"       \ 'args': ['--format=compact'],
+"       \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
+"       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#',
+"       \ 'cwd': '%:p:h',
+"       \ 'output_stream': 'stdout',
+"       \ }
+
+" let g:neomake_javascriptreact_flow_maker = {
+"       \ 'args': ['--from=vim', '--show-all-errors'],
+"       \ 'errorformat':
+"       \   '%-GNo errors!,'
+"       \   .'%EFile "%f"\, line %l\, characters %c-%m,'
+"       \   .'%trror: File "%f"\, line %l\, characters %c-%m,'
+"       \   .'%C%m,%Z',
+"       \ 'postprocess': function('neomake#makers#ft#javascript#FlowProcess')
+"       \ }
+
+let g:neomake_javascriptreact_enabled_makers = ['eslint']
+
+" When writing a buffer (no delay), and on normal mode changes (after 100ms).
+call neomake#configure#automake('nw', 500)
 
 " }}}
 
