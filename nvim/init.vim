@@ -358,7 +358,7 @@ vnoremap <silent> <leader>d "_d
 nnoremap Y y$
 
 " YankRing stuff
-let g:yankring_history_dir = '$HOME/.vim/.tmp'
+let g:yankring_history_dir = '$HOME/.config/nvim/.tmp'
 
 " Edit the vimrc file
 nnoremap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -449,7 +449,7 @@ nnoremap <leader>m :NERDTreeClose<CR>:NERDTreeFind<CR>
 nnoremap <leader>N :NERDTreeClose<CR>
 
 " Store the bookmarks file
-let NERDTreeBookmarksFile=expand("$HOME/.vim/NERDTreeBookmarks")
+let NERDTreeBookmarksFile=expand("$HOME/.config/nvim/NERDTreeBookmarks")
 
 " Show the bookmarks table on startup
 let NERDTreeShowBookmarks=1
@@ -682,7 +682,7 @@ autocmd BufReadPost *
 " }}}
 
 " Common abbreviations / misspellings {{{
-source ~/.vim/autocorrect.vim
+source ~/.config/nvim/autocorrect.vim
 " }}}
 
 " Extra vi-compatibility {{{
