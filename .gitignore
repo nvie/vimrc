@@ -6,9 +6,13 @@
 /vim/user.vim
 /vim/view
 /vim/.netrwhist
-/vim/.tmp/*
-/vim/.undo/*
+/vim/.tmp
+/vim/.undo
 /vim/doc/xml-plugin.txt
 tags
 
+/nvim/.tmp
+/nvim/.undo
+/nvim/cache
 /nvim/plugged
+/nvim/view
