@@ -27,6 +27,7 @@ Plug 'nvie/vim-rule-of-law'
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'ruanyl/vim-sort-imports'
+Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'scy/vim-mkdir-on-write'
 Plug 'terryma/vim-expand-region'
@@ -1056,6 +1057,43 @@ EOF
 " Configure ArgWrap
 let g:argwrap_tail_comma = 1
 nnoremap <leader>w :ArgWrap<cr>
+
+" Neoformat {{{
+
+let g:neoformat_run_all_formatters = 1
+let g:neoformat_try_formatprg = 1
+
+" Trigger a buffer format on `,f`
+nnoremap <leader>f :Neoformat<CR>
+
+" let g:neoformat_verbose = 1
+let g:neoformat_only_msg_on_error = 1
+
+let g:neoformat_graphql_prettier         = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_javascript_prettier      = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_javascriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_json_prettier            = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_markdown_prettier        = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_pegjs_prettier           = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_typescript_prettier      = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+let g:neoformat_typescriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+
+let g:neoformat_enabled_graphql         = ['prettier']
+let g:neoformat_enabled_javascript      = ['prettier']
+let g:neoformat_enabled_javascriptreact = ['prettier']
+let g:neoformat_enabled_json            = ['prettier']
+let g:neoformat_enabled_markdown        = ['prettier']
+let g:neoformat_enabled_pegjs           = ['prettier']
+let g:neoformat_enabled_typescript      = ['prettier']
+let g:neoformat_enabled_typescriptreact = ['prettier']
+
+" Enable format-on-save
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * Neoformat
+augroup END
+
+" }}}
 
 " ALE config {{{
 
