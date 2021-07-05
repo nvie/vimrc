@@ -27,7 +27,6 @@ Plug 'nvie/vim-oceanic-next'
 Plug 'nvie/vim-rule-of-law'
 Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'ruanyl/vim-sort-imports'
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdtree'
 Plug 'scy/vim-mkdir-on-write'
@@ -46,10 +45,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tsl0922/vim-nginx'
 Plug 'vim-scripts/YankRing.vim'
-Plug 'w0rp/ale'
 
 " Perhaps no longer necessary now with neovim?
-" Plug 'natebosch/vim-lsc'
 " Plug 'prabirshrestha/async.vim'
 " Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " Plug 'prabirshrestha/asyncomplete.vim'
@@ -478,14 +475,6 @@ let NERDTreeIgnore=[ '\.pyc$', '\.pyo$', '\.py\$class$', '\.obj$',
 
 " }}}
 
-" vim-sort-imports config (import-sort fixer) {{{
-
-" TODO: Ideally, this command would be run as an ALE fixer, so we can get rid
-" of the vim-sort-imports plugin.
-let g:import_sort_auto = 0
-
-" }}}
-
 " vim-flake8 default configuration
 let g:flake8_show_in_gutter=0
 
@@ -778,39 +767,6 @@ let g:Powerline_symbols = 'compatible'
 
 " }}}
 
-" Python mode configuration ----------------------------------------------- {{{
-
-" Don't run pylint on every save
-let g:pymode = 1
-let g:pymode_breakpoint = 0
-let g:pymode_breakpoint_bind = '<leader>b'
-let g:pymode_doc = 0
-let g:pymode_doc_bind = 'K'
-let g:pymode_folding = 0
-let g:pymode_indent = 0
-let g:pymode_lint = 0
-let g:pymode_lint_checkers = ['pyflakes', 'pep8', 'mccabe']
-let g:pymode_lint_cwindow = 1
-let g:pymode_lint_ignore = ''
-let g:pymode_lint_message = 1
-let g:pymode_lint_on_fly = 0
-let g:pymode_lint_on_write = 0
-let g:pymode_lint_select = ''
-let g:pymode_lint_signs = 1
-let g:pymode_motion = 0
-let g:pymode_options = 0
-let g:pymode_paths = []
-let g:pymode_quickfix_maxheight = 6
-let g:pymode_quickfix_minheight = 3
-let g:pymode_rope = 1
-let g:pymode_rope_completion = 0
-let g:pymode_rope_regenerate_on_write = 0
-let g:pymode_run = 0
-let g:pymode_run_bind = '<leader>r'
-let g:pymode_trim_whitespaces = 0
-
-" }}}
-
 " JavaScript configuration ------------------------------------------------ {{{
 
 let g:javascript_plugin_jsdoc = 0
@@ -873,9 +829,6 @@ nnoremap <leader>sl :execute "rightbelow vsplit" bufname('#')<cr>
 " Grep searches
 "nnoremap <leader>g :silent execute "grep! -R " . shellescape('<cword>') . " ."<cr>:copen 12<cr>
 "nnoremap <leader>G :silent execute "grep! -R " . shellescape('<cWORD>') . " ."<cr>:copen 12<cr>
-
-" Rope config
-nnoremap <leader>A :RopeAutoImport<cr>
 
 " Switch from block-cursor to vertical-line-cursor when going into/out of
 " insert mode
@@ -1122,131 +1075,6 @@ let g:neomake_javascriptreact_enabled_makers = ['eslint']
 
 " When writing a buffer (no delay), and on normal mode changes (after 100ms).
 call neomake#configure#automake('nw', 500)
-
-" }}}
-
-" ALE config {{{
-
-" let g:ale_enabled = 1
-let g:ale_completion_enabled = 0
-let g:ale_lint_delay = 200   " millisecs
-" let g:ale_lint_on_text_changed = 'always'  " never/insert/normal/always
-let g:ale_lint_on_enter = 1
-let g:ale_lint_on_filetype_changed = 1
-let g:ale_lint_on_save = 1
-let g:ale_fix_on_save = 1
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-" let g:ale_open_list = 1
-
-" TODO: Temporary hack until our eslint is configured correctly
-" let g:ale_javascript_eslint_options = '--no-ignore --rulesdir eslint'
-
-let g:ale_linters = {
-\   'graphql': ['eslint', 'flow'],
-\   'javascript.jsx': ['eslint', 'flow'],
-\   'javascript': ['eslint', 'flow'],
-\   'typescriptreact': ['typescript'],
-\   'typescript': ['typescript'],
-\}
-let g:ale_fixers = {
-\   'graphql': ['eslint', 'prettier'],
-\   'javascript.jsx': ['eslint', 'prettier'],
-\   'javascript': ['eslint', 'prettier'],
-\   'typescriptreact': ['eslint', 'prettier'],
-\   'typescript': ['eslint', 'prettier'],
-\   'markdown': ['prettier'],
-\   'pegjs': ['prettier'],
-\}
-
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" }}}
-
-" {{{ Check JS with Flow
-
-" Uncomment this if it gets annoying
-" let g:asyncomplete_auto_popup = 0
-" let g:asyncomplete_remove_duplicates = 1
-
-" Tab completion for vim-lsp
-" inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-"inoremap <tab> <c-n>
-"inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-"inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
-"set completeopt=menu,longest,preview
-
-" Force refresh completion
-"imap <s-space> <Plug>(asyncomplete_force_refresh)
-
-" vim-lsp configuration for IDE-like Flow help
-" See https://github.com/prabirshrestha/vim-lsp/wiki/Servers-Flow
-"if executable('flow-language-server')
-"   nnoremap gd :LspDefinition<cr>
-"   nnoremap <leader>i :LspHover<cr>
-"   autocmd FileType javascript setlocal omnifunc=lsp#complete
-"   autocmd FileType javascript.jsx setlocal omnifunc=lsp#complete
-"
-"   au User lsp_setup call lsp#register_server({
-"      \ 'name': 'flow-language-server',
-"      \ 'cmd': {server_info->[&shell, &shellcmdflag, 'flow-language-server --stdio']},
-"      \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), '.flowconfig'))},
-"      \ 'whitelist': ['javascript', 'javascript.jsx'],
-"      \ })
-"endif
-
-" }}}
-
-" {{{ Check JS with Flow (vim-lsc)
-
-" inoremap <expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <tab> <c-n>
-inoremap <expr> <s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<cr>"
-
-let g:lsc_server_commands = {
-   \ 'javascript': 'flow lsp',
-   \ 'typescript': 'typescript-language-server --stdio',
-   \ 'typescriptreact': 'typescript-language-server --stdio',
-   \ }
-
-" Use all the defaults (recommended)
-let g:lsc_auto_map = {
- \  'GoToDefinition': 'gd',
- \  'FindReferences': 'gr',
- \  'Rename': 'gR',
- \  'ShowHover': '<leader>i',
- \  'Completion': 'omnifunc',
- \}
-
-let g:lsc_preview_split_direction = 'below'
-let g:lsc_enable_autocomplete  = v:true
-let b:vcm_tab_complete = "omni"
-
-" Apply the defaults with a few overrides:
-"let g:lsc_auto_map = {'defaults': v:true, 'FindReferences': '<leader>r'}
-
-" Setting a value to a blank string leaves that command unmapped:
-"let g:lsc_auto_map = {'defaults': v:true, 'FindImplementations': ''}
-
-" ... or set only the commands you want mapped without defaults.
-" Complete default mappings are:
-"let g:lsc_auto_map = {
-"   \ 'GoToDefinition': '<C-]>',
-"   \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-"   \ 'FindReferences': 'gr',
-"   \ 'NextReference': '<C-n>',
-"   \ 'PreviousReference': '<C-p>',
-"   \ 'FindImplementations': 'gI',
-"   \ 'FindCodeActions': 'ga',
-"   \ 'Rename': 'gR',
-"   \ 'ShowHover': v:true,
-"   \ 'DocumentSymbol': 'go',
-"   \ 'WorkspaceSymbol': 'gS',
-"   \ 'SignatureHelp': 'gm',
-"   \ 'Completion': 'completefunc',
-"   \}
 
 " }}}
 
