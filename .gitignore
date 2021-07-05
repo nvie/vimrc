@@ -10,3 +10,5 @@
 /vim/.undo/*
 /vim/doc/xml-plugin.txt
 tags
+
+/nvim/plugged
