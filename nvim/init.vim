@@ -266,7 +266,7 @@ endfunction
 " }}}
 
 " Toggle the foldcolumn {{{
-nnoremap <leader>f :call FoldColumnToggle()<cr>
+nnoremap <leader>F :call FoldColumnToggle()<cr>
 
 let g:last_fold_column_width = 4  " Pick a sane default for the foldcolumn
 
