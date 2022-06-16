@@ -49,6 +49,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tsl0922/vim-nginx'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'jxnblk/vim-mdx-js'
 
 " Perhaps no longer necessary now with neovim?
 " Plug 'prabirshrestha/async.vim'
