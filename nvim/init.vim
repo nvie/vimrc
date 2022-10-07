@@ -8,7 +8,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'hrsh7th/nvim-compe'
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'ElmCast/elm-vim'
@@ -49,7 +49,62 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tsl0922/vim-nginx'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jxnblk/vim-mdx-js'
+
+" This will make Vim recompute folds based on syntax waaay less often, making
+" super slow neoformat saves a thing of the past. See
+" https://github.com/sbdchd/neoformat/issues/340
+Plug 'Konfekt/FastFold'
+
+" Recompute folds on every save
+let g:fastfold_savehook = 1
+" Manually recompute folds upon request
+nmap zuz <Plug>(FastFoldUpdate)
+
+let g:coc_global_extensions = ['coc-tsserver']
+
+" Remap keys for applying codeAction to the current line.
+" xmap <leader>a  <Plug>(coc-codeaction-selected)
+" nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap keys for applying codeAction to the current buffer.
+nmap <silent> ga  <Plug>(coc-codeaction)
+
+" Apply AutoFix to problem on the current line.
+" nmap <leader>q <Plug>(coc-fix-current)
+" Apply AutoFix to problem on the current line.
+
+ " Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location
+" list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+" autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming (seems broken in neovim 0.8.0, perhaps try it with a later version?)
+nmap <silent> gR <Plug>(coc-rename)
+
+" To enable more of the features of rust-analyzer, such as inlay hints and more!
+" Plug 'simrat39/rust-tools.nvim'
 
 " Perhaps no longer necessary now with neovim?
 " Plug 'prabirshrestha/async.vim'
@@ -111,6 +166,7 @@ set clipboard=unnamed           " normal OS clipboard interaction
 set autoread                    " automatically reload files changed outside of Vim
 
 set updatetime=1000             " Speed up the updatetime so gitgutter and friends are quicker
+set mouse=a
 
 " Make the keyboard faaaaaaast
 set ttyfast
@@ -171,7 +227,7 @@ nnoremap z5 :set foldlevel=5<cr>
 " }}}
 
 " Editor layout {{{
-set termencoding=utf-8
+" set termencoding=utf-8
 set encoding=utf-8
 set lazyredraw                  " don't update the display while executing macros
 set cmdheight=2                 " use a status bar that is 2 rows high
@@ -267,8 +323,8 @@ nnoremap <leader>; ;
 " Avoid accidental hits of <F1> while aiming for <Esc>
 noremap! <F1> <Esc>
 
-nnoremap <leader>Q :q<CR>    " Quickly close the current window
-nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
+"nnoremap <leader>Q :q<CR>    " Quickly close the current window
+"nnoremap <leader>q :bd<CR>   " Quickly close the current buffer
 
 " Use Q for formatting the current paragraph (or visual selection)
 " This used to be `gq` and `gqap`, but the "w" variant is the same, but puts
@@ -281,6 +337,7 @@ nnoremap Q gwap
 " Sort paragraphs
 vnoremap <leader>s !sort -f<CR>gv
 nnoremap <leader>s vip!sort -f<CR><Esc>
+vnoremap <leader>u !sort -u<CR>
 
 " make p in Visual mode replace the selected text with the yank register
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
@@ -390,8 +447,8 @@ endif
 " grep/Ack/Ag for the word under cursor
 " vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
 " nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
-vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
-nnoremap <leader>a :Ag <c-r><c-w>
+" vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
+" nnoremap <leader>a :Ag <c-r><c-w>
 " nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 " Allow quick additions to the spelling dict
@@ -734,7 +791,7 @@ let g:Powerline_symbols = 'compatible'
 " JavaScript configuration ------------------------------------------------ {{{
 
 let g:javascript_plugin_jsdoc = 0
-let g:javascript_plugin_flow = 1
+" let g:javascript_plugin_flow = 1
 
 " See https://github.com/elzr/vim-json#specific-customizations
 let g:vim_json_syntax_conceal = 0
@@ -922,52 +979,85 @@ EOF
 " See https://github.com/neovim/nvim-lspconfig#keybindings-and-completion
 
 lua << EOF
-local nvim_lsp = require('lspconfig')
-
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
-
-  -- See `:help vim.lsp.*` for documentation on any of the below functions
-  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-  buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
-end
-
+-- local nvim_lsp = require('lspconfig')
+-- 
+-- -- Use an on_attach function to only map the following keys
+-- -- after the language server attaches to the current buffer
+-- local on_attach = function(client, bufnr)
+--   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+--   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+-- 
+--   -- Enable completion triggered by <c-x><c-o>
+--   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+-- 
+--   -- Mappings.
+--   local opts = { noremap=true, silent=true }
+-- 
+--   -- See `:help vim.lsp.*` for documentation on any of the below functions
+--   buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+--   buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+--   buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+--   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+--   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+--   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+--   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+--   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+--   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+--   buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+--   buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+--   buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+--   buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
+--   buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+--   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+--   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+--   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+-- 
+-- end
+-- 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'flow', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
+-- local servers = { 'flow', }  -- 'tsserver' }
+-- for _, lsp in ipairs(servers) do
+--   nvim_lsp[lsp].setup {
+--     on_attach = on_attach,
+--     flags = {
+--       debounce_text_changes = 150,
+--     }
+--   }
+-- end
+
+
+-- For rust
+-- require('rust-tools').setup({
+--     tools = { -- rust-tools options
+--         autoSetHints = true,
+--         hover_with_actions = true,
+--         inlay_hints = {
+--             show_parameter_hints = false,
+--             parameter_hints_prefix = "",
+--             other_hints_prefix = "  ",
+--         },
+--     },
+-- 
+--     -- all the opts to send to nvim-lspconfig
+--     -- these override the defaults set by rust-tools.nvim
+--     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+--     server = {
+--         -- on_attach is a callback called when the language server attachs to the buffer
+--         -- on_attach = on_attach,
+--         settings = {
+--             -- to enable rust-analyzer settings visit:
+--             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
+--             ["rust-analyzer"] = {
+--                 -- enable clippy on save
+--                 checkOnSave = {
+--                     command = "clippy"
+--                 },
+--             }
+--         }
+--     },
+-- })
+
 EOF
 
 " }}}
@@ -979,7 +1069,7 @@ nnoremap <leader>w :ArgWrap<cr>
 " Neoformat {{{
 
 let g:neoformat_run_all_formatters = 1
-let g:neoformat_try_formatprg = 1
+let g:neoformat_try_formatprg = 0
 
 " Trigger a buffer format on `,f`
 nnoremap <leader>f :Neoformat<CR>
@@ -987,23 +1077,40 @@ nnoremap <leader>f :Neoformat<CR>
 " let g:neoformat_verbose = 1
 let g:neoformat_only_msg_on_error = 1
 
-let g:neoformat_graphql_prettier         = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_javascript_prettier      = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_javascriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_json_prettier            = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_markdown_prettier        = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_pegjs_prettier           = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_typescript_prettier      = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
-let g:neoformat_typescriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+" let g:neoformat_graphql_prettier         = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_javascript_prettier      = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_javascriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_json_prettier            = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_markdown_prettier        = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_pegjs_prettier           = { 'exe': 'prettier', 'args': ['--write', '--config', '.prettierrc'], 'replace': 1 }
+" let g:neoformat_typescript_prettier      = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
+" let g:neoformat_typescriptreact_prettier = { 'exe': 'prettier', 'args': ['--write', ], 'replace': 1 }
 
-let g:neoformat_enabled_graphql         = ['prettier']
-let g:neoformat_enabled_javascript      = ['prettier']
-let g:neoformat_enabled_javascriptreact = ['prettier']
+" let g:neoformat_graphql_eslint         = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_javascript_eslint      = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_javascriptreact_eslint = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_json_eslint            = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_markdown_eslint        = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_pegjs_eslint           = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+" let g:neoformat_typescript_eslint = {
+"     \ 'exe': 'echo',
+"     \ 'args': ['eslint', '--fix'],
+"     \ 'replace': 1,
+"     \ }
+" let g:neoformat_typescriptreact_eslint = { 'exe': 'eslint', 'args': ['--fix'], 'replace': 1 }
+
+let g:neoformat_enabled_graphql         = ['eslint', 'prettier']
+let g:neoformat_enabled_javascript      = ['eslint', 'prettier']
+let g:neoformat_enabled_javascriptreact = ['eslint', 'prettier']
 let g:neoformat_enabled_json            = ['prettier']
 let g:neoformat_enabled_markdown        = ['prettier']
 let g:neoformat_enabled_pegjs           = ['prettier']
-let g:neoformat_enabled_typescript      = ['prettier']
-let g:neoformat_enabled_typescriptreact = ['prettier']
+
+" NOTE: Neoformat only comes with TypeScript config using eslint_d. To enable
+" this, run `npm install -g eslint_d` to install `eslint_d` globally once.
+" After that, this starts working magically for all TypeScript projects.
+let g:neoformat_enabled_typescript      = ['eslint_d', 'prettier']
+let g:neoformat_enabled_typescriptreact = ['eslint_d', 'prettier']
 
 " Enable format-on-save
 augroup fmt
@@ -1017,26 +1124,17 @@ augroup END
 
 let g:neomake_open_list = 2
 let g:neomake_javascript_enabled_makers = ['eslint']
-
-" let g:neomake_javascriptreact_eslint_d_maker = {
-"       \ 'args': ['--format=compact'],
-"       \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
-"       \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#',
-"       \ 'cwd': '%:p:h',
-"       \ 'output_stream': 'stdout',
-"       \ }
-
-" let g:neomake_javascriptreact_flow_maker = {
-"       \ 'args': ['--from=vim', '--show-all-errors'],
-"       \ 'errorformat':
-"       \   '%-GNo errors!,'
-"       \   .'%EFile "%f"\, line %l\, characters %c-%m,'
-"       \   .'%trror: File "%f"\, line %l\, characters %c-%m,'
-"       \   .'%C%m,%Z',
-"       \ 'postprocess': function('neomake#makers#ft#javascript#FlowProcess')
-"       \ }
-
+let g:neomake_typescript_enabled_makers = ['eslint']
 let g:neomake_javascriptreact_enabled_makers = ['eslint']
+let g:neomake_typescriptreact_enabled_makers = ['eslint']
+
+let g:neomake_javascriptreact_eslint = {
+      \ 'args': ['--format=compact'],
+      \ 'errorformat': '%E%f: line %l\, col %c\, Error - %m,' .
+      \   '%W%f: line %l\, col %c\, Warning - %m,%-G,%-G%*\d problems%#',
+      \ 'cwd': '%:p:h',
+      \ 'output_stream': 'stdout',
+      \ }
 
 " When writing a buffer (no delay), and on normal mode changes (after 100ms).
 call neomake#configure#automake('nw', 500)
