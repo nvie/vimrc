@@ -615,6 +615,15 @@ if has("autocmd")
         autocmd filetype typescript setlocal foldmethod=syntax
     augroup end " }}}
 
+    augroup json_files "{{{
+        au!
+
+        " NOTE: By default, vim-json will highlight comments as errors. Some
+        " tools support JSON comments, however, so let's not make it all
+        " shouty and red.
+        autocmd filetype json syntax match Comment +\/\/.\+$+
+    augroup end " }}}
+
     augroup clojure_files "{{{
         au!
 
