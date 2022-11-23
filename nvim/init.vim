@@ -51,6 +51,7 @@ Plug 'tsl0922/vim-nginx'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jxnblk/vim-mdx-js'
+Plug 'terrastruct/d2-vim'
 
 " This will make Vim recompute folds based on syntax waaay less often, making
 " super slow neoformat saves a thing of the past. See
