@@ -85,7 +85,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gR <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -102,7 +102,7 @@ endfunction
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming (seems broken in neovim 0.8.0, perhaps try it with a later version?)
-nmap <silent> gR <Plug>(coc-rename)
+nmap <silent> gr <Plug>(coc-rename)
 
 " To enable more of the features of rust-analyzer, such as inlay hints and more!
 " Plug 'simrat39/rust-tools.nvim'
