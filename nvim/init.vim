@@ -47,6 +47,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'jremmen/vim-ripgrep'
 Plug 'tsl0922/vim-nginx'
 Plug 'vim-scripts/YankRing.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -445,13 +446,6 @@ if executable('ag')
    " Use ag over grep
    set grepprg=ag\ --nogroup\ --nocolor
 endif
-
-" grep/Ack/Ag for the word under cursor
-" vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
-" nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
-" vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
-" nnoremap <leader>a :Ag <c-r><c-w>
-" nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
 " Allow quick additions to the spelling dict
 nnoremap <leader>g :spellgood <c-r><c-w>
@@ -1078,13 +1072,21 @@ EOF
 let g:argwrap_tail_comma = 1
 nnoremap <leader>w :ArgWrap<cr>
 
+" grep/Ack/Ag for the word under cursor
+" vnoremap <leader>a y:grep! "\b<c-r>"\b"<cr>:cw<cr>
+" nnoremap <leader>a :grep! "\b<c-r><c-w>\b"
+" vnoremap <leader>a y:Ag <c-r><cr>:cw<cr>
+" nnoremap <leader>a :Ag <c-r><c-w>
+" nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
+
+" Search the entire repo with ripgrep using ,f
+nnoremap <leader>f :Rg 
+nnoremap K :Rg "\b<c-r><c-w>\b"<cr>
+
 " Neoformat {{{
 
 let g:neoformat_run_all_formatters = 1
 let g:neoformat_try_formatprg = 0
-
-" Trigger a buffer format on `,f`
-nnoremap <leader>f :Neoformat<CR>
 
 " let g:neoformat_verbose = 1
 let g:neoformat_only_msg_on_error = 1
