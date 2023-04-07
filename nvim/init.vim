@@ -596,7 +596,8 @@ if has("autocmd")
         " NOTE: By default, vim-json will highlight comments as errors. Some
         " tools support JSON comments, however, so let's not make it all
         " shouty and red.
-        autocmd filetype json syntax match Comment +\/\/.\+$+
+        autocmd filetype json syntax match Comment ,\/\/.\+$,
+        autocmd filetype json syntax match Comment ,\/\*.*\*\/,
     augroup end " }}}
 
     augroup supervisord_files "{{{
