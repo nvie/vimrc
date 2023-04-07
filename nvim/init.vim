@@ -133,7 +133,6 @@ set shell=bash                  " Vim expects a POSIX-compliant shell, which Fis
 
 " Change the mapleader from \ to ,
 let mapleader=","
-let maplocalleader="\\"
 
 " Editing behaviour {{{
 set showmode                    " always show what mode we're currently editing in
@@ -185,11 +184,6 @@ nnoremap <leader>N :setlocal number!<cr>
 " See http://stevelosh.com/blog/2010/09/coming-home-to-vim
 nnoremap / /\v
 vnoremap / /\v
-
-" Triggers global-search-and-replace. Prompts for a replacement string and
-" will replace all matches from the previous search command.
-" nnoremap <leader>r :%s//
-nnoremap <leader>r :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>:%s//
 
 " Speed up scrolling of the viewport slightly
 nnoremap <C-e> 2<C-e>
@@ -441,21 +435,6 @@ vnoremap <Space> za
 " Strip all trailing whitespace from a file, using ,W
 nnoremap <leader>W :%s/\s\+$//<CR>:let @/=''<CR>
 
-" Use The Silver Searcher over grep, iff possible
-if executable('ag')
-   " Use ag over grep
-   set grepprg=ag\ --nogroup\ --nocolor
-endif
-
-" Allow quick additions to the spelling dict
-nnoremap <leader>g :spellgood <c-r><c-w>
-
-" Define "Ag" command
-command -nargs=+ -complete=file -bar Ag silent! grep! <args> | cwindow | redraw!
-
-" bind \ (backward slash) to grep shortcut
-nnoremap \ :Ag<SPACE>
-
 " Creating folds for tags in HTML
 "nnoremap <leader>ft Vatzf
 
@@ -618,17 +597,6 @@ if has("autocmd")
         " tools support JSON comments, however, so let's not make it all
         " shouty and red.
         autocmd filetype json syntax match Comment +\/\/.\+$+
-    augroup end " }}}
-
-    augroup clojure_files "{{{
-        au!
-
-        " Set up <leader>r to run the entire file with vim-fireplace
-        autocmd filetype clojure nnoremap <leader>r :%Eval<cr>
-        autocmd filetype clojure RainbowParenthesesActivate
-        autocmd filetype clojure RainbowParenthesesLoadRound
-        autocmd filetype clojure RainbowParenthesesLoadSquare
-        autocmd filetype clojure RainbowParenthesesLoadBraces
     augroup end " }}}
 
     augroup supervisord_files "{{{
