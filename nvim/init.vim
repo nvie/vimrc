@@ -1047,9 +1047,27 @@ nnoremap <leader>w :ArgWrap<cr>
 " nnoremap <leader>a :Ag <c-r><c-w>
 " nnoremap K *N:grep! "\b<c-r><c-w>\b"<cr>:cw<cr>
 
-" Search the entire repo with ripgrep using ,f
-nnoremap <leader>f :Rg 
-nnoremap K :Rg "\b<c-r><c-w>\b"<cr>
+" Search the entire repo with ripgrep using \
+" or search for the word-under-cursor using ,f
+nnoremap \ :Rg ""<left>
+nnoremap \\ :Rg "\b<c-r><c-w>\b"<cr>
+" nnoremap <leader>f :Rg "\b<c-r><c-w>\b"<cr>
+
+" Triggers global-search-and-replace. Prompts for a replacement string and
+" will replace all matches from the previous search command.
+" nnoremap <leader>r :%s//
+nnoremap <leader>r :let @/='\<<C-R>=expand("<cword>")<CR>\>'<CR>:set hls<CR>:%s//
+
+" ------ OLD STUFF, reconsider using ripgrep here ---------------------
+" Use The Silver Searcher over grep, iff possible
+if executable('ag')
+   " Use ag over grep
+   set grepprg=ag\ --nogroup\ --nocolor
+endif
+
+" Define "Ag" command
+command -nargs=+ -complete=file -bar Ag silent! grep! <args> | cwindow | redraw!
+" ------ OLD STUFF, reconsider using ripgrep here ---------------------
 
 " Neoformat {{{
 
