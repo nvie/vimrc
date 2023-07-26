@@ -200,7 +200,7 @@ iab corproations corporations
 iab corruptable corruptible
 iab cotten cotton
 iab coudl could
-iab couldnt couldn't
+iab couldnt couldn’t
 iab couldthe could the
 iab cpoy copy
 iab ctaegory category
@@ -237,9 +237,9 @@ iab developor developer
 iab developors developers
 iab develpment development
 iab diaplay display
-iab didint didn't
+iab didint didn’t
 iab didnot did not
-iab didnt didn't
+iab didnt didn’t
 iab difefrent different
 iab diferences differences
 iab differance difference
@@ -264,14 +264,14 @@ iab documetn document
 iab documnet document
 iab documnets documents
 iab doese does
-iab doesnt doesn't
+iab doesnt doesn’t
 iab doign doing
 iab doimg doing
 iab doind doing
 iab doller dollars
 iab dollers dollars
 iab donig doing
-iab dont don't
+iab dont don’t
 iab driveing driving
 iab drnik drink
 iab efel feel
@@ -356,7 +356,7 @@ iab hapening happening
 iab hapens happens
 iab happend happened
 iab hasbeen has been
-iab hasnt hasn't
+iab hasnt hasn’t
 iab havebeen have been
 iab haveing having
 iab hda had
@@ -627,8 +627,8 @@ iab shesaid she said
 iab shineing shining
 iab shiped shipped
 iab shoudl should
-iab shouldent shouldn't
-iab shouldnt shouldn't
+iab shouldent shouldn’t
+iab shouldnt shouldn’t
 iab showinf showing
 iab signifacnt significant
 iab simalar similar
@@ -686,7 +686,7 @@ iab termoil turmoil
 iab tghe the
 iab tghis this
 iab thansk thanks
-iab thats that's
+iab thats that’s
 iab thatthe that the
 iab thecompany the company
 iab thefirst the first
@@ -697,8 +697,8 @@ iab thenew the new
 iab theri their
 iab thesame the same
 iab thetwo the two
-iab theyll they'll
-iab theyve they've
+iab theyll they’ll
+iab theyve they’ve
 iab thgat that
 iab thge the
 iab thier their
@@ -754,7 +754,7 @@ iab vrey very
 iab vulnerible vulnerable
 iab waht what
 iab warrent warrant
-iab wasnt wasn't
+iab wasnt wasn’t
 iab watn want
 iab wehn when
 iab werre were
@@ -782,7 +782,7 @@ iab woh who
 iab wokr work
 iab woudl would
 iab wouldbe would be
-iab wouldnt wouldn't
+iab wouldnt wouldn’t
 iab wriet write
 iab writting writing
 iab wrod word
@@ -796,7 +796,7 @@ iab yera year
 iab yersa years
 iab yoiu you
 iab youare you are
-iab youve you've
+iab youve you’ve
 iab ytou you
 iab yuor your
 iab yuo you
