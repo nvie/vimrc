@@ -1,5 +1,5 @@
-iab --@ –
 iab ---@ —
+iab --@ –
 iab abbout about
 iab abotu about
 iab abouta about a
@@ -271,6 +271,7 @@ iab doind doing
 iab doller dollars
 iab dollers dollars
 iab donig doing
+iab Dont Don’t
 iab dont don’t
 iab driveing driving
 iab drnik drink
@@ -297,8 +298,8 @@ iab exhcange exchange
 iab exhcanges exchanges
 iab experiance experience
 iab experienc experience
-iab exprienced experienced
 iab exprience experience
+iab exprienced experienced
 iab eyt yet
 iab faeture feature
 iab faetures features
@@ -350,8 +351,8 @@ iab grwo grow
 iab guidlines guidelines
 iab hadbeen had been
 iab haev have
-iab hapened happened
 iab hapen happen
+iab hapened happened
 iab hapening happening
 iab hapens happens
 iab happend happened
@@ -370,9 +371,9 @@ iab hismelf himself
 iab hlep help
 iab hsa has
 iab hsi his
+iab hte the
 iab htere there
 iab htese these
-iab hte the
 iab htey they
 iab hting thing
 iab htink think
@@ -385,6 +386,10 @@ iab idae idea
 iab idaes ideas
 iab identofy identify
 iab ihs his
+iab Ill I’ll
+iab ill I’ll
+iab Illl I’ll
+iab illl I’ll
 iab imediate immediate
 iab imediatly immediately
 iab immediatly immediately
@@ -414,14 +419,17 @@ iab interum interim
 iab inthe in the
 iab inwhich in which
 iab isthe is the
-iab itis it is
 iab ititial initial
+iab itnerest interest
 iab itnerested interested
 iab itneresting interesting
-iab itnerest interest
 iab itnerests interests
-iab itwas it was
-iab iused used
+iab Isnt Isn’t
+iab isnt isn’t
+iab Itss It’s
+iab itss it’s
+iab Itsss It’s
+iab itsss it’s
 iab iwll will
 iab iwth with
 iab jsut just
@@ -442,8 +450,8 @@ iab levle level
 iab libary library
 iab librarry library
 iab librery library
-iab liekd liked
 iab liek like
+iab liekd liked
 iab lieutenent lieutenant
 iab liev live
 iab likly likely
@@ -465,9 +473,9 @@ iab memeber member
 iab merchent merchant
 iab mesage message
 iab mesages messages
+iab mispell misspell
 iab mispelling misspelling
 iab mispellings misspellings
-iab mispell misspell
 iab mkae make
 iab mkaes makes
 iab mkaing making
@@ -573,13 +581,13 @@ iab realyl really
 iab reccomend recommend
 iab reccommend recommend
 iab receieve receive
-iab recieved received
 iab recieve receive
+iab recieved received
 iab recieving receiving
+iab recomend recommend
 iab recomendation recommendation
 iab recomendations recommendations
 iab recomended recommended
-iab recomend recommend
 iab reconize recognize
 iab recrod record
 iab religous religious
@@ -596,15 +604,15 @@ iab resorces resources
 iab respomd respond
 iab respomse response
 iab responce response
-iab responsapreferredbility responsibility
 iab responsable responsible
+iab responsapreferredbility responsibility
 iab responsibile responsible
 iab responsiblity responsibility
 iab restaraunt restaurant
 iab restuarant restaurant
 iab reult result
-iab reveiwing reviewing
 iab reveiw review
+iab reveiwing reviewing
 iab rumers rumors
 iab rwite write
 iab rythm rhythm
@@ -612,8 +620,8 @@ iab saidhe said he
 iab saidit said it
 iab saidthat said that
 iab saidthe said the
-iab sceduled scheduled
 iab scedule schedule
+iab sceduled scheduled
 iab secratary secretary
 iab sectino section
 iab seh she
@@ -649,30 +657,31 @@ iab somtimes sometimes
 iab soudn sound
 iab soudns sounds
 iab speach speech
-iab specificalyl specifically
 iab specificaly specifically
-iab statments statements
+iab specificalyl specifically
+iab sss ’s
 iab statment statement
+iab statments statements
+iab stirng string
 iab stnad stand
 iab stopry story
 iab stoyr story
 iab stpo stop
-iab stirng string
 iab strentgh strength
 iab stroy story
 iab struggel struggle
 iab strugle struggle
 iab studnet student
 iab successfull successful
-iab successfulyl successfully
 iab successfuly successfully
-iab sucessfull successful
+iab successfulyl successfully
 iab sucess success
+iab sucessfull successful
 iab sufficiant sufficient
 iab suposed supposed
 iab suppossed supposed
-iab suprised surprised
 iab suprise surprise
+iab suprised surprised
 iab swiming swimming
 iab tahn than
 iab taht that
@@ -691,13 +700,15 @@ iab thatthe that the
 iab thecompany the company
 iab thefirst the first
 iab thegovernment the government
-iab themselfs themselves
 iab themself themselves
+iab themselfs themselves
 iab thenew the new
 iab theri their
 iab thesame the same
 iab thetwo the two
 iab theyll they’ll
+iab Theyre They’re
+iab theyre they’re
 iab theyve they’ve
 iab thgat that
 iab thge the
@@ -708,8 +719,8 @@ iab thme them
 iab thna than
 iab thna than 
 iab thne then
-iab thnigs things
 iab thnig thing
+iab thnigs things
 iab threatend threatened
 iab thsi this
 iab thsoe those
@@ -719,8 +730,8 @@ iab timne time
 iab tiogether together
 iab tje the
 iab tjhe the
-iab tkaes takes
 iab tkae take
+iab tkaes takes
 iab tkaing taking
 iab tlaking talking
 iab todya today
@@ -728,8 +739,8 @@ iab togehter together
 iab tomorow tomorrow
 iab tongiht tonight
 iab tonihgt tonight
-iab totalyl totally
 iab totaly totally
+iab totalyl totally
 iab tothe to the
 iab towrad toward
 iab traditionalyl traditionally
@@ -757,7 +768,13 @@ iab warrent warrant
 iab wasnt wasn’t
 iab watn want
 iab wehn when
+iab Welll We’ll
+iab welll we’ll
+iab Wereee We’re
+iab wereee we’re
 iab werre were
+iab Weveee We’ve
+iab weveee we’ve
 iab whcih which
 iab wherre where
 iab whic which
@@ -774,12 +791,13 @@ iab witha with a
 iab withe with
 iab withthe with the
 iab wiull will
+iab wnat want
 iab wnated wanted
 iab wnats wants
-iab wnat want
-iab wohle whole
 iab woh who
+iab wohle whole
 iab wokr work
+iab wont won’t
 iab woudl would
 iab wouldbe would be
 iab wouldnt wouldn’t
@@ -791,12 +809,17 @@ iab wroking working
 iab wtih with
 iab wuould would
 iab wya way
-iab yeras years
 iab yera year
+iab yeras years
 iab yersa years
 iab yoiu you
 iab youare you are
+iab Youll you’ll
+iab youll you’ll
+iab Youre You’re
+iab youre you’re
+iab Youve you’ve
 iab youve you’ve
 iab ytou you
-iab yuor your
 iab yuo you
+iab yuor your
