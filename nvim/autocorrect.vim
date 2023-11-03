@@ -823,3 +823,5 @@ iab youve you’ve
 iab ytou you
 iab yuo you
 iab yuor your
+
+iab (tm) ™
