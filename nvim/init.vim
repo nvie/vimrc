@@ -66,6 +66,11 @@ let g:fastfold_savehook = 1
 nmap zuz <Plug>(FastFoldUpdate)
 
 let g:coc_global_extensions = ['coc-tsserver']
+let g:coc_user_config = {}
+let g:coc_user_config['typescript.suggestionActions.enabled'] = v:false
+" let g:coc_user_config['tsserver.tsdk'] = '/path/to/node_modules/typescript/lib'
+" let g:coc_user_config['typescript.showUnused'] = v:false
+" let g:coc_user_config['typescript.showDeprecated'] = v:false
 
 " Remap keys for applying codeAction to the current line.
 " xmap <leader>a  <Plug>(coc-codeaction-selected)
