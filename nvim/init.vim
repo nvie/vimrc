@@ -65,9 +65,11 @@ let g:fastfold_savehook = 1
 " Manually recompute folds upon request
 nmap zuz <Plug>(FastFoldUpdate)
 
+" Global extension names to install when they aren't installed
 let g:coc_global_extensions = ['coc-tsserver']
 let g:coc_user_config = {}
 let g:coc_user_config['typescript.suggestionActions.enabled'] = v:false
+" let g:coc_user_config['tsserver.useLocalTsdk'] = v:true
 " let g:coc_user_config['tsserver.tsdk'] = '/path/to/node_modules/typescript/lib'
 " let g:coc_user_config['typescript.showUnused'] = v:false
 " let g:coc_user_config['typescript.showDeprecated'] = v:false
