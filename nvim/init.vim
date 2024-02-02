@@ -729,6 +729,14 @@ iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacu
 " Smart-quote a paragraph
 vnoremap ' :s/'/’/<cr>
 
+" Replace a "-quoted string by a `-quoted one (using vim-surround)
+nmap <leader>' mMcs`'cs"''M
+nmap <leader>" mMcs`"cs'"'M
+nmap <leader>` mMcs"`cs'`'M
+"              ^^        ^^ Mark cursor, and jump back at the end
+"                ^^^^       Run cs"` vim-surround macro
+"                    ^^^^   Run cs'` vim-surround macro (in case it was a single-quoted string)
+
 "set guifont=Anonymous\ for\ Powerline:h12 linespace=2
 "set guifont=Droid\ Sans\ Mono:h14 linespace=0
 "set guifont=Mensch\ for\ Powerline:h14 linespace=0
@@ -816,13 +824,13 @@ inoremap <c-u> <esc>viwUea
 nnoremap <c-u> viwUe
 
 " Quote words under cursor
-nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
-nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
+" nnoremap <leader>" viW<esc>a"<esc>gvo<esc>i"<esc>gvo<esc>3l
+" nnoremap <leader>' viW<esc>a'<esc>gvo<esc>i'<esc>gvo<esc>3l
 
-" Quote current selection
-" TODO: This only works for selections that are created "forwardly"
-vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll
-vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvo<esc>ll
+" " Quote current selection
+" " TODO: This only works for selections that are created "forwardly"
+" vnoremap <leader>" <esc>a"<esc>gvo<esc>i"<esc>gvo<esc>ll
+" vnoremap <leader>' <esc>a'<esc>gvo<esc>i'<esc>gvo<esc>ll
 
 " Use shift-H and shift-L for move to beginning/end
 nnoremap H 0
