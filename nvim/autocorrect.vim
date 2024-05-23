@@ -74,6 +74,7 @@ iab approrpiate appropriate
 iab approrpriate appropriate
 iab aquisition acquisition
 iab aquisitions acquisitions
+iab arent aren’t
 iab arguement argument
 iab arguements arguments
 iab arond around
