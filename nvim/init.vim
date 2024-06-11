@@ -728,7 +728,42 @@ iab llorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus
 iab lllorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Etiam lacus ligula, accumsan id imperdiet rhoncus, dapibus vitae arcu.  Nulla non quam erat, luctus consequat nisi.  Integer hendrerit lacus sagittis erat fermentum tincidunt.  Cras vel dui neque.  In sagittis commodo luctus.  Mauris non metus dolor, ut suscipit dui.  Aliquam mauris lacus, laoreet et consequat quis, bibendum id ipsum.  Donec gravida, diam id imperdiet cursus, nunc nisl bibendum sapien, eget tempor neque elit in tortor
 
 " Smart-quote a paragraph
-vnoremap ' :s/'/’/<cr>
+" vnoremap ' :s/'/’/<cr>
+
+function! ToggleSmartQuotes()
+  let l:char = getline('.')[col('.')-1]
+  let l:next_char = getline('.')[col('.')-1:col('.')+1]
+
+  if l:char == "'"
+    " Determine if the character is at the start of a word
+    if col('.') == 1 || getline('.')[col('.')-2] =~ '\s'
+      " Start of a word, replace with ‘
+      normal! r‘
+    else
+      " Middle or end of a word, replace with ’
+      normal! r’
+    endif
+  elseif l:next_char == "‘" || l:next_char == "’"
+    " Toggle back to single quote
+    normal! r'
+  elseif l:char == '"'
+    " Determine if the character is at the start of a word
+    if col('.') == 1 || getline('.')[col('.')-2] =~ '\s'
+      " Start of a word, replace with “
+      normal! r“
+    else
+      " Middle or end of a word, replace with ”
+      normal! r”
+    endif
+  elseif l:next_char == "“" || l:next_char == "”"
+    " Toggle back to double quote
+    normal! r"
+  endif
+endfunction
+
+" TODO: Combine it with the toggler plugin
+" Map the ,! key in normal mode to call the ToggleSmartQuotes function
+nnoremap <silent> ,! :call ToggleSmartQuotes()<CR>
 
 " Replace a "-quoted string by a `-quoted one (using vim-surround)
 nmap <leader>' mMcs`'cs"''M
