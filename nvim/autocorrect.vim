@@ -810,16 +810,18 @@ iab wroking working
 iab wtih with
 iab wuould would
 iab wya way
+iab Youll you’ll
+iab Youre You’re
+iab Youve you’ve
+iab Youd You’d
 iab yera year
 iab yeras years
 iab yersa years
 iab yoiu you
 iab youare you are
-iab Youll you’ll
+iab youd you’d
 iab youll you’ll
-iab Youre You’re
 iab youre you’re
-iab Youve you’ve
 iab youve you’ve
 iab ytou you
 iab yuo you
