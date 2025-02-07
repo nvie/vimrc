@@ -29,6 +29,7 @@ Plug 'neomake/neomake'
 Plug 'nvie/vim-align'
 Plug 'nvie/vim-nox'
 Plug 'nvie/vim-ast-generator'
+Plug 'nfischer/vim-ohm'
 Plug 'nvie/vim-oceanic-next'
 Plug 'nvie/vim-rule-of-law'
 Plug 'pangloss/vim-javascript'
@@ -63,8 +64,6 @@ Plug 'pangloss/vim-javascript'
 " super slow neoformat saves a thing of the past. See
 " https://github.com/sbdchd/neoformat/issues/340
 Plug 'Konfekt/FastFold'
-
-Plug 'nfischer/vim-ohm'
 
 Plug 'github/copilot.vim'
 
@@ -325,7 +324,7 @@ set nocursorline                " don't highlight the current line (useful for q
 set inccommand=nosplit          " live preview of substitutions with `:s`
 " }}}
 
-nnoremap <leader>, :set cursorline!<cr>  " toggle highlighting the cursor line
+nnoremap <leader>l :set cursorline!<cr>  " toggle highlighting the cursor line
 
 " Toggle the quickfix window {{{
 " From Steve Losh, http://learnvimscriptthehardway.stevelosh.com/chapters/38.html
@@ -697,7 +696,12 @@ if has("autocmd")
 
         " Enable insertion of "debugger" statement in JS files
         autocmd filetype javascript nnoremap <leader>b Odebugger; // eslint-disable-line<esc>
+    augroup end "}}}
 
+    augroup tsconfig_files "{{{
+        " Auto-detect tsconfig.json files as JSONC
+        autocmd BufNewFile,BufRead tsconfig.json setlocal filetype=jsonc
+        autocmd BufNewFile,BufRead tsconfig.*.json setlocal filetype=jsonc
     augroup end "}}}
 
     augroup textile_files "{{{
@@ -791,8 +795,8 @@ function! ToggleSmartQuotes()
 endfunction
 
 " TODO: Combine it with the toggler plugin
-" Map the ,! key in normal mode to call the ToggleSmartQuotes function
-nnoremap <silent> ,! :call ToggleSmartQuotes()<CR>
+" Map the ,, key in normal mode to call the ToggleSmartQuotes function
+nnoremap <silent> ,, :call ToggleSmartQuotes()<CR>
 
 " Replace a "-quoted string by a `-quoted one (using vim-surround)
 nmap <leader>' mMcs`'cs"''M
@@ -876,7 +880,10 @@ let g:vim_json_syntax_conceal = 0
 " Invoke fzf, but CommandT style
 nnoremap <leader>t :Files<cr>
 nnoremap <leader>. :Tags<cr>
-nnoremap <leader>b :Buffers<cr>
+
+" Run Git blame on the current line or the selected block
+nnoremap <leader>b :execute '!git blame % -L' . line('.') . ',' . line('.') . ' --abbrev=6'<cr>
+vnoremap <leader>b :<c-u>execute '!git blame % -L' . line("'<") . ',' . line("'>") . ' --abbrev=6'<cr>
 
 " ------------------------------------------------------------------------- }}}
 
