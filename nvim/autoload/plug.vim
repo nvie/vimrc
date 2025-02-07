@@ -1,67 +1,36 @@
 " vim-plug: Vim plugin manager
 " ============================
 "
-" Download plug.vim and put it in ~/.vim/autoload
+" 1. Download plug.vim and put it in 'autoload' directory
 "
+"   # Vim
 "   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
-" Edit your .vimrc
+"   # Neovim
+"   sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 "
-"   call plug#begin('~/.vim/plugged')
+" 2. Add a vim-plug section to your ~/.vimrc (or ~/.config/nvim/init.vim for Neovim)
 "
-"   " Make sure you use single quotes
+"   call plug#begin()
 "
-"   " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-"   Plug 'junegunn/vim-easy-align'
+"   " List your plugins here
+"   Plug 'tpope/vim-sensible'
 "
-"   " Any valid git URL is allowed
-"   Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-"
-"   " Multiple Plug commands can be written in a single line using | separators
-"   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-"
-"   " On-demand loading
-"   Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-"   Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-"
-"   " Using a non-default branch
-"   Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-"
-"   " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-"   Plug 'fatih/vim-go', { 'tag': '*' }
-"
-"   " Plugin options
-"   Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-"
-"   " Plugin outside ~/.vim/plugged with post-update hook
-"   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-"
-"   " Unmanaged plugin (manually installed and updated)
-"   Plug '~/my-prototype-plugin'
-"
-"   " Initialize plugin system
 "   call plug#end()
 "
-" Then reload .vimrc and :PlugInstall to install plugins.
+" 3. Reload the file or restart Vim, then you can,
 "
-" Plug options:
+"     :PlugInstall to install plugins
+"     :PlugUpdate  to update plugins
+"     :PlugDiff    to review the changes from the last update
+"     :PlugClean   to remove plugins no longer in the list
 "
-"| Option                  | Description                                      |
-"| ----------------------- | ------------------------------------------------ |
-"| `branch`/`tag`/`commit` | Branch/tag/commit of the repository to use       |
-"| `rtp`                   | Subdirectory that contains Vim plugin            |
-"| `dir`                   | Custom directory for the plugin                  |
-"| `as`                    | Use different name for the plugin                |
-"| `do`                    | Post-update hook (string or funcref)             |
-"| `on`                    | On-demand loading: Commands or `<Plug>`-mappings |
-"| `for`                   | On-demand loading: File types                    |
-"| `frozen`                | Do not update unless explicitly specified        |
-"
-" More information: https://github.com/junegunn/vim-plug
+" For more information, see https://github.com/junegunn/vim-plug
 "
 "
-" Copyright (c) 2017 Junegunn Choi
+" Copyright (c) 2024 Junegunn Choi
 "
 " MIT License
 "
@@ -814,10 +783,11 @@ endfunction
 function! s:syntax()
   syntax clear
   syntax region plug1 start=/\%1l/ end=/\%2l/ contains=plugNumber
-  syntax region plug2 start=/\%2l/ end=/\%3l/ contains=plugBracket,plugX
+  syntax region plug2 start=/\%2l/ end=/\%3l/ contains=plugBracket,plugX,plugAbort
   syn match plugNumber /[0-9]\+[0-9.]*/ contained
   syn match plugBracket /[[\]]/ contained
   syn match plugX /x/ contained
+  syn match plugAbort /\~/ contained
   syn match plugDash /^-\{1}\ /
   syn match plugPlus /^+/
   syn match plugStar /^*/
@@ -842,6 +812,7 @@ function! s:syntax()
   hi def link plug2       Repeat
   hi def link plugH2      Type
   hi def link plugX       Exception
+  hi def link plugAbort   Ignore
   hi def link plugBracket Structure
   hi def link plugNumber  Number
 
@@ -939,7 +910,7 @@ function! s:prepare(...)
     endif
   endfor
 
-  call s:job_abort()
+  call s:job_abort(0)
   if s:switch_in()
     if b:plug_preview == 1
       pc
@@ -975,6 +946,8 @@ function! s:close_pane()
   if b:plug_preview == 1
     pc
     let b:plug_preview = -1
+  elseif exists('s:jobs') && !empty(s:jobs)
+    call s:job_abort(1)
   else
     bd
   endif
@@ -1357,7 +1330,12 @@ function! s:update_finish()
   endif
 endfunction
 
-function! s:job_abort()
+function! s:mark_aborted(name, message)
+  let attrs = { 'running': 0, 'error': 1, 'abort': 1, 'lines': [a:message] }
+  let s:jobs[a:name] = extend(get(s:jobs, a:name, {}), attrs)
+endfunction
+
+function! s:job_abort(cancel)
   if (!s:nvim && !s:vim8) || !exists('s:jobs')
     return
   endif
@@ -1371,8 +1349,18 @@ function! s:job_abort()
     if j.new
       call s:rm_rf(g:plugs[name].dir)
     endif
+    if a:cancel
+      call s:mark_aborted(name, 'Aborted')
+    endif
   endfor
-  let s:jobs = {}
+
+  if a:cancel
+    for todo in values(s:update.todo)
+      let todo.abort = 1
+    endfor
+  else
+    let s:jobs = {}
+  endif
 endfunction
 
 function! s:last_non_empty_line(lines)
@@ -1386,6 +1374,16 @@ function! s:last_non_empty_line(lines)
   return ''
 endfunction
 
+function! s:bullet_for(job, ...)
+  if a:job.running
+    return a:job.new ? '+' : '*'
+  endif
+  if get(a:job, 'abort', 0)
+    return '~'
+  endif
+  return a:job.error ? 'x' : get(a:000, 0, '-')
+endfunction
+
 function! s:job_out_cb(self, data) abort
   let self = a:self
   let data = remove(self.lines, -1) . a:data
@@ -1394,10 +1392,9 @@ function! s:job_out_cb(self, data) abort
   " To reduce the number of buffer updates
   let self.tick = get(self, 'tick', -1) + 1
   if !self.running || self.tick % len(s:jobs) == 0
-    let bullet = self.running ? (self.new ? '+' : '*') : (self.error ? 'x' : '-')
     let result = self.error ? join(self.lines, "\n") : s:last_non_empty_line(self.lines)
     if len(result)
-      call s:log(bullet, self.name, result)
+      call s:log(s:bullet_for(self), self.name, result)
     endif
   endif
 endfunction
@@ -1411,7 +1408,7 @@ endfunction
 
 function! s:job_cb(fn, job, ch, data)
   if !s:plug_window_exists() " plug window closed
-    return s:job_abort()
+    return s:job_abort(0)
   endif
   call call(a:fn, [a:job, a:data])
 endfunction
@@ -1483,17 +1480,16 @@ function! s:reap(name)
   endif
 
   let more = len(get(job, 'queue', []))
-  let bullet = job.error ? 'x' : more ? (job.new ? '+' : '*') : '-'
   let result = job.error ? join(job.lines, "\n") : s:last_non_empty_line(job.lines)
   if len(result)
-    call s:log(bullet, a:name, result)
+    call s:log(s:bullet_for(job), a:name, result)
   endif
 
   if !job.error && more
     let job.spec.queue = job.queue
     let s:update.todo[a:name] = job.spec
   else
-    let s:update.bar .= job.error ? 'x' : '='
+    let s:update.bar .= s:bullet_for(job, '=')
     call s:bar()
   endif
 endfunction
@@ -1572,6 +1568,12 @@ while 1 " Without TCO, Vim stack is bound to explode
 
   let name = keys(s:update.todo)[0]
   let spec = remove(s:update.todo, name)
+  if get(spec, 'abort', 0)
+    call s:mark_aborted(name, 'Skipped')
+    call s:reap(name)
+    continue
+  endif
+
   let queue = get(spec, 'queue', [])
   let new = empty(globpath(spec.dir, '.git', 1))
 
@@ -2312,7 +2314,10 @@ endfunction
 
 function! s:with_cd(cmd, dir, ...)
   let script = a:0 > 0 ? a:1 : 1
-  return printf('cd%s %s && %s', s:is_win ? ' /d' : '', plug#shellescape(a:dir, {'script': script}), a:cmd)
+  let pwsh = s:is_powershell(&shell)
+  let cd = s:is_win && !pwsh ? 'cd /d' : 'cd'
+  let sep = pwsh ? ';' : '&&'
+  return printf('%s %s %s %s', cd, plug#shellescape(a:dir, {'script': script, 'shell': &shell}), sep, a:cmd)
 endfunction
 
 function! s:system(cmd, ...)
