@@ -65,6 +65,31 @@ Plug 'pangloss/vim-javascript'
 Plug 'Konfekt/FastFold'
 
 Plug 'nfischer/vim-ohm'
+
+Plug 'github/copilot.vim'
+
+" Cycle through Copilot suggestions
+imap ‹c-m-[> ‹Plug>(copilot-previous)
+imap <c-m-]> <Plug>(copilot-next)
+
+" Quick enable/disable Copilot
+function! ToggleCopilot()
+  " FYI https://github.com/github/copilot.vim/blob/release/autoload/copilot.vim
+
+  if copilot#Enabled()
+      Copilot disable
+  else
+      Copilot enable
+  endif
+
+  echo "copilot is: " . (g:copilot_enabled ? "on" : "off")
+  Copilot status " visual confirmation - precise about global vs buffer local too
+endfunction
+
+" Quickly toggle Copilot on/off with Ctrl+.
+inoremap <c-.> <esc>:call ToggleCopilot()<cr>a
+nnoremap <c-.> :call ToggleCopilot()<CR>
+
 " Recompute folds on every save
 let g:fastfold_savehook = 1
 " Manually recompute folds upon request
@@ -106,7 +131,7 @@ endif
 inoremap <expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<CR>"
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <silent> ga  <Plug>(coc-codeaction)
+nmap <silent> ga <Plug>(coc-codeaction)
 
 " Apply AutoFix to problem on the current line.
 " nmap <leader>q <Plug>(coc-fix-current)
