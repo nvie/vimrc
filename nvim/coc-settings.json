@@ -1,0 +1,11 @@
+{
+  "eslint.enable": true,
+  "eslint.rules.customizations": [
+    // Turn off lint warnings in Vim for "XXX" comments
+    // I still want to see those in CI, but not in my editor constantly
+    {
+      "rule": "no-warning-comments",
+      "severity": "off"
+    }
+  ]
+}
