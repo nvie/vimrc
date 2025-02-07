@@ -28,9 +28,9 @@ Plug 'mileszs/ack.vim'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-align'
 Plug 'nvie/vim-nox'
+Plug 'nvie/vim-ast-generator'
 Plug 'nvie/vim-oceanic-next'
 Plug 'nvie/vim-rule-of-law'
-Plug 'othree/html5-syntax.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'sbdchd/neoformat'
 Plug 'preservim/nerdtree'
@@ -56,11 +56,15 @@ Plug 'jxnblk/vim-mdx-js'
 Plug 'terrastruct/d2-vim'
 Plug 'prisma/vim-prisma'
 
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+
 " This will make Vim recompute folds based on syntax waaay less often, making
 " super slow neoformat saves a thing of the past. See
 " https://github.com/sbdchd/neoformat/issues/340
 Plug 'Konfekt/FastFold'
 
+Plug 'nfischer/vim-ohm'
 " Recompute folds on every save
 let g:fastfold_savehook = 1
 " Manually recompute folds upon request
