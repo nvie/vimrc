@@ -72,8 +72,8 @@ Plug 'github/copilot.vim'
 inoremap <m-w> Σ
 
 " Cycle through Copilot suggestions
-imap ‹c-m-[> ‹Plug>(copilot-previous)
-imap <c-m-]> <Plug>(copilot-next)
+" imap ‹c-m-[> ‹Plug>(copilot-previous)
+" imap <c-m-]> <Plug>(copilot-next)
 
 " Quick enable/disable Copilot
 function! ToggleCopilot()
@@ -217,9 +217,6 @@ set listchars=tab:▸\ ,trail:·,extends:#,nbsp:·
 
 set nolist                      " don't show invisible characters by default,
                                 " but it is enabled for some file types (see later)
-set pastetoggle=<F2>            " when in insert mode, press <F2> to go to
-                                "    paste mode, where you can paste mass data
-                                "    that won't be autoindented
 set fileformats="unix,dos,mac"
 set formatoptions+=1            " When wrapping paragraphs, don't end lines
                                 "    with 1-letter words (looks stupid)
@@ -667,8 +664,10 @@ if has("autocmd")
     augroup markdown_files "{{{
         au!
 
-        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
+        "autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
+        "autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a Typora %<CR><CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a Typora %<CR><CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
