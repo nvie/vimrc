@@ -1192,5 +1192,6 @@ map gm :call SynStack()<CR>
 " Convert current filename to the clipboard
 " ,cs = copy short name (relative path)
 " ,cl = copy long name  (fully expanded absolute path)
-nmap ,cs :let @*=expand("%")<CR>
-nmap ,cl :let @*=expand("%:p")<CR>
+nmap ,cs :let @*=expand("%")<CR>:echom "Copied '" . @* . "' to clipboard"<CR>
+nmap ,cl :let @*=expand("%") . ':' . line('.')<CR>:echom "Copied '" . @* . "' to clipboard"<CR>
+nmap ,cf :let @*=expand("%:p")<CR>:echom "Copied '" . @* . "' to clipboard"<CR>
