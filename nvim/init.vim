@@ -67,6 +67,9 @@ Plug 'Konfekt/FastFold'
 
 Plug 'github/copilot.vim'
 
+" Write a Sigma when pressing Option+w
+inoremap <m-w> Σ
+
 " Cycle through Copilot suggestions
 imap ‹c-m-[> ‹Plug>(copilot-previous)
 imap <c-m-]> <Plug>(copilot-next)
