@@ -56,6 +56,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jxnblk/vim-mdx-js'
 Plug 'terrastruct/d2-vim'
 Plug 'prisma/vim-prisma'
+" Plug 'evanleck/vim-svelte'
 
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
