@@ -19,7 +19,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'alunny/pegjs-vim'
 Plug 'bling/vim-bufferline'
 Plug 'dag/vim-fish'
-Plug 'elzr/vim-json'
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -56,6 +55,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jxnblk/vim-mdx-js'
 Plug 'terrastruct/d2-vim'
 Plug 'prisma/vim-prisma'
+Plug 'wsdjeg/vim-fetch'  " opens 'src/index.ts:13:4' and jumps to L13
 " Plug 'evanleck/vim-svelte'
 
 Plug 'othree/html5.vim'
@@ -645,16 +645,6 @@ if has("autocmd")
         autocmd filetype typescript setlocal foldmethod=syntax
     augroup end " }}}
 
-    augroup json_files "{{{
-        au!
-
-        " NOTE: By default, vim-json will highlight comments as errors. Some
-        " tools support JSON comments, however, so let's not make it all
-        " shouty and red.
-        autocmd filetype json syntax match Comment ,\/\/.\+$,
-        autocmd filetype json syntax match Comment ,\/\*.*\*\/,
-    augroup end " }}}
-
     augroup supervisord_files "{{{
         au!
 
@@ -666,8 +656,8 @@ if has("autocmd")
 
         "autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
         "autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
-        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a Typora %<CR><CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a Typora %<CR><CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a MarkEdit %<CR><CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a MarkEdit %<CR><CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
@@ -872,9 +862,6 @@ let g:Powerline_symbols = 'compatible'
 
 let g:javascript_plugin_jsdoc = 0
 " let g:javascript_plugin_flow = 1
-
-" See https://github.com/elzr/vim-json#specific-customizations
-let g:vim_json_syntax_conceal = 0
 
 " }}}
 
