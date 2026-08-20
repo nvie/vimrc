@@ -1146,10 +1146,34 @@ let g:switch_mapping = "!"
 let g:switch_custom_definitions =
   \ [
   \   {
-  \     'x\(\d\*\)\?': 'y\1',
-  \     'y\(\d\*\)\?': 'x\1',
+  \     'x\(\d*\)': 'y\1',
+  \     'y\(\d*\)': 'x\1',
   \   },
-  \   ['width', 'height'],
+  \   {
+  \     '\C\<it(':             'it.only(',
+  \     '\C\<it\.only(':       'it.skip(',
+  \     '\C\<it\.skip(':       'it(',
+  \   },
+  \   {
+  \     '\C\<describe(':       'describe.only(',
+  \     '\C\<describe\.only(': 'describe.skip(',
+  \     '\C\<describe\.skip(': 'describe(',
+  \   },
+  \   switch#NormalizedCase(['width', 'height']),
+  \   switch#NormalizedCaseWords(['always', 'never']),
+  \   switch#NormalizedCaseWords(['min', 'max']),
+  \   switch#NormalizedCaseWords(['first', 'last']),
+  \   switch#NormalizedCaseWords(['before', 'after']),
+  \   switch#NormalizedCaseWords(['enable', 'disable']),
+  \   switch#NormalizedCaseWords(['enabled', 'disabled']),
+  \   switch#NormalizedCaseWords(['include', 'exclude']),
+  \   switch#NormalizedCaseWords(['show', 'hide']),
+  \   switch#NormalizedCaseWords(['top', 'bottom']),
+  \   switch#NormalizedCaseWords(['left', 'right']),
+  \   switch#NormalizedCaseWords(['asc', 'desc']),
+  \   switch#Words(['null', 'undefined']),
+  \   switch#Words(['let', 'const']),
+  \   switch#Words(['GET', 'POST', 'PUT', 'PATCH', 'DELETE']),
   \ ]
 
 autocmd FileType gitrebase let b:switch_custom_definitions =
