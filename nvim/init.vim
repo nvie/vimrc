@@ -865,6 +865,18 @@ let g:javascript_plugin_jsdoc = 0
 
 " }}}
 
+" Astro configuration ----------------------------------------------------- {{{
+
+" Neovim vendors wuelnerdotexe's astro syntax, so no plugin is needed. It
+" defaults to sourcing syntax/javascript.vim for the `---` frontmatter, and
+" JavaScript reads `interface` as a reserved word rather than a block opener,
+" so the closing brace of every `interface Props {}` lights up as
+" jsParensError. This switches the fence to TypeScript, which is what is
+" actually written there.
+let g:astro_typescript = 'enable'
+
+" }}}
+
 " fzf config -------------------------------------------------------------- {{{
 
 " Invoke fzf, but CommandT style
@@ -1109,6 +1121,17 @@ let g:neoformat_enabled_pegjs           = ['prettier']
 " After that, this starts working magically for all TypeScript projects.
 let g:neoformat_enabled_typescript      = ['eslint_d', 'prettier']
 let g:neoformat_enabled_typescriptreact = ['eslint_d', 'prettier']
+
+" NOTE: Neoformat ships no astro definition, so this one is spelled out.
+" Formatting .astro needs prettier-plugin-astro, which prettier resolves
+" relative to the project's .prettierrc -- so the project's own prettier has to
+" be the one on PATH (direnv `layout node` in that directory).
+let g:neoformat_astro_prettier = {
+  \ 'exe': 'prettier',
+  \ 'args': ['--stdin-filepath', '"%:p"'],
+  \ 'stdin': 1,
+  \ }
+let g:neoformat_enabled_astro = ['prettier']
 
 " Enable format-on-save
 augroup fmt
