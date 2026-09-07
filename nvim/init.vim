@@ -546,6 +546,7 @@ if has("autocmd")
 
         " Show invisible characters in all of these files
         autocmd filetype vim setlocal list
+        autocmd filetype markdown,markdown.mdx setlocal list
         autocmd filetype python,rst setlocal list
         autocmd filetype ruby setlocal list
         autocmd filetype javascript,css setlocal list
@@ -653,8 +654,10 @@ if has("autocmd")
     augroup markdown_files "{{{
         au!
 
-        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!open -a 'Marked 2' %<CR><CR>
+        autocmd filetype markdown noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!viewdown %<CR><CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!viewdown %<CR><CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
