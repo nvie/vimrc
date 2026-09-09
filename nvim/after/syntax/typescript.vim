@@ -170,6 +170,17 @@ syn cluster typescriptSymbols add=typescriptCustomizedLogicOp
 hi link typescriptBinaryOp Operator
 hi link typescriptCustomizedLogicOp Boolean
 
+" Bugfix for yats `key: (a).b ?? c` expressions getting treated as ternaries {{{
+" I've filed this fix upstream as
+" https://github.com/HerringtonDarkholme/yats.vim/pull/305
+" We can drop this block once Neovim ships a runtime carrying this merged fix.
+syn clear typescriptTernary
+syntax region typescriptTernary contained matchgroup=typescriptTernaryOp
+      \ start=/?\@1<!?[.?]\@!/ end=/:/
+      \ contains=@typescriptValue,@typescriptComments
+      \ nextgroup=@typescriptValue skipwhite skipempty
+" -------------------------------------------------------------------------- }}}
+
 " leafgarland painted every `;` and `,` red, wherever it sat. yats has the rule
 " but only reaches it inside for-headers and type members.
 exe 'syn match typescriptCustomizedEndColons /[;,]/ containedin=' . s:code
