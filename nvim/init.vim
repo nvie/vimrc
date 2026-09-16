@@ -465,7 +465,7 @@ inoremap jj <Esc>
 " nnoremap <leader>ac :center<CR>
 
 " Sudo to write
-cnoremap w!! w !sudo tee % >/dev/null
+cnoremap w!! w !sudo tee %:S >/dev/null
 
 " Ctrl+W to redraw the buffer's contents
 "
@@ -620,10 +620,10 @@ if has("autocmd")
         "autocmd filetype python setlocal foldmethod=expr
 
         " Python runners
-        autocmd filetype python noremap <buffer> <F5> :w<CR>:!python %<CR>
-        autocmd filetype python inoremap <buffer> <F5> <Esc>:w<CR>:!python %<CR>
-        autocmd filetype python noremap <buffer> <S-F5> :w<CR>:!ipython %<CR>
-        autocmd filetype python inoremap <buffer> <S-F5> <Esc>:w<CR>:!ipython %<CR>
+        autocmd filetype python noremap <buffer> <F5> :w<CR>:!python %:S<CR>
+        autocmd filetype python inoremap <buffer> <F5> <Esc>:w<CR>:!python %:S<CR>
+        autocmd filetype python noremap <buffer> <S-F5> :w<CR>:!ipython %:S<CR>
+        autocmd filetype python inoremap <buffer> <S-F5> <Esc>:w<CR>:!ipython %:S<CR>
 
         " Automatic insertion of breakpoints
         autocmd filetype python nnoremap <buffer> <leader>bp :normal oimport pdb; pdb.set_trace()  # TODO: BREAKPOINT  # noqa<Esc>
@@ -654,10 +654,10 @@ if has("autocmd")
     augroup markdown_files "{{{
         au!
 
-        autocmd filetype markdown noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
-        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!viewdown %<CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!viewdown %<CR>
+        autocmd filetype markdown noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %:S<CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %:S<CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!viewdown %:S<CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!viewdown %:S<CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
