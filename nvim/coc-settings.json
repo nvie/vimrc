@@ -1,20 +1,20 @@
 {
-  // Astro has no coc extension, so the language server is wired up directly.
-  //
-  //   npm install -g @astrojs/language-server
-  //
-  // npm and not pnpm: pnpm's strict node_modules layout breaks a transitive
-  // require inside the server's bundled yaml-language-server, and it dies on
-  // startup with "Cannot find module 'jsonc-parser'".
-  //
-  // The server refuses to initialize without being handed a TypeScript SDK,
-  // and it cannot use this repo's own: TypeScript 7 is the Go port and ships
-  // only tsc.js, where Volar needs typescript.js. So the SDK is a dedicated
-  // 5.x that no project or node upgrade can move:
-  //
-  //   mkdir -p ~/.local/share/astro-ls && cd ~/.local/share/astro-ls
-  //   npm init -y && npm install typescript@5
   "languageserver": {
+    // Astro has no coc extension, so the language server is wired up directly.
+    //
+    //   npm install -g @astrojs/language-server
+    //
+    // npm and not pnpm: pnpm's strict node_modules layout breaks a transitive
+    // require inside the server's bundled yaml-language-server, and it dies on
+    // startup with "Cannot find module 'jsonc-parser'".
+    //
+    // The server refuses to initialize without being handed a TypeScript SDK,
+    // and it cannot use this repo's own: TypeScript 7 is the Go port and ships
+    // only tsc.js, where Volar needs typescript.js. So the SDK is a dedicated
+    // 5.x that no project or node upgrade can move:
+    //
+    //   mkdir -p ~/.local/share/astro-ls && cd ~/.local/share/astro-ls
+    //   npm init -y && npm install typescript@5
     "astro": {
       "command": "astro-ls",
       "args": ["--stdio"],
@@ -25,6 +25,17 @@
           "tsdk": "/Users/nvie/.local/share/astro-ls/node_modules/typescript/lib"
         }
       }
+    },
+
+    // Uses the rustup-managed binary, so it tracks the toolchain:
+    //
+    //   rustup component add rust-analyzer rust-src
+    //
+    // rust-src is what makes jumping into std (Option, Vec, ...) resolve.
+    "rust": {
+      "command": "rust-analyzer",
+      "filetypes": ["rust"],
+      "rootPatterns": ["Cargo.toml", "rust-project.json"]
     }
   },
 
