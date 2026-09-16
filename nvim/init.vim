@@ -656,8 +656,8 @@ if has("autocmd")
 
         autocmd filetype markdown noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
         autocmd filetype markdown.mdx noremap <buffer> <leader>P :w<CR>:!open -a 'Marked 2' %<CR>
-        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!viewdown %<CR><CR>
-        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!viewdown %<CR><CR>
+        autocmd filetype markdown noremap <buffer> <leader>p :w<CR>:!viewdown %<CR>
+        autocmd filetype markdown.mdx noremap <buffer> <leader>p :w<CR>:!viewdown %<CR>
     augroup end " }}}
 
     augroup ruby_files "{{{
