@@ -232,8 +232,10 @@ set mouse=a
 set ttyfast
 set timeout timeoutlen=1000 ttimeoutlen=50
 
-" Toggle show/hide invisible chars
+" Toggles for extra visual noise: invisible chars, and the language server's
+" inlay hints (types, parameter names)
 nnoremap <leader>I :set list!<cr>
+nnoremap <silent> <leader>i :CocCommand document.toggleInlayHint<cr>
 
 " Toggle line numbers
 nnoremap <leader>N :setlocal number!<cr>

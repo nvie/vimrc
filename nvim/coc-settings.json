@@ -39,6 +39,12 @@
     }
   },
 
+  // Inlay hints are noisy while reading Rust, so they start hidden and are
+  // toggled per buffer with <leader>i.
+  "[rust]": {
+    "inlayHint.display": false
+  },
+
   "eslint.enable": true,
   "eslint.rules.customizations": [
     // Turn off lint warnings in Vim for "XXX" comments
