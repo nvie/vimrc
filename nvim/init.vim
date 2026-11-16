@@ -1173,8 +1173,8 @@ let g:switch_mapping = "!"
 let g:switch_custom_definitions =
   \ [
   \   {
-  \     'x\(\d*\)': 'y\1',
-  \     'y\(\d*\)': 'x\1',
+  \     '\<x\(\d*\)\>': 'y\1',
+  \     '\<y\(\d*\)\>': 'x\1',
   \   },
   \   {
   \     '\C\<it(':             'it.only(',
