@@ -36,6 +36,23 @@
       "command": "rust-analyzer",
       "filetypes": ["rust"],
       "rootPatterns": ["Cargo.toml", "rust-project.json"]
+    },
+
+    // sourcekit-lsp ships with Xcode; going through xcrun makes it follow the
+    // selected Xcode (xcode-select). It understands SwiftPM packages on its
+    // own. An Xcode project needs a buildServer.json next to it, so the
+    // server knows the project's files and build settings:
+    //
+    //   brew install xcode-build-server
+    //   xcode-build-server config -project Foo.xcodeproj -scheme Foo
+    //
+    // and one build in Xcode or xcodebuild, after which it reads that build's
+    // index.
+    "swift": {
+      "command": "xcrun",
+      "args": ["sourcekit-lsp"],
+      "filetypes": ["swift"],
+      "rootPatterns": ["buildServer.json", "Package.swift", ".git"]
     }
   },
 
