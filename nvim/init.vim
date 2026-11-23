@@ -54,6 +54,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jxnblk/vim-mdx-js'
 Plug 'terrastruct/d2-vim'
 Plug 'prisma/vim-prisma'
+Plug 'keith/swift.vim'
 Plug 'wsdjeg/vim-fetch'  " opens 'src/index.ts:13:4' and jumps to L13
 " Plug 'evanleck/vim-svelte'
 
