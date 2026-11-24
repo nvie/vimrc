@@ -237,6 +237,7 @@ set timeout timeoutlen=1000 ttimeoutlen=50
 " inlay hints (types, parameter names)
 nnoremap <leader>I :set list!<cr>
 nnoremap <silent> <leader>i :CocCommand document.toggleInlayHint<cr>
+nnoremap <silent> <leader>, :CocCommand document.toggleInlayHint<cr>
 
 " Toggle line numbers
 nnoremap <leader>N :setlocal number!<cr>
@@ -791,8 +792,11 @@ function! ToggleSmartQuotes()
 endfunction
 
 " TODO: Combine it with the toggler plugin
-" Map the ,, key in normal mode to call the ToggleSmartQuotes function
-nnoremap <silent> ,, :call ToggleSmartQuotes()<CR>
+" Map the ,, key in normal mode to call the ToggleSmartQuotes function (prose files only)
+augroup smart_quotes
+    autocmd!
+    autocmd FileType markdown,text,html nnoremap <buffer> <silent> ,, :call ToggleSmartQuotes()<CR>
+augroup end
 
 " Replace a "-quoted string by a `-quoted one (using vim-surround)
 nmap <leader>' mMcs`'cs"''M
